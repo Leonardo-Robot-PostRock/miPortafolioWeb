@@ -11,7 +11,12 @@ export default {
       'victorMono': ['Victor Mono', 'sans-serif'],
       'victorMonoItalic': ['Victor Mono Italic', 'sans-serif'],
       'victorMonoBold': ['Victor Mono Bold', 'sans-serif']
-    }
+    },
+    minWidth: {
+      '0': '0',
+      '280': '280px',
+      'full': '100%',
+    },
   },
   plugins: [],
 }
