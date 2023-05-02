@@ -7,15 +7,15 @@ export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="flex min-w-280 w-screen items-center justify-between flex-wrap bg-white shadow-lg p-4 text-cyan-600 font-baskerville fixed">
-      <div className="flex items-center flex-shrink-0 lg:ml-20 mr-6 lg:mr-72">
-        <h2 className="w-100 h-10 font-dancingScript mr-2 text-5xl">Leolux</h2>
+    <nav className="flex min-w-280 w-screen items-center z-10 justify-between flex-wrap bg-white shadow-lg p-4 text-cyan-600 font-baskerville fixed">
+      <div className="flex items-center flex-shrink-0 lg:mr-72">
+        <h2 className="w-100 h-10 font-dancingScript mx-6  text-5xl">Leolux</h2>
       </div>
       {/* Menu Hamburger */}
       <MenuHamburger isOpen={isOpen} setIsOpen={setIsOpen} />
       <div
-        className={`w-full block flex-grow mt-10 lg:flex lg:items-center lg:justify-end lg:w-auto lg:mt-0 animate__animated animate__fadeInRight ${
-          isOpen ? 'block' : 'hidden'
+        className={`w-full block flex-grow lg:flex lg:items-center lg:justify-end lg:w-auto lg:mt-0 ${
+          isOpen ? 'block animate__animated animate__fadeInRight' : 'hidden'
         }`}>
         <div className="sm:text-sm md:text-lg lg:flex lg:flex-grow lg:justify-end lg:mr-20">
           <HashLink
