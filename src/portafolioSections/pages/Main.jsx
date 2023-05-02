@@ -6,11 +6,11 @@ import { Contact } from './../section/Contact';
 
 export const Main = () => {
   return (
-    <main>
+    <>
       <Home />
       <About />
       <Portfolio />
       <Contact />
-    </main>
+    </>
   );
 };
