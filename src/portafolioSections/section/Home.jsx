@@ -3,34 +3,45 @@ import foto from './../../assets/images/foto.png';
 import { ReactComponent as Twitter } from '../../assets/icons/twitter.svg';
 import { ReactComponent as Github } from '../../assets/icons/github.svg';
 import { ReactComponent as Linkedin } from '../../assets/icons/linkedin.svg';
+import { PresentationWithEffects } from '../components/PresentationWithEffects';
 
 export const Home = () => {
   return (
-    <main className="flex bg-blue-100 font-victorMono place-content-center items-center h-screen min-w-280" id="home">
-      <div className="mt-40 items-end">
-        <div className="flex justify-center relative align-middle">
-          <figure className="flex justify-center absolute -top-24 shadow-lg rounded-full border-8 border-solid border-cyan-50">
-            <img src={foto} alt="" className="w-full border-4 border-solid border-cyan-700 rounded-full h-48 lg:h-56" />
+    <main
+      className="flex min-w-280 flex-wrap place-content-center items-center bg-blue-100 font-victorMono sm:h-max md:h-screen"
+      id="home">
+      <section className="W-2/4 mt-10 items-end md:mt-32">
+        <div className="relative flex justify-center align-middle">
+          <figure className="absolute mt-20 flex justify-center rounded-full border-8 border-solid border-cyan-50 shadow-lg sm:top-0 md:-top-40 lg:-top-40">
+            <img
+              src={foto}
+              alt=""
+              className="flex h-40 w-full rounded-full border-4 border-solid border-cyan-700 lg:h-56"
+            />
           </figure>
         </div>
-        <div className="flex flex-col px-4 w-64 lg:w-96 bg-blue-200 shadow-lg rounded-2xl mt-6 h-72 place-content-end">
-          <h1 className="text-16px lg:text-2xl font-victorMonoBold text-center text-cyan-900">
+        <div className="mt-40 flex h-64 w-64 flex-col place-content-end rounded-2xl bg-blue-200 shadow-lg sm:mt-40 sm:w-80 md:mt-0 md:w-80 lg:mt-10 lg:h-72 lg:w-96">
+          <h1 className="text-16px text-center font-victorMonoBold text-cyan-900 lg:text-2xl">
             Leonardo Gabriel Puebla
           </h1>
-          <h2 className="text-3xl font-dancingScript text-center text-cyan-900">FrontEnd Developer</h2>
-          <div className="flex justify-evenly my-5">
-            <div className="flex items-center rounded-lg h-max border-solid border-2 border-cyan-800">
+          <h2 className="text-center font-dancingScript text-3xl text-cyan-900">FrontEnd Developer</h2>
+          <div className="my-5 flex justify-center gap-6">
+            <div className="flex h-max animate-pulse items-center rounded-lg border-2 border-solid border-cyan-800">
               <Twitter className="w-10 fill-cyan-700" />
             </div>
-            <div className="flex items-center rounded-lg border-solid border-2 border-cyan-800">
+            <div className="flex animate-pulse items-center rounded-lg border-2 border-solid border-cyan-800">
               <Github className="w-10 fill-cyan-700" />
             </div>
-            <div className="flex items-center rounded-lg border-solid border-2 border-cyan-800">
+            <div className="flex animate-pulse items-center rounded-lg border-2 border-solid border-cyan-800">
               <Linkedin className="w-10 fill-cyan-700" />
             </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      <section className="flex h-auto sm:w-max md:w-2/4">
+        <PresentationWithEffects />
+      </section>
     </main>
   );
 };
