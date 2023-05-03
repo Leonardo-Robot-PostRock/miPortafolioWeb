@@ -7,20 +7,20 @@ export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="flex min-w-280 w-screen items-center z-10 justify-between flex-wrap bg-white shadow-lg p-4 text-cyan-600 font-baskerville fixed">
-      <div className="flex items-center flex-shrink-0 lg:mr-72">
-        <h2 className="w-100 h-10 font-dancingScript mx-6  text-5xl">Leolux</h2>
+    <nav className="fixed z-10 flex w-screen min-w-280 flex-wrap items-center justify-between bg-white p-4 font-baskerville text-cyan-600 shadow-lg">
+      <div className="flex flex-shrink-0 items-center lg:mr-72">
+        <h2 className="w-100 mx-6 h-10 font-dancingScript  text-5xl">Leolux</h2>
       </div>
       {/* Menu Hamburger */}
       <MenuHamburger isOpen={isOpen} setIsOpen={setIsOpen} />
       <div
-        className={`w-full block flex-grow lg:flex lg:items-center lg:justify-end lg:w-auto lg:mt-0 ${
-          isOpen ? 'block animate__animated animate__fadeInRight' : 'hidden'
+        className={`block w-full flex-grow lg:mt-0 lg:flex lg:w-auto lg:items-center lg:justify-end ${
+          isOpen ? 'animate__animated animate__fadeInRight block' : 'hidden'
         }`}>
-        <div className="sm:text-sm md:text-lg lg:flex lg:flex-grow lg:justify-end lg:mr-20">
+        <div className="sm:text-sm md:text-lg lg:mr-20 lg:flex lg:flex-grow lg:justify-end">
           <HashLink
             onClick={() => setisActiveLink('home')}
-            className={`max-w-max block lg:inline-block text-cyan-600 hover:text-gray-400 transition duration-300 py-3 mr-8 lg:mt-0 ${
+            className={`mr-8 block max-w-max py-3 text-cyan-600 transition duration-300 hover:text-gray-400 lg:mt-0 lg:inline-block ${
               isActiveLink === 'home' ? 'border-b-4 border-cyan-800' : ''
             }`}
             smooth
@@ -29,7 +29,7 @@ export const Navbar = () => {
           </HashLink>
           <HashLink
             onClick={() => setisActiveLink('about')}
-            className={`max-w-max block lg:inline-block text-cyan-600 hover:text-gray-400 transition duration-300 py-3 mr-8 lg:mt-0 ${
+            className={`mr-8 block max-w-max py-3 text-cyan-600 transition duration-300 hover:text-gray-400 lg:mt-0 lg:inline-block ${
               isActiveLink === 'about' ? 'border-b-4 border-cyan-800' : ''
             }`}
             smooth
@@ -38,7 +38,7 @@ export const Navbar = () => {
           </HashLink>
           <HashLink
             onClick={() => setisActiveLink('porfolio')}
-            className={`max-w-max block lg:inline-block text-cyan-600 hover:text-gray-400 transition duration-300 py-3 mr-8 lg:mt-0 ${
+            className={`mr-8 block max-w-max py-3 text-cyan-600 transition duration-300 hover:text-gray-400 lg:mt-0 lg:inline-block ${
               isActiveLink === 'porfolio' ? 'border-b-4 border-cyan-800' : ''
             }`}
             smooth
@@ -47,7 +47,7 @@ export const Navbar = () => {
           </HashLink>
           <HashLink
             onClick={() => setisActiveLink('contact')}
-            className={`max-w-max block lg:inline-block text-cyan-600 hover:text-gray-400 transition duration-300 py-3 mr-8 lg:mt-0 ${
+            className={`mr-8 block max-w-max py-3 text-cyan-600 transition duration-300 hover:text-gray-400 lg:mt-0 lg:inline-block ${
               isActiveLink === 'contact' ? 'border-b-4 border-cyan-800' : ''
             }`}
             smooth
