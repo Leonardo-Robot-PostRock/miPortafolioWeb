@@ -8,7 +8,7 @@ import { PresentationWithEffects } from '../components/PresentationWithEffects';
 export const Home = () => {
   return (
     <main
-      className="flex min-w-280 flex-wrap place-content-center items-center bg-blue-100 font-victorMono sm:h-max md:h-screen"
+      className="flex min-w-280 flex-wrap place-content-center items-center bg-slate-100 font-victorMono sm:h-max md:h-screen"
       id="home">
       <section className="W-2/4 mt-10 items-end md:mt-32">
         <div className="relative flex justify-center align-middle">
@@ -27,13 +27,19 @@ export const Home = () => {
           <h2 className="text-center font-dancingScript text-3xl text-cyan-900">FrontEnd Developer</h2>
           <div className="my-5 flex justify-center gap-6">
             <div className="flex h-max animate-pulse items-center rounded-lg border-2 border-solid border-cyan-800">
-              <Twitter className="w-10 fill-cyan-700" />
+              <a href="https://twitter.com/LeonardoPu65507">
+                <Twitter className="w-10 cursor-pointer fill-cyan-700" alt="red social Twitter" />
+              </a>
             </div>
             <div className="flex animate-pulse items-center rounded-lg border-2 border-solid border-cyan-800">
-              <Github className="w-10 fill-cyan-700" />
+              <a href="https://github.com/Leonardo-Robot-PostRock?tab=repositories">
+                <Github className="w-10 cursor-pointer fill-cyan-700" alt="repositorio Github" />
+              </a>
             </div>
             <div className="flex animate-pulse items-center rounded-lg border-2 border-solid border-cyan-800">
-              <Linkedin className="w-10 fill-cyan-700" />
+              <a href="https://www.linkedin.com/in/leonardo-puebla-1a2b71229/">
+                <Linkedin className="w-10 cursor-pointer fill-cyan-700" alt="red social Linkedin" />
+              </a>
             </div>
           </div>
         </div>
