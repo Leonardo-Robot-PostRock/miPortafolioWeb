@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
 import { HashLink } from 'react-router-hash-link';
 import { MenuHamburger } from '../menu-hamburger/MenuHamburger';
+import { ToggleDarkMode } from '../button-darkMode/toggleDarkMode';
 
-export const Navbar = () => {
+export const Navbar = ({ toggleDarkMode, darkMode }) => {
   const [isActiveLink, setisActiveLink] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <nav className="fixed z-10 flex w-screen min-w-280 flex-wrap items-center justify-between bg-white p-4 font-baskerville text-cyan-600 shadow-lg">
-      <div className="flex flex-shrink-0 items-center lg:mr-72">
-        <h2 className="w-100 mx-6 h-10 font-dancingScript  text-5xl">Leolux</h2>
+      <div className="flex flex-shrink-0 flex-wrap items-center justify-center lg:mr-72">
+        <h2 className="w-100 mx-4 h-10 font-dancingScript text-4xl md:mx-6 md:text-5xl">Leolux</h2>
+        <ToggleDarkMode toggleDarkMode={toggleDarkMode} darkMode={darkMode} />
       </div>
       {/* Menu Hamburger */}
       <MenuHamburger isOpen={isOpen} setIsOpen={setIsOpen} />
