@@ -2,7 +2,7 @@ import React from 'react';
 
 export const PresentationWithEffects = () => {
   return (
-    <div class="min-h-40 xs-mt-28 mx-2 mt-2 flex min-w-280 flex-wrap justify-center p-4 sm:mt-10">
+    <div className="min-h-40 xs-mt-28 mx-2 mt-2 flex min-w-280 flex-wrap justify-center p-4 sm:mt-10">
       <h1 className="animate-bounce whitespace-pre-line from-stone-800 px-4 text-center font-victorMonoBold tracking-widest md:mb-5 md:text-2xl lg:mb-10">
         Bienvenido/a a mi portafolio web
       </h1>
