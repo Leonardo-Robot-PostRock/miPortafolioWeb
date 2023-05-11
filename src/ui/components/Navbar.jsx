@@ -8,10 +8,10 @@ export const Navbar = ({ toggleDarkMode, darkMode }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed z-10 flex w-screen min-w-280 flex-wrap items-center justify-between bg-white p-4 font-baskerville text-cyan-600 shadow-lg">
+    <nav className="fixed z-10 flex w-screen min-w-280 flex-wrap items-center justify-between bg-white p-4 font-baskerville text-cyan-600 shadow-lg dark:bg-gray-800 dark:text-gray-200">
       <div className="flex flex-shrink-0 flex-wrap items-center justify-center lg:mr-72">
         <h2 className="w-100 mx-4 h-10 font-dancingScript text-4xl md:mx-6 md:text-5xl">Leolux</h2>
-        <ToggleDarkMode toggleDarkMode={toggleDarkMode} darkMode={darkMode} />
+        <ToggleDarkMode toggleDarkMode={toggleDarkMode} />
       </div>
       {/* Menu Hamburger */}
       <MenuHamburger isOpen={isOpen} setIsOpen={setIsOpen} />
