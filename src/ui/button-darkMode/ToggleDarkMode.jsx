@@ -1,10 +1,10 @@
 import React from 'react';
 import './ToggleDarkMode.css';
 
-export const ToggleDarkMode = () => {
+export const ToggleDarkMode = ({ toggleDarkMode }) => {
   return (
     <div className="toggleWrapper">
-      <input type="checkbox" className="dn" id="dn" />
+      <input onClick={toggleDarkMode} type="checkbox" checked={darkMode} className="dn" id="dn" />
       <label htmlFor="dn" className="toggle">
         <span className="toggle__handler">
           <span className="crater crater--1"></span>
