@@ -2,21 +2,16 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { Navbar } from '../ui/components/Navbar';
 import { Main } from '../portafolioSections/pages/Main';
-import { useState } from 'react';
+import { useDarkMode } from '../ui/hooks/useDarkMode';
 
 export const AppRouter = () => {
-  const [darkMode, setDarkMode] = useState(false);
-
-  const toggleDarkMode = () => {
-    setDarkMode((prevDarkMode) => !prevDarkMode);
-    console.log();
-  };
+  const [darkMode, toggleDarkMode, savedDarkMode] = useDarkMode();
 
   return (
     <div
       className={`mx-auto h-full w-full 
     ${darkMode ? 'dark' : ''}`}>
-      <Navbar toggleDarkMode={toggleDarkMode} darkMode={darkMode} />
+      <Navbar toggleDarkMode={toggleDarkMode} darkMode={darkMode} savedDarkMode={savedDarkMode} />
       <Routes>
         <Route path="/" element={<Main />}></Route>
         {/* Provisorio */}
