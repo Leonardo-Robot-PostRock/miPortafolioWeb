@@ -8,7 +8,7 @@ import { PresentationWithEffects } from '../components/PresentationWithEffects';
 export const Home = () => {
   return (
     <main
-      className="flex min-w-280 flex-wrap place-content-center items-center bg-slate-100 font-victorMono dark:bg-slate-950 dark:text-slate-300 sm:h-max md:h-screen"
+      className="flex min-w-280 flex-wrap place-content-center items-center bg-slate-100 font-victorMono dark:bg-gray-900 dark:text-slate-300 sm:h-max md:h-screen"
       id="home">
       <section className="W-2/4 mt-10 items-end md:mt-32">
         <div className="relative flex justify-center align-middle">
