@@ -11,14 +11,6 @@
 }
 
 @font-face {
-    font-family: 'Victor Mono Italic';
-    src: url('./assets/fonts/VictorMono-Italic.woff2') format('woff2'),
-        url('./assets/fonts/VictorMono-Italic.woff') format('woff');
-    font-weight: normal;
-    font-style: italic;
-}
-
-@font-face {
     font-family: 'Victor Mono Bold';
     src: url('./assets/fonts/VictorMono-Bold.woff2') format('woff2'),
         url('./assets/fonts/VictorMono-Bold.woff') format('woff');
