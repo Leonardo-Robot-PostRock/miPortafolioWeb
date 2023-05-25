@@ -40,7 +40,7 @@ export const Home = ({ darkMode }) => {
             <div className="flex h-max animate-pulse items-center rounded-lg border-2 border-solid border-sky-400">
               <a href="https://twitter.com/LeonardoPu65507">
                 <Twitter
-                  className="w-10 cursor-pointer fill-sky-400 dark:fill-white md:p-1 2xl:w-16 2xl:p-2"
+                  className="w-10 cursor-pointer fill-sky-400 p-1 dark:fill-white 2xl:w-16 2xl:p-2"
                   alt="red social Twitter"
                 />
               </a>
