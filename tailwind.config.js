@@ -6,10 +6,9 @@ export default {
   ],
   theme: {
     fontFamily: {
-      'dancingScript': ['Dancing Script', 'cursive'],
-      'baskerville': ['Libre Baskerville', 'serif'],
+      'Raleway': ['Raleway', 'sans-serif'],
+      'Kanit': ['Kanit', 'sans-serif'],
       'victorMono': ['Victor Mono', 'sans-serif'],
-      'victorMonoItalic': ['Victor Mono Italic', 'sans-serif'],
       'victorMonoBold': ['Victor Mono Bold', 'sans-serif']
     },
     minWidth: {
