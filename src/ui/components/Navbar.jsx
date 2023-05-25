@@ -22,7 +22,7 @@ export const Navbar = ({ toggleDarkMode, darkMode, savedDarkMode }) => {
         <div className="sm:text-sm md:text-lg lg:mr-20 lg:flex lg:flex-grow lg:justify-end">
           <HashLink
             onClick={() => setisActiveLink('home')}
-            className={`max-w-max dark:hover:text-skborder-sky-400 mr-8 block py-3 text-neutral-950 transition duration-300 hover:text-sky-500 dark:text-white dark:hover:text-sky-400 lg:mt-0 lg:inline-block ${
+            className={`dark:hover:text-skborder-sky-400 mr-8 block max-w-max py-3 text-neutral-950 transition duration-300 hover:text-sky-500 dark:text-white dark:hover:text-sky-400 lg:mt-0 lg:inline-block ${
               isActiveLink === 'home' ? 'border-b-2 border-sky-400 dark:border-sky-400' : ''
             }`}
             smooth
@@ -31,7 +31,7 @@ export const Navbar = ({ toggleDarkMode, darkMode, savedDarkMode }) => {
           </HashLink>
           <HashLink
             onClick={() => setisActiveLink('about')}
-            className={`max-w-max dark:hover:text-skborder-sky-400 mr-8 block py-3 text-neutral-950 transition duration-300 hover:text-sky-500 dark:text-white dark:hover:text-sky-400 lg:mt-0  lg:inline-block ${
+            className={`dark:hover:text-skborder-sky-400 mr-8 block max-w-max py-3 text-neutral-950 transition duration-300 hover:text-sky-500 dark:text-white dark:hover:text-sky-400 lg:mt-0  lg:inline-block ${
               isActiveLink === 'about' ? 'border-b-2 border-sky-400 dark:border-sky-400' : ''
             }`}
             smooth
@@ -39,8 +39,17 @@ export const Navbar = ({ toggleDarkMode, darkMode, savedDarkMode }) => {
             About
           </HashLink>
           <HashLink
+            onClick={() => setisActiveLink('skills')}
+            className={`dark:hover:text-skborder-sky-400 mr-8 block max-w-max py-3 text-neutral-950 transition duration-300 hover:text-sky-500 dark:text-white dark:hover:text-sky-400 lg:mt-0  lg:inline-block ${
+              isActiveLink === 'skills' ? 'border-b-2 border-sky-400 dark:border-sky-400' : ''
+            }`}
+            smooth
+            to={'/#skills'}>
+            Skills
+          </HashLink>
+          <HashLink
             onClick={() => setisActiveLink('porfolio')}
-            className={`max-w-max dark:hover:text-skborder-sky-400 mr-8 block py-3 text-neutral-950 transition duration-300 hover:text-sky-500 dark:text-white dark:hover:text-sky-400 lg:mt-0 lg:inline-block ${
+            className={`dark:hover:text-skborder-sky-400 mr-8 block max-w-max py-3 text-neutral-950 transition duration-300 hover:text-sky-500 dark:text-white dark:hover:text-sky-400 lg:mt-0 lg:inline-block ${
               isActiveLink === 'porfolio' ? 'border-b-2 border-sky-400 dark:border-sky-400' : ''
             }`}
             smooth
@@ -49,7 +58,7 @@ export const Navbar = ({ toggleDarkMode, darkMode, savedDarkMode }) => {
           </HashLink>
           <HashLink
             onClick={() => setisActiveLink('contact')}
-            className={`max-w-max dark:hover:text-skborder-sky-400 mr-8 block py-3 text-neutral-950 transition duration-300 hover:text-sky-500 dark:text-white dark:hover:text-sky-400 lg:mt-0 lg:inline-block ${
+            className={`dark:hover:text-skborder-sky-400 mr-8 block max-w-max py-3 text-neutral-950 transition duration-300 hover:text-sky-500 dark:text-white dark:hover:text-sky-400 lg:mt-0 lg:inline-block ${
               isActiveLink === 'contact' ? 'border-b-2 border-sky-400 dark:border-sky-400' : ''
             }`}
             smooth
