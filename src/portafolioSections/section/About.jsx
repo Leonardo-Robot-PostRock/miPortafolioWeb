@@ -51,14 +51,14 @@ export const About = () => {
         <h2 className="mb-5 text-center font-Raleway text-3xl md:mt-24 xl:mt-24">About me</h2>
         <div className="xl:grid xl:grid-cols-2 xl:gap-x-36">
           <div className="mx-5 leading-6 md:w-96">
-            <p className="p-1 tracking-normal">
+            <p className="2xl:text-1xl p-1 text-sm tracking-normal">
               Comencé mis estudios con Java en el curso 111MilProgramadores entre 2016 y 2017. Luego, reforcé
               conocimientos en POO. En 2019 ingresé a la UTN y estudié durante todo el año. En 2021, me uní a
               plataformas como Platzi y Udemy, donde estudié JavaScript y React. Actualmente, estoy estudiando
               Desarrollo de Software en ies-9008 Manuel Belgrano.
             </p>
             <div className="my-2 border-b-2 border-neutral-950 dark:border-white"></div>
-            <p className="mt-2 font-victorMono">
+            <p className="2xl:text-1xl mt-2 font-victorMono text-sm">
               Tengo 1 año de experiencia laboral como programador freelance. Trabajé en un proyecto con otro programador
               y un diseñador, utilizando Angular.
             </p>
