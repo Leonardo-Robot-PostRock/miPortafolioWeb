@@ -58,7 +58,7 @@ export const About = () => {
               Desarrollo de Software en ies-9008 Manuel Belgrano.
             </p>
             <div className="my-2 border-b-2 border-neutral-950 dark:border-white"></div>
-            <p className="2xl:text-1xl mt-2 font-victorMono text-sm">
+            <p className="2xl:text-1xl mt-2 font-victorMonoBold text-sm">
               Tengo 1 año de experiencia laboral como programador freelance. Trabajé en un proyecto con otro programador
               y un diseñador, utilizando Angular.
             </p>
@@ -68,7 +68,8 @@ export const About = () => {
 
           <div className="m-1 flex flex-col">
             <h3 className="text-center font-Kanit text-2xl">📚Libros que leo:</h3>
-            <div className={`relative mt-4 flex min-w-280 justify-center`}>
+            <div
+              className={`relative mx-auto mt-4 flex w-56 min-w-280 justify-center md:mx-auto md:w-full 2xl:mx-0 2xl:w-full`}>
               {' '}
               <button
                 className="absolute left-2 top-1/2 -translate-y-1/2 transform rounded-full bg-neutral-950 bg-opacity-50 p-2 text-white dark:bg-sky-500 xl:left-10"
