@@ -8,22 +8,22 @@ import { ReactComponent as Linkedin } from '../../assets/icons/linkedin.svg';
 export const Home = ({ darkMode }) => {
   return (
     <main
-      className="flex h-screen min-w-280 place-content-center items-center bg-slate-100 font-victorMono dark:bg-neutral-900 dark:text-slate-300 md:mx-28 md:h-max"
+      className="flex h-screen min-w-280 place-content-center items-center bg-slate-100 font-victorMono dark:bg-neutral-900 dark:text-slate-300 md:mx-28 md:mb-20 md:h-max"
       id="home">
-      <section className="mt-32 flex justify-center md:mt-0 2xl:mt-10">
-        <div className="md:mt-16">
-          <figure className="lg:w-50 mx-auto mb-5 w-44 justify-center rounded-full border-4 border-solid border-neutral-300 shadow-lg dark:border-sky-400 dark:shadow-none md:mt-10 md:w-44 lg:border-8 2xl:w-72">
+      <section className="mt-32 flex justify-center md:mt-14 2xl:my-20">
+        <div className="md:mt-16 2xl:mt-24">
+          <figure className="lg:w-50 mx-auto mb-5 w-44 justify-center rounded-full border-4 border-solid border-neutral-300 shadow-lg dark:border-neutral-950 dark:shadow-none md:mt-10 md:w-44 lg:border-8 2xl:w-72">
             {!darkMode ? (
               <img
                 src={fotoWhite}
-                alt=""
-                className="w-full rounded-full border-4 border-solid border-sky-400 dark:border-neutral-900 lg:border-4"
+                alt="Leonardo Puebla"
+                className="w-full rounded-full border-4 border-solid border-sky-400 lg:border-4"
               />
             ) : (
               <img
                 src={foto}
-                alt=""
-                className="w-full rounded-full border-4 border-solid border-sky-400 dark:border-neutral-900 lg:border-4"
+                alt="Leonardo Puebla"
+                className="w-full rounded-full border-4 border-solid border-sky-400 lg:border-4"
               />
             )}
           </figure>
