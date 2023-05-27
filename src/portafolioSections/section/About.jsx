@@ -61,7 +61,7 @@ export const About = () => {
     <main
       className="flex h-max min-w-280 place-content-center items-center dark:bg-neutral-900 dark:text-slate-200 md:mx-28 md:h-max xl:h-max 2xl:h-screen"
       id="about">
-      <section className="mt-20 flex flex-col rounded-lg dark:bg-inherit md:mt-0 2xl:mt-0">
+      <section className="my-20 flex w-screen min-w-280 flex-col rounded-lg dark:bg-inherit md:mt-0 md:w-max 2xl:my-0">
         <h2 className="mb-5 text-center font-Raleway text-3xl md:mt-24 xl:mt-24 2xl:my-5 2xl:text-6xl">About me</h2>
         <div className="md:grid md:grid-cols-2 md:gap-24 xl:grid xl:grid-cols-2 xl:gap-x-36">
           <div className="mx-5 leading-6 md:w-72 2xl:w-96">
@@ -71,18 +71,17 @@ export const About = () => {
               plataformas como Platzi y Udemy, donde estudié JavaScript y React. Actualmente, estoy estudiando
               Desarrollo de Software en ies-9008 Manuel Belgrano.
             </p>
-            <p className="2xl:text-md mt-2 p-1 font-victorMonoBold text-lg">
-              Tengo 2 años de experiencia laboral como programador freelance. En uno trabajé con Angular y en el otro
-              React.
+            <p className="mt-2 p-1 font-victorMonoBold text-sm 2xl:text-lg">
+              Tengo 2 años de experiencia laboral como programador freelance.
             </p>
             <div className="my-2 border-b-2 border-neutral-950 dark:border-white md:hidden"></div>
             {/* Sección descargar curriculum */}
 
-            <div className="divide m-3 flex flex-col place-items-center md:mt-16">
-              <h1 className="mb-1 text-center font-Kanit text-2xl tracking-wider 2xl:text-4xl">Curriculum</h1>
+            <div className="divide m-3 flex flex-col place-items-center md:mt-16 2xl:mt-16">
+              <h1 className="mb-4 text-center font-Kanit text-2xl tracking-wider 2xl:mb-4 2xl:text-4xl">Curriculum</h1>
               <button className="flex w-max justify-self-center rounded-lg border-2 border-sky-400 p-2 align-middle font-victorMonoBold text-sky-400 hover:bg-sky-400 hover:text-white dark:border-white dark:text-white hover:dark:border-sky-400">
                 <span class="material-symbols-outlined px-1">download</span>
-                <a className="text-md 2xl:text-lg" href={leonardoCv} download>
+                <a className="text-md px-1 2xl:text-lg" href={leonardoCv} download>
                   Download Curriculum
                 </a>
               </button>
@@ -107,9 +106,11 @@ export const About = () => {
                   alt={programmingBooks[currentSlide].title}
                   className="h-52 rounded-lg 2xl:h-64"
                 />
-                <p className="mt-2 text-center font-Raleway text-sm">{programmingBooks[currentSlide].title}</p>
-                <p className="text-center font-Raleway text-xs">{programmingBooks[currentSlide].author}</p>
-                <p className="text-center font-Kanit text-xs">{programmingBooks[currentSlide].pag}</p>
+                <p className="mt-2 text-center font-Raleway text-sm 2xl:text-lg">
+                  {programmingBooks[currentSlide].title}
+                </p>
+                <p className="2xl:text-md text-center font-Raleway text-xs">{programmingBooks[currentSlide].author}</p>
+                <p className="2xl:text-md text-center font-Kanit text-xs">{programmingBooks[currentSlide].pag}</p>
               </figure>
               <button
                 className="absolute right-2 top-1/2 -translate-y-1/2 transform rounded-full bg-neutral-950 bg-opacity-50 p-2 text-white dark:bg-sky-500 xl:right-10 2xl:right-0 2xl:text-3xl"
@@ -118,13 +119,13 @@ export const About = () => {
               </button>
             </div>
             <div className="mx-5 my-2 border-b-2 border-neutral-950 dark:border-white md:hidden"></div>
-            <div className="mx-5 flex flex-col text-sm md:mx-2">
-              <h2 className="font-kanit mb-2 text-center text-2xl 2xl:mt-5 2xl:text-3xl">Personal Information</h2>
-              <div className="rounded-lg border-2 border-sky-400 p-2 dark:border-white">
-                <p className="2xl:text-lg">Name: {personalData.name}</p>
-                <p className="2xl:text-lg">Age: {personalData.age}</p>
-                <p className="2xl:text-lg">Email: {personalData.email}</p>
-                <p className="tracking-widest 2xl:text-lg">Phone: {personalData.phone}</p>
+            <div className="mx-5 flex flex-col place-items-center md:mx-2">
+              <h2 className="font-kanit mb-4 text-center text-2xl 2xl:mt-5 2xl:text-3xl">Personal Information</h2>
+              <div className="flex w-64 flex-col rounded-lg border-2 border-dotted border-sky-400 p-2 dark:border-white sm:align-middle md:w-full 2xl:p-4">
+                <p className="text-sm 2xl:text-lg">Name: {personalData.name}</p>
+                <p className="text-sm 2xl:text-lg">Age: {personalData.age}</p>
+                <p className="text-sm 2xl:text-lg">Email: {personalData.email}</p>
+                <p className="text-sm tracking-widest 2xl:text-lg">Phone: {personalData.phone}</p>
               </div>
             </div>
           </div>
