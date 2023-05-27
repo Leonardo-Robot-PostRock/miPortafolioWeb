@@ -66,7 +66,7 @@ export const About = () => {
         <div className="md:grid md:grid-cols-2 md:gap-24 xl:grid xl:grid-cols-2 xl:gap-x-36">
           <div className="mx-5 leading-6 md:w-72 2xl:w-96">
             <p className="p-1 text-sm tracking-normal 2xl:text-lg">
-              Comencé mis estudios con Java en el curso 111MilProgramadores entre 2016 y 2017. Luego, reforcé
+              Comencé mis estudios con Java en el curso 111 Mil Programadores entre el año 2016 y 2017. Luego, reforcé
               conocimientos en POO. En 2019 ingresé a la UTN y estudié durante todo el año. En 2021, me uní a
               plataformas como Platzi y Udemy, donde estudié JavaScript y React. Actualmente, estoy estudiando
               Desarrollo de Software en ies-9008 Manuel Belgrano.
