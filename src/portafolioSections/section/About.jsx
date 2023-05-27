@@ -77,7 +77,7 @@ export const About = () => {
             <div className="my-2 border-b-2 border-neutral-950 dark:border-white md:hidden"></div>
             {/* Sección descargar curriculum */}
 
-            <div className="divide m-3 flex flex-col place-items-center md:mt-16 2xl:mt-16">
+            <div className="divide m-3 flex flex-col place-items-center md:mt-16 2xl:mt-28">
               <h1 className="mb-4 text-center font-Kanit text-2xl tracking-wider 2xl:mb-4 2xl:text-4xl">Curriculum</h1>
               <button className="flex w-max justify-self-center rounded-lg border-2 border-sky-400 p-2 align-middle font-victorMonoBold text-sky-400 hover:bg-sky-400 hover:text-white dark:border-white dark:text-white hover:dark:border-sky-400">
                 <span class="material-symbols-outlined px-1">download</span>
