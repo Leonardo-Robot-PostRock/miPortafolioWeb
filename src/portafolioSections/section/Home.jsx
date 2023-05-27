@@ -33,7 +33,7 @@ export const Home = ({ darkMode }) => {
           <p className="mb-4 text-center font-Raleway text-4xl tracking-wider text-sky-400 lg:text-4xl xl:text-5xl 2xl:text-6xl">
             Leonardo
           </p>
-          <h2 className="xl:text-1xl mt-3 px-1 text-center font-victorMonoBold text-2xl tracking-wider text-neutral-950 dark:text-white sm:text-3xl md:text-3xl lg:text-2xl xl:mt-5 2xl:mt-10 2xl:text-5xl">
+          <h2 className="xl:text-1xl mt-3 px-1 text-center font-victorMonoBold text-2xl tracking-wider text-neutral-950 dark:text-white sm:text-3xl md:text-3xl lg:text-2xl xl:mt-5 2xl:my-10 2xl:text-5xl">
             FrontEnd Developer
           </h2>
           <div className="my-5 flex justify-center gap-6">
