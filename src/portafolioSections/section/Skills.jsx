@@ -1,9 +1,11 @@
+import { ParticlesComponent } from '../components/Particle';
+
 import React from 'react';
 
-export const Skills = () => {
+export const Skills = (darkMode) => {
   return (
-    <div className="h-screen dark:bg-neutral-900 dark:text-slate-200" id="skills">
-      Skills
+    <div className="h-screen" id="skills">
+      <ParticlesComponent darkMode={darkMode} id="tsparticles" />
     </div>
   );
 };
