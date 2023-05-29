@@ -4,9 +4,9 @@ import React from 'react';
 
 export const Skills = (darkMode) => {
   return (
-    <main className="relavite flex h-screen min-w-280 justify-center md:mx-0" id="skills">
+    <main className="relavite flex h-screen min-w-280 items-center justify-center md:mx-0" id="skills">
       <section className="absolute mx-auto min-w-280">
-        <h1 className="mb-52 mt-32 text-center font-Raleway text-4xl dark:text-white md:mb-20 md:text-5xl 2xl:mb-36">
+        <h1 className="mb-5 text-center font-Raleway text-4xl dark:text-white sm:mb-32 md:mb-20 md:text-5xl 2xl:mb-28 2xl:text-6xl">
           Skills
         </h1>
         <div className="mx-2 rounded-lg p-4 md:mx-52 2xl:mx-auto 2xl:w-7/12 2xl:p-16">
