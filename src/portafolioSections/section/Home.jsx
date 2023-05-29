@@ -1,9 +1,9 @@
 import React from 'react';
 import foto from './../../assets/images/foto.png';
 import fotoWhite from './../../assets/images/foto_bgWhite.jpg';
-import { ReactComponent as Twitter } from '../../assets/icons/twitter.svg';
-import { ReactComponent as Github } from '../../assets/icons/github.svg';
-import { ReactComponent as Linkedin } from '../../assets/icons/linkedin.svg';
+import { ReactComponent as Twitter } from '../../assets/icons/social/twitter.svg';
+import { ReactComponent as Github } from '../../assets/icons/social/github.svg';
+import { ReactComponent as Linkedin } from '../../assets/icons/social/linkedin.svg';
 
 export const Home = ({ darkMode }) => {
   return (
@@ -17,13 +17,13 @@ export const Home = ({ darkMode }) => {
               <img
                 src={fotoWhite}
                 alt="Leonardo Puebla"
-                className="w-full rounded-full border-4 border-solid border-sky-400 lg:border-4"
+                className="w-full rounded-full border-4 border-solid border-sky-400 brightness-105 lg:border-4"
               />
             ) : (
               <img
                 src={foto}
                 alt="Leonardo Puebla"
-                className="w-full rounded-full border-4 border-solid border-sky-400 lg:border-4"
+                className="w-full rounded-full border-4 border-solid border-sky-400 contrast-125 lg:border-4"
               />
             )}
           </figure>
