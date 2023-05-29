@@ -44,7 +44,7 @@ export const ParticlesComponent = (props) => {
         },
         modes: {
           repulse: {
-            distance: 200,
+            distance: 150,
             duration: 0.4
           }
         }
@@ -58,7 +58,7 @@ export const ParticlesComponent = (props) => {
         },
         links: {
           color: color,
-          distance: 200,
+          distance: 150,
           enable: true,
           opacity: 0.5,
           width: 1
@@ -72,7 +72,7 @@ export const ParticlesComponent = (props) => {
           outModes: {
             default: 'bounce'
           },
-          random: true,
+          random: false,
           speed: 2,
           straight: false
         },
@@ -172,12 +172,12 @@ export const ParticlesComponent = (props) => {
             {
               src: primeflex,
               height: 32,
-              width: 100
+              width: 50
             }
           ]
         },
         size: {
-          value: { min: 20, max: 35 }
+          value: { min: 25, max: 40 }
         }
       },
       detectRetina: true
