@@ -1,27 +1,25 @@
-import React, { useCallback, useMemo } from 'react';
+import React, { useCallback, useMemo, lazy, Suspense } from 'react';
 
-import Particles from 'react-particles';
 import { loadFull } from 'tsparticles';
+import iconImages from '../utils/icons';
 
-import node from '../../assets/icons/node.svg';
-import javaScript from '../../assets/icons/javaScript.svg';
-import css from '../../assets/icons/css.svg';
-import primeng from '../../assets/icons/primeng.svg';
-import materialUi from '../../assets/icons/materialUi.svg';
-import html from '../../assets/icons/html.svg';
-import tailwind from '../../assets/icons/tailwindcss.svg';
-import bootstrap from '../../assets/icons/bootstrap.svg';
-import webpack from '../../assets/icons/webpack.svg';
-import angular from '../../assets/icons/angular.svg';
-import primeflex from '../../assets/icons/primeflex.svg';
-import mongodb from '../../assets/icons/mongodb.svg';
-import sql from '../../assets/icons/sql.png';
-import vite from '../../assets/icons/vite.svg';
-import angularMaterial from '../../assets/icons/angularMaterial.svg';
-import react from '../../assets/icons/react.svg';
+const LazyParticles = lazy(() => import('react-particles'));
+
+const LoadingFallback = () => <div>Loading...</div>;
 
 export const ParticlesComponent = (props) => {
   let color = '#38bdf8';
+
+  const shapeOptions = useMemo(() => {
+    return {
+      type: 'images',
+      image: Object.values(iconImages).map((src) => ({
+        src,
+        height: 32,
+        width: 32
+      }))
+    };
+  }, []);
 
   const options = useMemo(() => {
     return {
@@ -30,7 +28,7 @@ export const ParticlesComponent = (props) => {
           value: props.darkMode
         }
       },
-      fpsLimit: 120,
+      fpsLimit: 30,
       interactivity: {
         events: {
           onClick: {
@@ -81,122 +79,27 @@ export const ParticlesComponent = (props) => {
             enable: true,
             area: 800
           },
-          value: 25
+          value: 30
         },
         opacity: {
-          value: 0.3
+          value: 0.6
         },
-        shape: {
-          type: 'images',
-          image: [
-            {
-              src: node,
-              height: 32,
-              width: 32
-            },
-            {
-              src: sql,
-              height: 32,
-              width: 32
-            },
-            {
-              src: mongodb,
-              height: 32,
-              width: 32
-            },
-            {
-              src: css,
-              height: 32,
-              width: 32
-            },
-            {
-              src: javaScript,
-              height: 32,
-              width: 32
-            },
-            {
-              src: react,
-              height: 32,
-              width: 32
-            },
-            {
-              src: materialUi,
-              height: 32,
-              width: 32
-            },
-            {
-              src: html,
-              height: 32,
-              width: 32
-            },
-            {
-              src: vite,
-              height: 32,
-              width: 32
-            },
-            {
-              src: materialUi,
-              height: 32,
-              width: 32
-            },
-            {
-              src: primeng,
-              height: 32,
-              width: 32
-            },
-            {
-              src: angularMaterial,
-              height: 32,
-              width: 32
-            },
-            {
-              src: tailwind,
-              height: 32,
-              width: 32
-            },
-            {
-              src: webpack,
-              height: 32,
-              width: 32
-            },
-            {
-              src: angular,
-              height: 32,
-              width: 32
-            },
-            {
-              src: bootstrap,
-              height: 32,
-              width: 32
-            },
-            {
-              src: primeflex,
-              height: 32,
-              width: 50
-            }
-          ]
-        },
+        shape: shapeOptions,
         size: {
-          value: { min: 25, max: 40 }
+          value: { min: 25, max: 30 }
         }
       },
       detectRetina: true
     };
-  });
+  }, []);
 
   const particlesInit = useCallback(async (engine) => {
     await loadFull(engine);
   }, []);
 
-  const particlesLoaded = useCallback(async (container) => {}, []);
-
   return (
-    <Particles
-      className="h-screen w-screen"
-      id={props.id}
-      init={particlesInit}
-      loaded={particlesLoaded}
-      options={options}
-    />
+    <Suspense fallback={<LoadingFallback />}>
+      <LazyParticles className="h-screen w-screen" id={props.id} init={particlesInit} options={options} />
+    </Suspense>
   );
 };
