@@ -14,8 +14,10 @@
     "hamburger-react": "^2.5.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-particles": "^2.9.3",
     "react-router-dom": "^6.11.0",
     "react-router-hash-link": "^2.4.3",
+    "tsparticles": "^2.9.3",
     "vite-plugin-svgr": "^2.4.0"
   },
   "devDependencies": {
