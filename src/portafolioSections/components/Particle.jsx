@@ -32,7 +32,8 @@ export const ParticlesComponent = (props) => {
       interactivity: {
         events: {
           onClick: {
-            enable: false
+            enable: true,
+            mode: 'pause'
           },
           onHover: {
             enable: true,
