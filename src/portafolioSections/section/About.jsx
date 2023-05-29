@@ -59,13 +59,13 @@ export const About = () => {
 
   return (
     <main
-      className="flex h-max min-w-280 place-content-center items-center dark:bg-neutral-900 dark:text-slate-200 md:mx-28 md:h-max xl:h-max 2xl:h-screen"
+      className="flex h-max min-w-280 place-content-center items-center dark:bg-neutral-900 dark:text-slate-200 md:h-max xl:h-max 2xl:h-screen"
       id="about">
       <section className="my-20 flex w-screen min-w-280 flex-col rounded-lg dark:bg-inherit md:mt-0 md:w-max 2xl:my-0">
         <h2 className="mb-5 text-center font-Raleway text-3xl md:mt-24 xl:mt-24 2xl:my-5 2xl:text-6xl">About me</h2>
         <div className="md:grid md:grid-cols-2 md:gap-24 xl:grid xl:grid-cols-2 xl:gap-x-36">
           <div className="mx-5 leading-6 md:w-72 2xl:w-96">
-            <p className="p-1 text-sm tracking-normal 2xl:text-lg">
+            <p className="p-1 font-victorMono text-sm tracking-normal 2xl:text-lg">
               Comencé mis estudios con Java en el curso 111 Mil Programadores entre el año 2016 y 2017. Luego, reforcé
               conocimientos en POO. En 2019 ingresé a la UTN y estudié durante todo el año. En 2021, me uní a
               plataformas como Platzi y Udemy, donde estudié JavaScript y React. Actualmente, estoy estudiando
@@ -120,12 +120,12 @@ export const About = () => {
             </div>
             <div className="mx-5 my-2 border-b-2 border-neutral-950 dark:border-white md:hidden"></div>
             <div className="mx-5 flex flex-col place-items-center md:mx-2">
-              <h2 className="font-kanit mb-4 text-center text-2xl 2xl:mt-5 2xl:text-3xl">Personal Information</h2>
+              <h2 className="mb-4 text-center font-Kanit text-2xl 2xl:mt-5 2xl:text-3xl">Personal Information</h2>
               <div className="flex w-64 flex-col rounded-lg border-2 border-dotted border-sky-400 p-2 dark:border-white sm:align-middle md:w-full 2xl:p-4">
-                <p className="text-sm 2xl:text-lg">Name: {personalData.name}</p>
-                <p className="text-sm 2xl:text-lg">Age: {personalData.age}</p>
-                <p className="text-sm 2xl:text-lg">Email: {personalData.email}</p>
-                <p className="text-sm tracking-widest 2xl:text-lg">Phone: {personalData.phone}</p>
+                <p className="font-victorMono text-sm 2xl:text-lg">Name: {personalData.name}</p>
+                <p className="font-victorMono text-sm 2xl:text-lg">Age: {personalData.age}</p>
+                <p className="font-victorMono text-sm 2xl:text-lg">Email: {personalData.email}</p>
+                <p className="font-victorMono text-sm tracking-widest 2xl:text-lg">Phone: {personalData.phone}</p>
               </div>
             </div>
           </div>
