@@ -10,6 +10,8 @@ const LoadingFallback = () => <div>Loading...</div>;
 export const ParticlesComponent = (props) => {
   let color = '#38bdf8';
 
+  //map icons
+
   const shapeOptions = useMemo(() => {
     return {
       type: 'images',
@@ -20,6 +22,8 @@ export const ParticlesComponent = (props) => {
       }))
     };
   }, []);
+
+  //Particle options
 
   const options = useMemo(() => {
     return {
@@ -97,7 +101,6 @@ export const ParticlesComponent = (props) => {
   }, [props.zIndex, props.count, shapeOptions]);
 
   const particlesInit = useCallback(async (engine) => {
-    console.log(engine);
     await loadFull(engine);
   }, []);
 

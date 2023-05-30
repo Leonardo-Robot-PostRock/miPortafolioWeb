@@ -78,6 +78,7 @@ export const About = () => {
               Tengo 2 años de experiencia laboral como programador freelance.
             </p>
             <div className="my-2 border-b-2 border-neutral-950 dark:border-white md:hidden"></div>
+
             {/* Sección descargar curriculum */}
 
             <div className="my-2 flex flex-col place-items-center md:mt-6 2xl:mt-5">
@@ -123,6 +124,9 @@ export const About = () => {
                 <span class="material-symbols-outlined">chevron_right</span>
               </button>
             </div>
+
+            {/* Información personal */}
+
             <div className="mx-5 my-2 border-b-2 border-neutral-950 dark:border-white md:hidden"></div>
             <div className="mx-5 flex flex-col place-items-center md:mx-2">
               <h2 className="mb-4 text-center font-Kanit text-2xl 2xl:mt-5 2xl:text-4xl">Personal Information</h2>
