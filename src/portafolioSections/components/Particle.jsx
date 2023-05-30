@@ -66,7 +66,7 @@ export const ParticlesComponent = (props) => {
           distance: 150,
           enable: true,
           opacity: 0.5,
-          width: 1
+          width: 0.5
         },
         collisions: {
           enable: true
@@ -84,13 +84,13 @@ export const ParticlesComponent = (props) => {
         number: {
           density: {
             enable: true,
-            area: 800
+            area: 1100
           },
-          value: 40
+          value: 50
         },
         shape: shapeOptions,
         size: {
-          value: { min: 25, max: 30 }
+          value: { min: 15, max: 30 }
         },
         opacity: {
           value: props.zIndex !== false && props.count !== 2 ? 0.1 : 1
