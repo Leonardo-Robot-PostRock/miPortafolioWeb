@@ -8,7 +8,7 @@ export const Navbar = ({ toggleDarkMode, darkMode, savedDarkMode }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed z-20 flex w-screen min-w-280 flex-wrap items-center justify-between bg-white p-4 font-Raleway text-neutral-950 shadow-md dark:bg-neutral-950 dark:text-gray-100">
+    <nav className="fixed z-40 flex w-screen min-w-280 flex-wrap items-center justify-between bg-white p-4 font-Raleway text-neutral-950 shadow-md dark:bg-neutral-950 dark:text-gray-100">
       <div className="flex flex-shrink-0 flex-wrap items-center justify-center align-middle">
         <h2 className="w-100 mx-4 text-2xl md:mx-6 md:text-3xl">Leolux</h2>
         <ToggleDarkMode toggleDarkMode={toggleDarkMode} darkMode={darkMode} savedDarkMode={savedDarkMode} />
