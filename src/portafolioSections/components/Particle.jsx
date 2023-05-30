@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, lazy, Suspense } from 'react';
+import React, { useCallback, useMemo, lazy, Suspense, useEffect } from 'react';
 
 import { loadFull } from 'tsparticles';
 import iconImages from '../utils/icons';
@@ -30,6 +30,7 @@ export const ParticlesComponent = (props) => {
       },
       fpsLimit: 30,
       interactivity: {
+        detect_on: 'canvas',
         events: {
           onClick: {
             enable: true,
@@ -37,14 +38,15 @@ export const ParticlesComponent = (props) => {
           },
           onHover: {
             enable: true,
-            mode: 'repulse'
+            mode: 'repulse',
+            parallax: { enable: false, force: 60, smooth: 10 }
           },
           resize: true
         },
         modes: {
           repulse: {
             distance: 150,
-            duration: 0.4
+            duration: 0.5
           }
         }
       },
@@ -71,7 +73,7 @@ export const ParticlesComponent = (props) => {
           outModes: {
             default: 'bounce'
           },
-          random: false,
+          random: true,
           speed: 2,
           straight: false
         },
@@ -80,27 +82,28 @@ export const ParticlesComponent = (props) => {
             enable: true,
             area: 800
           },
-          value: 30
-        },
-        opacity: {
-          value: 0.6
+          value: 40
         },
         shape: shapeOptions,
         size: {
           value: { min: 25, max: 30 }
+        },
+        opacity: {
+          value: props.zIndex !== false && props.count !== 2 ? 0.1 : 1
         }
       },
       detectRetina: true
     };
-  }, []);
+  }, [props.zIndex, props.count, shapeOptions]);
 
   const particlesInit = useCallback(async (engine) => {
+    console.log(engine);
     await loadFull(engine);
   }, []);
 
   return (
     <Suspense fallback={<LoadingFallback />}>
-      <LazyParticles className="h-screen w-screen" id={props.id} init={particlesInit} options={options} />
+      <LazyParticles className="absolute h-screen w-full" id={props.id} init={particlesInit} options={options} />
     </Suspense>
   );
 };
