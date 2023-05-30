@@ -27,7 +27,7 @@ export const Skills = ({ darkMode }) => {
         Skills
       </h1>
       <section className={`absolute mx-auto min-w-280 ${zIndex === true ? 'z-20' : count === 1 && 'z-20'}`}>
-        <div className={`mx-2 rounded-lg p-4 md:mx-52 2xl:mx-auto 2xl:w-7/12 2xl:p-16 ${count === 2 ? 'hidden' : ''}`}>
+        <div className={`mx-2 rounded-lg p-4 md:mx-52 2xl:mx-auto 2xl:w-7/12 2xl:p-16 ${count === 2 && 'hidden'}`}>
           <h3 className="mb-1 font-Kanit text-2xl dark:text-white 2xl:mb-4 2xl:text-4xl">Tengo conocimientos en:</h3>
           <p className=" font-victorMono text-sm dark:text-white 2xl:text-lg">
             Node.js, JS, Angular, React, Angular Material, PrimeNG, PrimeFlex, MaterialUi,Tailwind CSS, CSS, HTML,
