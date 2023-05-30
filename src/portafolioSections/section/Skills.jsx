@@ -26,7 +26,7 @@ export const Skills = ({ darkMode }) => {
         <span className="material-symbols-outlined pr-2">left_click</span>
         Skills
       </h1>
-      <section className={`absolute mx-auto min-w-280 ${zIndex === true ? 'z-10' : 'z-0'}`}>
+      <section className={`absolute mx-auto min-w-280 ${zIndex === true ? 'z-20' : count === 1 && 'z-20'}`}>
         <div className={`mx-2 rounded-lg p-4 md:mx-52 2xl:mx-auto 2xl:w-7/12 2xl:p-16 ${count === 2 ? 'hidden' : ''}`}>
           <h3 className="mb-1 font-Kanit text-2xl dark:text-white 2xl:mb-4 2xl:text-4xl">Tengo conocimientos en:</h3>
           <p className=" font-victorMono text-sm dark:text-white 2xl:text-lg">
