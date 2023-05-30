@@ -59,13 +59,15 @@ export const About = () => {
 
   return (
     <main
-      className="flex h-max min-w-280 place-content-center items-center dark:bg-neutral-900 dark:text-slate-200 md:h-max xl:h-max 2xl:h-screen"
+      className="flex h-max min-w-280 place-content-center items-center dark:bg-neutral-900 dark:text-slate-200 md:mb-6 md:h-max xl:h-max 2xl:h-screen"
       id="about">
       <section className="my-20 flex w-screen min-w-280 flex-col rounded-lg dark:bg-inherit md:mt-0 md:w-max 2xl:my-0">
-        <h2 className="mb-5 text-center font-Raleway text-3xl md:mt-24 xl:mt-24 2xl:my-5 2xl:text-6xl">About me</h2>
+        <h2 className="mb-1 text-center font-Raleway text-3xl md:mt-24 md:text-5xl xl:mt-24 2xl:my-5 2xl:mb-5 2xl:text-6xl">
+          About me
+        </h2>
         <div className="md:grid md:grid-cols-2 md:gap-24 xl:grid xl:grid-cols-2 xl:gap-x-36">
           <div className="mx-5 leading-6 md:w-72 2xl:w-96">
-            <h3 className="p-1 text-center font-Kanit text-2xl 2xl:text-4xl">Estudios y experiencia:</h3>
+            <h3 className="p-1 text-center font-Kanit text-2xl md:text-start 2xl:text-4xl">Estudios y experiencia:</h3>
             <p className="mt-2 p-1 font-victorMono text-sm tracking-normal 2xl:text-lg">
               Comencé mis estudios con Java en el curso 111 Mil Programadores entre el año 2016 y 2017. Luego, reforcé
               conocimientos en POO. En 2019 ingresé a la UTN y estudié durante todo el año. En 2021, me uní a
