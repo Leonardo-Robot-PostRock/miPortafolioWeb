@@ -84,7 +84,7 @@ export const About = () => {
               <h1 className="mb-10 text-center font-Kanit text-2xl tracking-widest 2xl:mb-16 2xl:text-4xl">
                 Curriculum
               </h1>
-              <button className="flex w-max justify-self-center rounded-lg border-2 border-sky-400 p-2 align-middle font-victorMonoBold text-sky-400 hover:bg-sky-400 hover:text-white dark:border-white dark:text-white hover:dark:border-sky-400">
+              <button className="flex w-max justify-self-center rounded-lg border-2 border-sky-400 p-2 align-middle font-victorMonoBold text-sky-400 transition-colors duration-500 hover:bg-sky-400 hover:text-white hover:transition-colors hover:duration-500 dark:border-white dark:text-white hover:dark:border-sky-400">
                 <span className="material-symbols-outlined px-1">download</span>
                 <a className="text-md px-1 2xl:text-lg" href={leonardoCv} download>
                   Download Curriculum
