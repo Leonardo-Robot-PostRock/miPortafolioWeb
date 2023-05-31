@@ -38,12 +38,12 @@ export const ParticlesComponent = (props) => {
         events: {
           onClick: {
             enable: true,
-            mode: 'pause'
+            mode: props.count !== 1 ? 'pause' : 'remove'
           },
           onHover: {
             enable: true,
             mode: 'repulse',
-            parallax: { enable: false, force: 60, smooth: 10 }
+            parallax: { enable: props.count !== 1 ? false : true, force: 60, smooth: 10 }
           },
           resize: true
         },
@@ -84,16 +84,16 @@ export const ParticlesComponent = (props) => {
         number: {
           density: {
             enable: true,
-            area: 1100
+            area: props.count === 0 ? 700 : 1100
           },
-          value: 50
+          value: props.count === 2 ? 20 : 50
         },
         shape: shapeOptions,
         size: {
           value: { min: 15, max: 30 }
         },
         opacity: {
-          value: props.zIndex !== false && props.count !== 2 ? 0.1 : 1
+          value: props.zIndex !== false && props.count !== 3 ? 0.1 : 1
         }
       },
       detectRetina: true
