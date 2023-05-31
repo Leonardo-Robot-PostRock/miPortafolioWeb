@@ -104,7 +104,7 @@ export const About = () => {
               <button
                 className="absolute left-2 top-1/2 flex -translate-y-1/2 transform rounded-full bg-neutral-950 bg-opacity-50 p-2 text-white transition-colors duration-500 hover:bg-sky-400 hover:duration-500 dark:hover:bg-sky-400 xl:left-10 2xl:left-0"
                 onClick={handlePrevSlide}>
-                <span class="material-symbols-outlined">chevron_left</span>
+                <span className="material-symbols-outlined">chevron_left</span>
               </button>
               <figure className={`m-2 rounded-xl border-2 border-neutral-950 dark:border-white ${bookAnimation}`}>
                 <img
@@ -121,7 +121,7 @@ export const About = () => {
               <button
                 className="absolute right-2 top-1/2 flex -translate-y-1/2 transform rounded-full bg-neutral-950 bg-opacity-50 p-2 text-white transition-colors duration-500 hover:bg-sky-400 hover:transition-colors hover:duration-500 dark:hover:bg-sky-400 xl:right-10 2xl:right-0"
                 onClick={handleNextSlide}>
-                <span class="material-symbols-outlined">chevron_right</span>
+                <span className="material-symbols-outlined">chevron_right</span>
               </button>
             </div>
 
