@@ -93,7 +93,7 @@ export const ParticlesComponent = (props) => {
           value: { min: 15, max: 30 }
         },
         opacity: {
-          value: props.zIndex !== false && props.count !== 3 ? 0.1 : 1
+          value: props.zIndex !== false && props.count !== 3 ? 0.4 : 1
         }
       },
       detectRetina: true
