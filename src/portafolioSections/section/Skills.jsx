@@ -42,9 +42,9 @@ export const Skills = ({ darkMode }) => {
           className={`mx-2 rounded-lg p-4 md:mx-52 2xl:mx-auto 2xl:w-7/12 2xl:p-16 ${count === 3 ? 'hidden' : 'z-0'}`}>
           <h3 className="mb-1 font-Kanit text-2xl dark:text-white 2xl:mb-4 2xl:text-4xl">Tengo conocimientos en:</h3>
           <p
-            className={`font-victorMono text-sm 2xl:text-lg ${
+            className={`font-victorMonoBold text-sm 2xl:text-lg ${
               count === 1 &&
-              'z-20 before:absolute before:inset-0 before:block before:-skew-y-3 before:bg-sky-400 before:bg-opacity-10 dark:text-white md:before:-skew-y-1 2xl:before:-skew-y-3'
+              'z-20 before:absolute before:inset-0 before:flex before:-skew-y-3  before:bg-sky-400 before:bg-opacity-20 dark:text-white md:before:-skew-y-2 2xl:before:-skew-y-3'
             }`}>
             Node.js, JS, Angular, React, Angular Material, PrimeNG, PrimeFlex, MaterialUi,Tailwind CSS, CSS, HTML,
             Webpack, Vite, sql, mysql y mongodb. Experiencia en desarrollo web frontend y backend, creación de
