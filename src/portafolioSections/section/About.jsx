@@ -37,7 +37,6 @@ export const About = () => {
 
   const handlePrevSlide = () => {
     setCurrentSlide((prevSlide) => (prevSlide === 0 ? programmingBooks.length - 1 : prevSlide - 1));
-    console.log(bookAnimation);
     if (bookAnimation !== 'animate__animated animate__fadeInLeft') {
       setBookAnimation('animate__animated animate__fadeInLeft');
       setTimeout(() => {
@@ -47,7 +46,6 @@ export const About = () => {
   };
 
   const handleNextSlide = () => {
-    console.log(bookAnimation);
     setCurrentSlide((prevSlide) => (prevSlide === programmingBooks.length - 1 ? 0 : prevSlide + 1));
     if (bookAnimation !== 'animate__animated animate__fadeInRight') {
       setBookAnimation('animate__animated animate__fadeInRight');
