@@ -27,16 +27,35 @@ export const Portfolio = () => {
   }, [contador]);
 
   return (
-    <main className="h-screen min-w-280" id="portfolio">
-      <section className="mt-20 flex flex-col justify-center">
+    <main className="h-max min-w-280 font-victorMono dark:text-white md:h-screen" id="portfolio">
+      <section className="mb-24 mt-24 flex min-w-280 flex-col flex-wrap justify-center">
         <h1 className="mb-5 text-center font-Raleway text-3xl dark:text-white">Portfolio</h1>
-        <div className="flex h-full justify-center">
-          <div className="relative">
-            <img className={`animate__animated z-0 w-96 ${animationTwo}`} src={macBookPro16} alt="Mac Book Pro 16" />
-            <figure className={`animate__animated abosolute z-10 flex w-full items-center justify-evenly ${animation}`}>
-              <img className="relative z-20 h-44  md:-right-44 md:bottom-64" src={iphoneX} alt="Iphone X" />
-              <img className="relative h-72 md:-right-20 md:bottom-72" src={ipadMini} alt="Ipad Mini" />
-            </figure>
+        <p className="mx-5 mb-10 p-1 md:text-center">
+          Proyecto de publicidad para el mundial de fútbol 2022 para LatinAd.
+        </p>
+        <div className="mx-auto h-full md:grid md:grid-cols-6 md:gap-32 2xl:mx-96">
+          <div className="relative mx-2 flex w-56 flex-col justify-center p-1 xs:mx-auto xs:w-60 375:w-80 md:col-span-3 md:w-96">
+            <img
+              className={`animate__animated z-0 xs:mx-auto xs:w-72 375:w-80 md:mx-0 md:w-full ${animationTwo}`}
+              src={macBookPro16}
+              alt="Mac Book Pro 16"
+            />
+            <img
+              className={`animate__animated absolute right-5 z-20 w-24 xs:right-5 xs:top-20 xs:w-24 375:top-28 375:w-36 md:bottom-64 md:right-10 md:w-44 ${animation}`}
+              src={iphoneX}
+              alt="Iphone X"
+            />
+            <img
+              className={`animate__animated absolute -right-4 w-20 xs:-right-4 xs:top-10 xs:w-20 375:top-16 375:w-28 md:-right-2 md:w-32 ${animation}`}
+              src={ipadMini}
+              alt="Ipad Mini"
+            />
+          </div>
+          <div className="relative bottom-8 mx-5 leading-6 dark:text-white md:col-span-3 md:flex md:w-72 md:items-center 2xl:w-96">
+            <p className="p-1">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo, doloremque maiores vel et maxime
+              harum pariatur commodi placeat a nostrum minus ex porro officia aliquid nisi sed ratione! Ducimus
+            </p>
           </div>
         </div>
       </section>
