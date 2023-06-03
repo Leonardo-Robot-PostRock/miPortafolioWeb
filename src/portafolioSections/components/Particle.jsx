@@ -84,9 +84,9 @@ export const ParticlesComponent = (props) => {
         number: {
           density: {
             enable: true,
-            area: props.count === 0 ? 700 : 1100
+            area: props.count === 0 ? 800 : 1100
           },
-          value: props.count === 2 ? 20 : 50
+          value: props.count === 2 ? 20 : 35
         },
         shape: shapeOptions,
         size: {
