@@ -27,7 +27,7 @@ export const About = () => {
 
   const personalData = {
     name: 'Leonardo Gabriel Puebla',
-    age: 28,
+    fechaDeNacimiento: '22/06/1994',
     email: 'leonardo38361@gmail.com',
     phone: '+549-2612589352'
   };
@@ -130,7 +130,7 @@ export const About = () => {
               <h2 className="mb-4 text-center font-Kanit text-2xl 2xl:mt-5 2xl:text-4xl">Personal Information</h2>
               <div className="flex w-64 flex-col rounded-lg border-2 border-dotted border-sky-400 p-2 dark:border-white sm:align-middle md:w-full 2xl:p-4">
                 <p className="font-victorMono text-sm 2xl:text-lg">Name: {personalData.name}</p>
-                <p className="font-victorMono text-sm 2xl:text-lg">Age: {personalData.age}</p>
+                <p className="font-victorMono text-sm 2xl:text-lg">Nacimiento: {personalData.fechaDeNacimiento}</p>
                 <p className="font-victorMono text-sm 2xl:text-lg">Email: {personalData.email}</p>
                 <p className="font-victorMono text-sm tracking-widest 2xl:text-lg">Phone: {personalData.phone}</p>
               </div>
