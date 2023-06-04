@@ -38,12 +38,12 @@ export const ParticlesComponent = (props) => {
         events: {
           onClick: {
             enable: true,
-            mode: props.count !== 1 ? 'pause' : 'remove'
+            mode: props.count !== 0 ? 'pause' : 'remove'
           },
           onHover: {
             enable: true,
             mode: 'repulse',
-            parallax: { enable: props.count !== 1 ? false : true, force: 60, smooth: 10 }
+            parallax: { enable: props.count !== 2 ? false : true, force: 60, smooth: 10 }
           },
           resize: true
         },

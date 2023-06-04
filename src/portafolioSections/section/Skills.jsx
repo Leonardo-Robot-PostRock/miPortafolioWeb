@@ -40,11 +40,13 @@ export const Skills = ({ darkMode }) => {
             : count === 3 && 'hidden'
         }`}>
         <div
-          className={`mx-2 rounded-lg p-4 md:mx-52 2xl:mx-auto 2xl:w-7/12 2xl:p-16 ${count === 3 ? 'hidden' : 'z-0'}`}>
+          className={`mx-2 mt-10 rounded-lg p-4 md:mx-52 md:mt-0 2xl:mx-auto 2xl:w-7/12 2xl:p-16 ${
+            count === 3 ? 'hidden' : 'z-0'
+          }`}>
           <div
-            className={`font-victorMonoBold text-sm 2xl:text-lg ${
+            className={`font-victorMono text-sm 2xl:text-lg ${
               count === 0 &&
-              'relative z-20 inline-block p-3 text-white before:absolute before:inset-0 before:block before:-skew-y-3 before:bg-sky-600 dark:text-white dark:before:bg-sky-600 sm:p-4 md:p-10 md:before:-skew-y-1 2xl:before:-skew-y-2'
+              'relative z-20 inline-block p-3 text-white before:absolute before:inset-0 before:block before:-skew-y-1 before:bg-sky-600 dark:text-white dark:before:bg-sky-950 sm:p-4 md:p-10 md:before:-skew-y-1 2xl:before:-skew-y-2'
             }`}>
             <h3 className="relative mb-1 font-Kanit text-2xl dark:text-white 2xl:mb-4 2xl:text-4xl">
               Tengo conocimientos en:
