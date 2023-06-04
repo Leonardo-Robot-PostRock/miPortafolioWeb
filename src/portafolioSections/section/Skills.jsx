@@ -34,7 +34,7 @@ export const Skills = ({ darkMode }) => {
           count === 1
             ? 'hidden'
             : count === 0
-            ? 'animate__animated animate__bounceInDown z-20'
+            ? 'animate__animated animate__fadeInRight z-20'
             : count === 2
             ? 'text-neutral-800 dark:text-white'
             : count === 3 && 'hidden'
@@ -48,10 +48,16 @@ export const Skills = ({ darkMode }) => {
               count === 0 &&
               'relative z-20 inline-block p-3 text-white before:absolute before:inset-0 before:block before:-skew-y-1 before:bg-sky-600 dark:text-white dark:before:bg-sky-950 sm:p-4 md:p-10 md:before:-skew-y-1 2xl:before:-skew-y-2'
             }`}>
-            <h3 className="relative mb-1 font-Kanit text-2xl dark:text-white 2xl:mb-4 2xl:text-4xl">
+            <h3
+              className={`${
+                count === 0 && 'animate__delay-1s'
+              } animate__animated animate__bounceInLeft relative mb-1 font-Kanit text-2xl dark:text-white 2xl:mb-4 2xl:text-4xl`}>
               Tengo conocimientos en:
             </h3>
-            <p className="relative dark:text-white">
+            <p
+              className={`${
+                count === 0 && 'animate__delay-1s'
+              } animate__animated animate__bounceInLeft relative dark:text-white`}>
               Node.js, JS, Angular, React, Angular Material, PrimeNG, PrimeFlex, MaterialUi,Tailwind CSS, CSS, HTML,
               Webpack, Vite, sql, mysql y mongodb. Experiencia en desarrollo web frontend y backend, creación de
               aplicaciones dinámicas, gestión del estado y diseño de interfaces atractivas y funcionales.
