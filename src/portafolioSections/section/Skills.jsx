@@ -7,7 +7,6 @@ export const Skills = ({ darkMode }) => {
   const [count, setCount] = useState(0);
 
   const handleZIndex = () => {
-    console.log(zIndex, count);
     setCount((prevCount) => prevCount + 1);
     if (count === 3) {
       setZIndex((prevState) => !prevState);
@@ -16,7 +15,9 @@ export const Skills = ({ darkMode }) => {
   };
 
   return (
-    <main className="relavite flex h-screen min-w-280 flex-col items-center justify-center md:mx-0" id="skills">
+    <main
+      className="relavite flex h-screen min-w-280 flex-col items-center justify-center text-black dark:text-white md:mx-0"
+      id="skills">
       <h1
         className={`z-30 mb-96 flex cursor-pointer items-center  rounded-lg p-3 text-center font-Raleway text-4xl 
         transition-colors duration-500 hover:bg-sky-400 hover:text-white hover:transition-all hover:duration-500 dark:text-white hover:dark:rounded-lg hover:dark:bg-sky-400 
