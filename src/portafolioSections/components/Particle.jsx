@@ -90,7 +90,7 @@ export const ParticlesComponent = (props) => {
         },
         shape: shapeOptions,
         size: {
-          value: { min: 15, max: 30 }
+          value: { min: 15, max: 25 }
         },
         opacity: {
           value: props.zIndex !== false && props.count !== 3 ? 0.3 : 1
