@@ -34,7 +34,7 @@ export const Skills = ({ darkMode }) => {
           count === 1
             ? 'hidden'
             : count === 0
-            ? 'animate__animated animate__fadeInRight z-20'
+            ? 'animate__animated animate__fadeInRight animate__faster z-20'
             : count === 2
             ? 'text-neutral-800 dark:text-white'
             : count === 3 && 'hidden'
@@ -46,7 +46,7 @@ export const Skills = ({ darkMode }) => {
           <div
             className={`font-victorMono text-sm 2xl:text-lg ${
               count === 0 &&
-              'relative z-20 inline-block p-3 text-white before:absolute before:inset-0 before:block before:-skew-y-1 before:bg-sky-600 dark:text-white dark:before:bg-sky-950 sm:p-4 md:p-10 md:before:-skew-y-1 2xl:before:-skew-y-2'
+              'relative z-20 inline-block p-3 before:absolute before:inset-0 before:block before:-skew-y-1 before:bg-neutral-200 dark:text-white dark:before:bg-sky-950 sm:p-4 md:p-10 md:before:-skew-y-1 2xl:before:-skew-y-2'
             }`}>
             <h3
               className={`${

@@ -5,7 +5,7 @@ import iconImages from '../utils/icons';
 
 const LazyParticles = lazy(() => import('react-particles'));
 
-const LoadingFallback = () => <div>Loading...</div>;
+const LoadingFallback = () => <div className="font-Raleway text-2xl">Loading particles...</div>;
 
 export const ParticlesComponent = (props) => {
   let color = '#38bdf8';
@@ -84,7 +84,7 @@ export const ParticlesComponent = (props) => {
         number: {
           density: {
             enable: true,
-            area: props.count === 0 ? 800 : 1100
+            area: props.count === 3 ? 800 : 1100
           },
           value: props.count === 2 ? 20 : 35
         },
