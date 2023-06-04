@@ -27,10 +27,10 @@ export const Portfolio = () => {
   }, [contador]);
 
   return (
-    <main className="h-max min-w-280 font-victorMono dark:text-white md:h-screen" id="portfolio">
+    <main className="h-max min-w-280 font-victorMono text-black  md:h-screen" id="portfolio">
       <section className="mb-24 mt-24 flex min-w-280 flex-col flex-wrap justify-center">
         <h1 className="mb-5 text-center font-Raleway text-3xl dark:text-white">Portfolio</h1>
-        <p className="mx-5 mb-10 p-1 md:text-center">
+        <p className="mx-5 p-1 dark:text-white md:text-center">
           Proyecto de publicidad para el mundial de fútbol 2022 para LatinAd.
         </p>
         <div className="mx-auto h-full md:grid md:grid-cols-6 md:gap-32 2xl:mx-96">
@@ -38,21 +38,21 @@ export const Portfolio = () => {
             <img
               className={`animate__animated z-0 xs:mx-auto xs:w-72 375:w-80 md:mx-0 md:w-full ${animationTwo}`}
               src={macBookPro16}
-              alt="Mac Book Pro 16"
+              alt="Mac Book Pro 16 publicidad mundial"
             />
             <img
               className={`animate__animated absolute right-5 z-20 w-24 xs:right-5 xs:top-20 xs:w-24 375:top-28 375:w-36 md:bottom-64 md:right-10 md:w-44 ${animation}`}
               src={iphoneX}
-              alt="Iphone X"
+              alt="Iphone X publicidad mundial"
             />
             <img
               className={`animate__animated absolute -right-4 w-20 xs:-right-4 xs:top-10 xs:w-20 375:top-16 375:w-28 md:-right-2 md:w-32 ${animation}`}
               src={ipadMini}
-              alt="Ipad Mini"
+              alt="Ipad Mini publicidad mundial"
             />
           </div>
-          <div className="relative bottom-8 mx-5 leading-6 dark:text-white md:col-span-3 md:flex md:w-72 md:items-center 2xl:w-96">
-            <p className="p-1">
+          <div className="relative bottom-8 mx-5 leading-6 md:col-span-3 md:flex md:w-72 md:items-center 2xl:w-96">
+            <p className="p-1 dark:text-white">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo, doloremque maiores vel et maxime
               harum pariatur commodi placeat a nostrum minus ex porro officia aliquid nisi sed ratione! Ducimus
             </p>
