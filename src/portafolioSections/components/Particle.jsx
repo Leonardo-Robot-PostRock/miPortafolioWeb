@@ -1,5 +1,4 @@
-import React, { useCallback, useMemo, lazy, Suspense, useEffect } from 'react';
-
+import React, { useCallback, useMemo, lazy, Suspense } from 'react';
 import { loadFull } from 'tsparticles';
 import iconImages from '../utils/icons';
 
@@ -7,10 +6,8 @@ const LazyParticles = lazy(() => import('react-particles'));
 
 const LoadingFallback = () => <div className="font-Raleway text-2xl">Loading particles...</div>;
 
-export const ParticlesComponent = (props) => {
-  let color = '#38bdf8';
-
-  //map icons
+const ParticlesComponent = (props) => {
+  const color = '#38bdf8';
 
   const shapeOptions = useMemo(() => {
     return {
@@ -23,9 +20,20 @@ export const ParticlesComponent = (props) => {
     };
   }, []);
 
-  //Particle options
-
   const options = useMemo(() => {
+    const interactivityEvents = {
+      onClick: {
+        enable: true,
+        mode: props.count !== 0 ? 'pause' : 'remove'
+      },
+      onHover: {
+        enable: true,
+        mode: 'repulse',
+        parallax: { enable: props.count !== 2 ? false : true, force: 60, smooth: 10 }
+      },
+      resize: true
+    };
+
     return {
       background: {
         color: {
@@ -35,18 +43,7 @@ export const ParticlesComponent = (props) => {
       fpsLimit: 30,
       interactivity: {
         detect_on: 'canvas',
-        events: {
-          onClick: {
-            enable: true,
-            mode: props.count !== 0 ? 'pause' : 'remove'
-          },
-          onHover: {
-            enable: true,
-            mode: 'repulse',
-            parallax: { enable: props.count !== 2 ? false : true, force: 60, smooth: 10 }
-          },
-          resize: true
-        },
+        events: interactivityEvents,
         modes: {
           repulse: {
             distance: 150,
@@ -62,7 +59,7 @@ export const ParticlesComponent = (props) => {
           value: '#ffffff'
         },
         links: {
-          color: color,
+          color,
           distance: 150,
           enable: true,
           opacity: 0.5,
@@ -98,7 +95,7 @@ export const ParticlesComponent = (props) => {
       },
       detectRetina: true
     };
-  }, [props.zIndex, props.count, shapeOptions]);
+  }, [props.count, props.zIndex, shapeOptions]);
 
   const particlesInit = useCallback(async (engine) => {
     await loadFull(engine);
@@ -110,3 +107,5 @@ export const ParticlesComponent = (props) => {
     </Suspense>
   );
 };
+
+export default ParticlesComponent;
