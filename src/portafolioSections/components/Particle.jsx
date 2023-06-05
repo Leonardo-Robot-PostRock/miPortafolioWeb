@@ -1,4 +1,5 @@
 import React, { useCallback, useMemo, lazy, Suspense } from 'react';
+
 import { loadFull } from 'tsparticles';
 import iconImages from '../utils/icons';
 
@@ -6,8 +7,10 @@ const LazyParticles = lazy(() => import('react-particles'));
 
 const LoadingFallback = () => <div className="font-Raleway text-2xl">Loading particles...</div>;
 
-const ParticlesComponent = (props) => {
-  const color = '#38bdf8';
+export const ParticlesComponent = (props) => {
+  let color = '#38bdf8';
+
+  //map icons
 
   const shapeOptions = useMemo(() => {
     return {
@@ -19,6 +22,8 @@ const ParticlesComponent = (props) => {
       }))
     };
   }, []);
+
+  //Particle options
 
   const options = useMemo(() => {
     const interactivityEvents = {
@@ -107,5 +112,3 @@ const ParticlesComponent = (props) => {
     </Suspense>
   );
 };
-
-export default ParticlesComponent;
