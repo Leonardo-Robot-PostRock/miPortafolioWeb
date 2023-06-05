@@ -58,7 +58,7 @@ const AudioPlayer = ({ audioElem, isPlaying, setIsPlaying, currentSong, setCurre
 
   return (
     <div className="flex flex-col items-center justify-center dark:text-white">
-      <div className="w-52 rounded-lg border-2 border-solid border-neutral-500 px-4 py-1 dark:border-neutral-400 md:w-96">
+      <div className="w-60 rounded-lg border-2 border-solid border-neutral-500 px-4 py-1 dark:border-neutral-400 xs:w-60 375:w-80 md:w-96">
         <div>
           <p className="mb-2 animate-pulse text-center font-Raleway">{currentSong.title}</p>
         </div>
