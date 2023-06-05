@@ -2,8 +2,8 @@ import React from 'react';
 
 export const Contact = () => {
   return (
-    <div className="h-screen" id="contact">
-      Contact
-    </div>
+    <main className="h-screen text-center" id="contact">
+      <h1>Contact</h1>
+    </main>
   );
 };
