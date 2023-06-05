@@ -1,35 +1,48 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 import iphoneX from '../../assets/images/deviceShots/iphoneX.png';
 import ipadMini from '../../assets/images/deviceShots/ipadMini.png';
 import macBookPro16 from '../../assets/images/deviceShots/macBookPro16.png';
 
+import AudioPlayer from '../components/AudioPlayer';
+
+import { usePortfolioHooks } from '../hooks/usePortfolioHooks';
+
 export const Portfolio = () => {
-  const [animation, setAnimation] = useState('');
-  const [animationTwo, setAnimationTwo] = useState('');
-  const [contador, setContador] = useState(0);
+  const [animation, animationTwo, songs, setSongs, isPlaying, setIsPlaying, currentSong, setCurrentSong] =
+    usePortfolioHooks();
+
+  const audioElem = useRef();
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      setContador((prevValue) => prevValue + 1);
+    if (isPlaying) {
+      audioElem.current.play();
+    } else {
+      audioElem.current.pause();
+    }
+  }, [isPlaying, currentSong]);
 
-      if (contador === 3) {
-        setAnimation('animate__fadeInDown');
-        setAnimationTwo('animate__fadeInLeft');
-        setContador(0);
-      }
-      setTimeout(() => {
-        setAnimation('');
-        setAnimationTwo('');
-        return clearTimeout(timeout);
-      }, 2000);
-    }, [1000]);
-  }, [contador]);
+  const onPlaying = () => {
+    const duration = audioElem.current.duration;
+    const ct = audioElem.current.currentTime;
+
+    setCurrentSong({ ...currentSong, progress: (ct / duration) * 100, length: duration });
+  };
 
   return (
     <main className="h-max min-w-280 font-victorMono text-black  md:h-screen" id="portfolio">
-      <section className="mb-24 mt-24 flex min-w-280 flex-col flex-wrap justify-center">
-        <h1 className="mb-5 text-center font-Raleway text-3xl dark:text-white">Portfolio</h1>
+      <section className="mt-24 flex min-w-280 flex-col flex-wrap justify-center">
+        <h1 className="mb-10 text-center font-Raleway text-3xl dark:text-white md:text-5xl">Portfolio</h1>
+        <audio src={currentSong.url} ref={audioElem} onTimeUpdate={onPlaying} />
+        <AudioPlayer
+          songs={songs}
+          setSongs={setSongs}
+          isPlaying={isPlaying}
+          setIsPlaying={setIsPlaying}
+          audioElem={audioElem}
+          currentSong={currentSong}
+          setCurrentSong={setCurrentSong}
+        />
         <p className="mx-5 p-1 dark:text-white md:text-center">
           Proyecto de publicidad para el mundial de fútbol 2022 para LatinAd.
         </p>
