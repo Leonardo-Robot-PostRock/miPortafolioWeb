@@ -1,114 +1,106 @@
-import React, { useCallback, useMemo, lazy, Suspense } from 'react';
-
+import React from 'react';
 import { loadFull } from 'tsparticles';
 import iconImages from '../utils/icons';
-
-const LazyParticles = lazy(() => import('react-particles'));
+import { Particles } from 'react-particles';
 
 const LoadingFallback = () => <div className="font-Raleway text-2xl">Loading particles...</div>;
 
-export const ParticlesComponent = (props) => {
+export const ParticlesComponent = React.memo(({ count, darkMode, zIndex, id }) => {
   let color = '#38bdf8';
 
-  //map icons
+  const shapeOptions = {
+    type: 'images',
+    image: Object.values(iconImages).map((src) => ({
+      src,
+      height: 32,
+      width: 32
+    }))
+  };
 
-  const shapeOptions = useMemo(() => {
-    return {
-      type: 'images',
-      image: Object.values(iconImages).map((src) => ({
-        src,
-        height: 32,
-        width: 32
-      }))
-    };
-  }, []);
-
-  //Particle options
-
-  const options = useMemo(() => {
-    const interactivityEvents = {
-      onClick: {
-        enable: true,
-        mode: props.count !== 0 ? 'pause' : 'remove'
-      },
-      onHover: {
-        enable: true,
-        mode: 'repulse',
-        parallax: { enable: props.count !== 2 ? false : true, force: 60, smooth: 10 }
-      },
-      resize: true
-    };
-
-    return {
-      background: {
-        color: {
-          value: props.darkMode
-        }
-      },
-      fpsLimit: 30,
-      interactivity: {
-        detect_on: 'canvas',
-        events: interactivityEvents,
-        modes: {
-          repulse: {
-            distance: 150,
-            duration: 0.5
-          }
-        }
-      },
-      fullScreen: {
-        enable: false
-      },
-      particles: {
-        color: {
-          value: '#ffffff'
+  const options = {
+    background: {
+      color: {
+        value: darkMode
+      }
+    },
+    fpsLimit: 30,
+    interactivity: {
+      detect_on: 'canvas',
+      events: {
+        onClick: {
+          enable: true,
+          mode: count !== 0 ? 'pause' : 'remove'
         },
-        links: {
-          color,
+        onHover: {
+          enable: true,
+          mode: 'repulse',
+          parallax: { enable: count !== 2 ? false : true, force: 60, smooth: 10 }
+        },
+        resize: true
+      },
+      modes: {
+        repulse: {
           distance: 150,
-          enable: true,
-          opacity: 0.5,
-          width: 0.5
-        },
-        collisions: {
-          enable: true
-        },
-        move: {
-          directions: 'none',
-          enable: true,
-          outModes: {
-            default: 'bounce'
-          },
-          random: true,
-          speed: 2,
-          straight: false
-        },
-        number: {
-          density: {
-            enable: true,
-            area: props.count === 3 ? 800 : 1100
-          },
-          value: props.count === 2 ? 20 : 35
-        },
-        shape: shapeOptions,
-        size: {
-          value: { min: 15, max: 25 }
-        },
-        opacity: {
-          value: props.zIndex !== false && props.count !== 3 ? 0.3 : 1
+          duration: 0.5
         }
+      }
+    },
+    fullScreen: {
+      enable: false
+    },
+    particles: {
+      color: {
+        value: '#ffffff'
       },
-      detectRetina: true
-    };
-  }, [props.count, props.zIndex, shapeOptions]);
+      links: {
+        color,
+        distance: 150,
+        enable: true,
+        opacity: 0.5,
+        width: 0.5
+      },
+      collisions: {
+        enable: true
+      },
+      move: {
+        directions: 'none',
+        enable: true,
+        outModes: {
+          default: 'bounce'
+        },
+        random: true,
+        speed: 2,
+        straight: false
+      },
+      number: {
+        density: {
+          enable: true,
+          area: count === 3 ? 800 : 1100
+        },
+        value: count === 2 ? 20 : 35
+      },
+      shape: shapeOptions,
+      size: {
+        value: { min: 15, max: 25 }
+      },
+      opacity: {
+        value: zIndex !== false && count !== 3 ? 0.3 : 1
+      }
+    },
+    detectRetina: true
+  };
 
-  const particlesInit = useCallback(async (engine) => {
+  const particlesInit = async (engine) => {
     await loadFull(engine);
-  }, []);
+  };
 
   return (
-    <Suspense fallback={<LoadingFallback />}>
-      <LazyParticles className="absolute h-screen w-full" id={props.id} init={particlesInit} options={options} />
-    </Suspense>
+    <Particles
+      className="absolute h-screen w-full"
+      id={id}
+      init={particlesInit}
+      options={options}
+      fallback={<LoadingFallback />}
+    />
   );
-};
+});
