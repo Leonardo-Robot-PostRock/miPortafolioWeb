@@ -43,7 +43,7 @@ export const Portfolio = () => {
           currentSong={currentSong}
           setCurrentSong={setCurrentSong}
         />
-        <p className="mx-5 p-1 dark:text-white md:text-center">
+        <p className="mx-5 p-1 mt-4 dark:text-white md:text-center">
           Proyecto de publicidad para el mundial de fútbol 2022 para LatinAd.
         </p>
         <div className="mx-auto h-full md:grid md:grid-cols-6 md:gap-32 2xl:mx-96">
