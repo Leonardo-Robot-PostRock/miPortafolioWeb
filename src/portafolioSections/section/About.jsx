@@ -1,12 +1,7 @@
 import React, { useState } from 'react';
 
-//imagenes
-
 import eloquentJsImage from '../../assets/images/eloquentJs.jpg';
 import pythonAfondoImage from '../../assets/images/pythonAfondo.jpg';
-
-//cv
-
 import leonardoCv from '../../assets/cv/LeonardoGabrielPueblaCV.pdf';
 
 export const About = () => {
@@ -35,24 +30,23 @@ export const About = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [bookAnimation, setBookAnimation] = useState('');
 
-  const handlePrevSlide = () => {
-    setCurrentSlide((prevSlide) => (prevSlide === 0 ? programmingBooks.length - 1 : prevSlide - 1));
-    if (bookAnimation !== 'animate__animated animate__fadeInLeft') {
-      setBookAnimation('animate__animated animate__fadeInLeft');
+  const handleSlideChange = (increment) => {
+    setCurrentSlide((prevSlide) => (prevSlide + increment + programmingBooks.length) % programmingBooks.length);
+    const animationClass = increment === -1 ? 'animate__fadeInLeft' : 'animate__fadeInRight';
+    if (bookAnimation !== `animate__animated ${animationClass}`) {
+      setBookAnimation(`animate__animated ${animationClass}`);
       setTimeout(() => {
         setBookAnimation('');
-      }, [1000]);
+      }, 1000);
     }
   };
 
+  const handlePrevSlide = () => {
+    handleSlideChange(-1);
+  };
+
   const handleNextSlide = () => {
-    setCurrentSlide((prevSlide) => (prevSlide === programmingBooks.length - 1 ? 0 : prevSlide + 1));
-    if (bookAnimation !== 'animate__animated animate__fadeInRight') {
-      setBookAnimation('animate__animated animate__fadeInRight');
-      setTimeout(() => {
-        setBookAnimation('');
-      }, [1000]);
-    }
+    handleSlideChange(1);
   };
 
   return (
@@ -76,9 +70,6 @@ export const About = () => {
               Tengo 2 años de experiencia laboral como programador freelance.
             </p>
             <div className="my-2 border-b-2 border-neutral-950 dark:border-white md:hidden"></div>
-
-            {/* Sección descargar curriculum */}
-
             <div className="my-2 flex flex-col place-items-center md:mt-6 2xl:mt-5">
               <h1 className="mb-10 text-center font-Kanit text-2xl tracking-widest 2xl:mb-16 2xl:text-4xl">
                 Curriculum
@@ -91,9 +82,6 @@ export const About = () => {
               </button>
             </div>
           </div>
-
-          {/* Sección de lectura */}
-
           <div className="mb-2 flex flex-col md:w-72 xl:w-96">
             <div className="mx-5 my-2 border-b-2 border-neutral-950 dark:border-white md:hidden"></div>
             <h3 className="p-1 text-center font-Kanit text-2xl 2xl:text-4xl">📚Books I read:</h3>
@@ -122,9 +110,6 @@ export const About = () => {
                 <span className="material-symbols-outlined">chevron_right</span>
               </button>
             </div>
-
-            {/* Información personal */}
-
             <div className="mx-5 my-2 border-b-2 border-neutral-950 dark:border-white md:hidden"></div>
             <div className="mx-5 flex flex-col place-items-center md:mx-2">
               <h2 className="mb-4 text-center font-Kanit text-2xl 2xl:mt-5 2xl:text-4xl">Personal Information</h2>
