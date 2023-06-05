@@ -65,7 +65,7 @@ const AudioPlayer = ({ audioElem, isPlaying, setIsPlaying, currentSong, setCurre
         <div className="w-full">
           <div className="flex justify-between font-victorMonoBold">
             <p className={`${formatTime(currentSong.progress) === 'NaN:NaN' && 'opacity-0'}`}>
-              {formatTime(currentSong.progress) === 'NaN:NaN' ? '--:--' : formatTime(currentSong.progress)}
+              {formatTime(currentSong.progress) === 'NaN:NaN' ? '--:--' : formatTime(audioElem.current.currentTime)}
             </p>
             <p className={`${formatTime(currentSong.progress) === 'NaN:NaN' && 'opacity-0'}`}>
               {formatTime(currentSong.length) === 'NaN:NaN' ? '--:--' : formatTime(currentSong.length)}
