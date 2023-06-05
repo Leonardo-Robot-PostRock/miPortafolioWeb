@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import foto from './../../assets/images/foto.png';
 import fotoWhite from './../../assets/images/foto_bgWhite.jpg';
 import { ReactComponent as Twitter } from '../../assets/icons/social/twitter.svg';
@@ -6,6 +6,14 @@ import { ReactComponent as Github } from '../../assets/icons/social/github.svg';
 import { ReactComponent as Linkedin } from '../../assets/icons/social/linkedin.svg';
 
 export const Home = ({ darkMode }) => {
+  useEffect(() => {
+    const imageUrls = [foto, fotoWhite];
+    imageUrls.forEach((imageUrl) => {
+      const image = new Image();
+      image.src = imageUrl;
+    });
+  }, []);
+
   return (
     <main
       className="flex h-screen min-w-280 place-content-center items-center bg-slate-100 font-victorMono dark:bg-neutral-900 dark:text-slate-300 md:mx-28 md:mb-20"
