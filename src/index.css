@@ -54,6 +54,7 @@ html.light::-webkit-scrollbar-thumb:hover {
     url('./assets/fonts/VictorMono-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -62,6 +63,7 @@ html.light::-webkit-scrollbar-thumb:hover {
     url('./assets/fonts/VictorMono-Bold.woff') format('woff');
   font-weight: bold;
   font-style: normal;
+  font-display: swap;
 }
 
 /* Variables :root */
