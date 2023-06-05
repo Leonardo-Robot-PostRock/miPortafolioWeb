@@ -10,7 +10,7 @@ import webpack from '../../assets/icons/webpack.svg';
 import angular from '../../assets/icons/angular.svg';
 import primeflex from '../../assets/icons/primeflex.svg';
 import mongodb from '../../assets/icons/mongodb.svg';
-import sql from '../../assets/icons/sql.png';
+import sql from '../../assets/icons/sql.svg';
 import vite from '../../assets/icons/vite.svg';
 import angularMaterial from '../../assets/icons/angularMaterial.svg';
 import react from '../../assets/icons/react.svg';
