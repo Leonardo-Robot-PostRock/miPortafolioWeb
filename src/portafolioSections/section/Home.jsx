@@ -26,12 +26,16 @@ export const Home = ({ darkMode }) => {
                 src={fotoWhite}
                 alt="Leonardo Puebla"
                 className="w-full rounded-full border-4 border-solid border-sky-400 brightness-105 lg:border-4"
+                width={44}
+                height={44}
               />
             ) : (
               <img
                 src={foto}
                 alt="Leonardo Puebla"
                 className="w-full rounded-full border-4 border-solid border-sky-400 contrast-125 lg:border-4"
+                width={44}
+                height={44}
               />
             )}
           </figure>
