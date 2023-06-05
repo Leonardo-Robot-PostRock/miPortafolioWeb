@@ -4,15 +4,15 @@ import QuantumSingularity from '../../assets/music/QuantumSingularity.mp3';
 
 const playlist = [
     {
-        "title": 'NFS High Stakes: Bulbular Swirl',
+        "title": 'Bulbular Swirl',
         "url": BulbularSwirl
     },
     {
-        "title": 'NFS High Stakes: Photon Rez',
+        "title": 'Photon Rez',
         "url": PhotonRez
     },
     {
-        "title": 'NFS High Stakes: Quantum Singularity',
+        "title": 'Quantum Singularity',
         "url": QuantumSingularity
     },
 ]

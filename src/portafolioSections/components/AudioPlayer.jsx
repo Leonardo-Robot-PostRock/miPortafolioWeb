@@ -60,10 +60,10 @@ const AudioPlayer = ({ audioElem, isPlaying, setIsPlaying, currentSong, setCurre
     <div className="flex flex-col items-center justify-center dark:text-white">
       <div className="w-52 rounded-lg border-2 border-solid border-neutral-500 px-4 py-1 dark:border-neutral-400 md:w-96">
         <div>
-          <p className="mb-2 text-center">{currentSong.title}</p>
+          <p className="mb-2 text-center font-Raleway">{currentSong.title}</p>
         </div>
         <div className="w-full">
-          <div className="flex justify-between">
+          <div className="flex justify-between font-victorMonoBold">
             <p className={`${formatTime(currentSong.progress) === 'NaN:NaN' && 'opacity-0'}`}>
               {formatTime(currentSong.progress) === 'NaN:NaN' ? '--:--' : formatTime(currentSong.progress)}
             </p>
@@ -77,19 +77,19 @@ const AudioPlayer = ({ audioElem, isPlaying, setIsPlaying, currentSong, setCurre
         </div>
 
         <div className="my-2 flex justify-center gap-5">
-          <span className="material-symbols-outlined cursor-pointer" onClick={skipBack}>
+          <span className="material-symbols-outlined cursor-pointer rounded-sm hover:bg-sky-400" onClick={skipBack}>
             skip_previous
           </span>
           {isPlaying ? (
-            <span className="material-symbols-outlined cursor-pointer" onClick={PlayPause}>
+            <span className="material-symbols-outlined cursor-pointer rounded-sm hover:bg-sky-400" onClick={PlayPause}>
               pause
             </span>
           ) : (
-            <span className="material-symbols-outlined cursor-pointer" onClick={PlayPause}>
+            <span className="material-symbols-outlined cursor-pointer rounded-sm hover:bg-sky-400" onClick={PlayPause}>
               play_arrow
             </span>
           )}
-          <span className="material-symbols-outlined cursor-pointer" onClick={skipToNext}>
+          <span className="material-symbols-outlined cursor-pointer rounded-sm hover:bg-sky-400" onClick={skipToNext}>
             skip_next
           </span>
         </div>
