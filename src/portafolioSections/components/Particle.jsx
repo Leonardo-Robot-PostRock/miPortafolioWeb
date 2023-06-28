@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { lazy } from 'react';
 import { loadFull } from 'tsparticles';
 import iconImages from '../utils/icons';
-import { Particles } from 'react-particles';
+const Particles = lazy(() => import('react-particles'));
 
 const LoadingFallback = () => <div className="font-Raleway text-2xl">Loading particles...</div>;
 
