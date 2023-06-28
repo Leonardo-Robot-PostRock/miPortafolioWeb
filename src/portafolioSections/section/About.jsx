@@ -86,13 +86,13 @@ export const About = () => {
             <div className="mx-5 my-2 border-b-2 border-neutral-950 dark:border-white md:hidden"></div>
             <h3 className="p-1 text-center font-Kanit text-2xl 2xl:text-4xl">📚Books I read:</h3>
             <div
-              className={`relative mx-auto mb-2 mt-2 flex w-56 min-w-280 justify-center p-1 md:mx-auto md:w-full 2xl:w-full`}>
+              className={`relative mx-auto mb-2 mt-2 flex w-56 min-w-280 justify-center overflow-hidden p-1 md:mx-auto md:w-full md:overflow-visible 2xl:w-full`}>
               <button
-                className="absolute left-2 top-1/2 flex -translate-y-1/2 transform rounded-full bg-neutral-950 bg-opacity-50 p-2 text-white transition-colors duration-500 hover:bg-sky-400 hover:duration-500 dark:hover:bg-sky-400 xl:left-10 2xl:left-0"
+                className="absolute left-2 top-1/2 z-10 flex -translate-y-1/2 transform rounded-full bg-neutral-950 bg-opacity-50 p-2 text-white md:hover:bg-sky-400 md:hover:bg-opacity-50 md:hover:transition md:hover:duration-500 dark:md:hover:bg-sky-400 xl:left-10 2xl:left-0"
                 onClick={handlePrevSlide}>
                 <span className="material-symbols-outlined">chevron_left</span>
               </button>
-              <figure className={`m-2 rounded-xl border-2 border-neutral-950 dark:border-white ${bookAnimation}`}>
+              <figure className={`z-0 m-2 rounded-xl border-2 border-neutral-950 dark:border-white ${bookAnimation}`}>
                 <img
                   src={programmingBooks[currentSlide].image}
                   alt={programmingBooks[currentSlide].title}
@@ -105,7 +105,7 @@ export const About = () => {
                 <p className="2xl:text-md text-center font-Kanit text-xs">{programmingBooks[currentSlide].pag}</p>
               </figure>
               <button
-                className="absolute right-2 top-1/2 flex -translate-y-1/2 transform rounded-full bg-neutral-950 bg-opacity-50 p-2 text-white transition-colors duration-500 hover:bg-sky-400 hover:transition-colors hover:duration-500 dark:hover:bg-sky-400 xl:right-10 2xl:right-0"
+                className="absolute right-2 top-1/2 flex -translate-y-1/2 transform rounded-full bg-neutral-950 bg-opacity-50 p-2 text-white md:hover:bg-sky-400 md:hover:bg-opacity-50 md:hover:transition md:hover:duration-500 dark:md:hover:bg-sky-400 xl:right-10 2xl:right-0"
                 onClick={handleNextSlide}>
                 <span className="material-symbols-outlined">chevron_right</span>
               </button>
