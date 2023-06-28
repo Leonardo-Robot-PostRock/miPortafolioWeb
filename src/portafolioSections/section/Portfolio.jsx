@@ -1,10 +1,10 @@
-import React, { useEffect, useRef } from 'react';
+import React, { lazy, useEffect, useRef } from 'react';
 
 import iphoneX from '../../assets/images/deviceShots/iphoneX.png';
 import ipadMini from '../../assets/images/deviceShots/ipadMini.png';
 import macBookPro16 from '../../assets/images/deviceShots/macBookPro16.png';
 
-import AudioPlayer from '../components/AudioPlayer';
+const AudioPlayer = lazy(() => import('../components/AudioPlayer'));
 
 import { usePortfolioHooks } from '../hooks/usePortfolioHooks';
 
@@ -47,7 +47,7 @@ export const Portfolio = () => {
           Proyecto de publicidad para el mundial de fútbol 2022 para LatinAd.
         </p>
         <div className="mx-auto h-full md:grid md:grid-cols-6 md:gap-32 2xl:mx-96">
-          <div className="relative mx-2 flex w-56 flex-col justify-center overflow-hidden p-1 xs:mx-auto xs:w-60 375:w-80 md:col-span-3 md:w-96">
+          <div className="relative mx-2 flex w-56 flex-col justify-center overflow-hidden p-1 xs:mx-auto xs:w-60 375:w-80 md:col-span-3 md:w-96 md:overflow-visible">
             <img
               className={`animate__animated z-0 xs:mx-auto xs:w-72 375:w-80 md:mx-0 md:w-full ${animationTwo}`}
               src={macBookPro16}
