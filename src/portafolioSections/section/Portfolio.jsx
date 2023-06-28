@@ -43,11 +43,11 @@ export const Portfolio = () => {
           currentSong={currentSong}
           setCurrentSong={setCurrentSong}
         />
-        <p className="mx-5 p-1 mt-4 dark:text-white md:text-center">
+        <p className="mx-5 mt-4 p-1 dark:text-white md:text-center">
           Proyecto de publicidad para el mundial de fútbol 2022 para LatinAd.
         </p>
         <div className="mx-auto h-full md:grid md:grid-cols-6 md:gap-32 2xl:mx-96">
-          <div className="relative mx-2 flex w-56 flex-col justify-center p-1 xs:mx-auto xs:w-60 375:w-80 md:col-span-3 md:w-96">
+          <div className="relative mx-2 flex w-56 flex-col justify-center overflow-hidden p-1 xs:mx-auto xs:w-60 375:w-80 md:col-span-3 md:w-96">
             <img
               className={`animate__animated z-0 xs:mx-auto xs:w-72 375:w-80 md:mx-0 md:w-full ${animationTwo}`}
               src={macBookPro16}
@@ -59,7 +59,7 @@ export const Portfolio = () => {
               alt="Iphone X publicidad mundial"
             />
             <img
-              className={`animate__animated absolute -right-4 w-20 xs:-right-4 xs:top-10 xs:w-20 375:top-16 375:w-28 md:-right-2 md:w-32 ${animation}`}
+              className={`animate__animated absolute right-0 w-20 xs:right-0 xs:top-10 xs:w-20 375:top-16 375:w-28 md:-right-2 md:w-32 ${animation}`}
               src={ipadMini}
               alt="Ipad Mini publicidad mundial"
             />
