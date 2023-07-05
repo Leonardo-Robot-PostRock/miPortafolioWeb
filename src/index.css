@@ -79,14 +79,10 @@ html.light::-webkit-scrollbar-thumb:hover {
   --four: #6a6a6a4d;
   --five: #171717;
   --clr-bg-dark: #171717;
-  /* gray-800 */
   --clr-bg-light: #fafafa;
-  /* zinc-50 */
 
   --clr-text-dark: #ffffff;
-  /* gray-200 */
-  --clr-text-light: #fafafa;
-  /* zinc-50 */
+  --clr-text-light: #000000;
 }
 
 .dark {
