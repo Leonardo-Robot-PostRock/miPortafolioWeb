@@ -16,7 +16,7 @@ export const Home = ({ darkMode }) => {
 
   return (
     <main
-      className="flex h-screen min-w-280 place-content-center items-center bg-slate-100 font-victorMono dark:bg-neutral-900 dark:text-slate-300 md:mx-28 md:mb-20"
+      className="flex h-screen min-w-280 place-content-center items-center bg-slate-100 font-victorMono dark:bg-neutral-900 md:mx-28 md:mb-20"
       id="home">
       <section className="mt-32 flex justify-center md:mt-14 2xl:my-20">
         <div className="md:mt-16 2xl:mt-24">
