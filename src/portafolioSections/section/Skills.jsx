@@ -15,7 +15,7 @@ export const Skills = ({ darkMode }) => {
 
   return (
     <main
-      className={`relavite mb-20 flex h-screen min-w-280 flex-col items-center justify-center overflow-hidden text-black dark:text-white md:mx-0`}
+      className={`relavite flex h-screen min-w-280 flex-col items-center justify-center text-black dark:text-white md:mx-0`}
       id="skills">
       {/* Estilos dinámicos para h1 */}
       <h1
