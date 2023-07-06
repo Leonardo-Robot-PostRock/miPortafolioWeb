@@ -4,13 +4,21 @@ import iphoneX from '../../assets/images/deviceShots/iphoneX.png';
 import ipadMini from '../../assets/images/deviceShots/ipadMini.png';
 import macBookPro16 from '../../assets/images/deviceShots/macBookPro16.png';
 
+import { usePortfolioHooks } from '../hooks/usePortfolioHooks';
+import { Carousel } from '../components/Carousel';
 const AudioPlayer = lazy(() => import('../components/AudioPlayer'));
 
-import { usePortfolioHooks } from '../hooks/usePortfolioHooks';
-
 export const Portfolio = () => {
-  const [animation, animationTwo, songs, setSongs, isPlaying, setIsPlaying, currentSong, setCurrentSong] =
-    usePortfolioHooks();
+  const [
+    animation,
+    animationTwo,
+    songs,
+    setSongs,
+    isPlaying,
+    setIsPlaying,
+    currentSong,
+    setCurrentSong,
+  ] = usePortfolioHooks();
 
   const audioElem = useRef();
 
@@ -26,13 +34,21 @@ export const Portfolio = () => {
     const duration = audioElem.current.duration;
     const ct = audioElem.current.currentTime;
 
-    setCurrentSong({ ...currentSong, progress: (ct / duration) * 100, length: duration });
+    setCurrentSong({
+      ...currentSong,
+      progress: (ct / duration) * 100,
+      length: duration,
+    });
   };
 
   return (
-    <main className="h-max min-w-280 font-victorMono text-black  md:h-screen" id="portfolio">
+    <main
+      className="h-max min-w-280 font-victorMono text-black dark:text-white  md:h-max"
+      id="portfolio">
       <section className="mt-24 flex min-w-280 flex-col flex-wrap justify-center">
-        <h1 className="mb-10 text-center font-Raleway text-3xl dark:text-white md:text-5xl">Portfolio</h1>
+        <h1 className="mb-10 text-center font-Raleway text-3xl md:text-5xl">
+          Portfolio
+        </h1>
         <audio src={currentSong.url} ref={audioElem} onTimeUpdate={onPlaying} />
         <AudioPlayer
           songs={songs}
@@ -43,7 +59,7 @@ export const Portfolio = () => {
           currentSong={currentSong}
           setCurrentSong={setCurrentSong}
         />
-        <p className="mx-5 mt-4 p-1 dark:text-white md:text-center">
+        <p className="mx-5 mt-4 p-1 md:text-center">
           Proyecto de publicidad para el mundial de fútbol 2022 para LatinAd.
         </p>
         <div className="mx-auto h-full md:grid md:grid-cols-6 md:gap-32 2xl:mx-96">
@@ -65,13 +81,19 @@ export const Portfolio = () => {
             />
           </div>
           <div className="relative bottom-8 mx-5 leading-6 md:col-span-3 md:flex md:w-72 md:items-center 2xl:w-96">
-            <p className="p-1 dark:text-white">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo, doloremque maiores vel et maxime
-              harum pariatur commodi placeat a nostrum minus ex porro officia aliquid nisi sed ratione! Ducimus
+            <p className="p-1">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Explicabo, doloremque maiores vel et maxime harum pariatur commodi
+              placeat a nostrum minus ex porro officia aliquid nisi sed ratione!
+              Ducimus
             </p>
           </div>
         </div>
       </section>
+      <section className="flex justify-center">
+        <h1>Proyectos personales:</h1>
+      </section>
+      <Carousel />
     </main>
   );
 };
