@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
-import eloquentJsImage from '../../assets/images/eloquentJs.jpg';
-import pythonAfondoImage from '../../assets/images/pythonAfondo.jpg';
+import eloquentJsImage from '../../assets/images/books/eloquentJs.jpg';
+import pythonAfondoImage from '../../assets/images/books/pythonAfondo.jpg';
 import leonardoCv from '../../assets/cv/LeonardoGabrielPueblaCV.pdf';
 
 export const About = () => {
