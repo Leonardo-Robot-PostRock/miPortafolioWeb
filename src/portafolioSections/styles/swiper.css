@@ -1,0 +1,100 @@
+.swiper-button {
+  display: flex;
+  position: absolute;
+  top: calc(50% - 12px);
+  z-index: 10;
+}
+
+.image-swiper-button-prev {
+  left: 25px;
+}
+
+.image-swiper-button-next {
+  right: 25px;
+}
+
+.swiper-button-disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.swiper-pagination-bullets-dark,
+.swiper-pagination-bullets-light {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Modo claro */
+.swiper-pagination-bullets-light {
+  /* Estilos para el modo claro */
+  color: #000; /* Color de los bullets */
+}
+
+.swiper-pagination-bullets-light .swiper-pagination-bullet {
+  /* Estilos para los bullets individuales en modo claro */
+  background-color: gray; /* Color de fondo de los bullets */
+}
+
+.swiper-pagination-bullets-light .swiper-pagination-bullet-active {
+  /* Estilos para el bullet activo en modo claro */
+  background-color: #38bdf8; /* Color de fondo del bullet activo */
+}
+
+/* Modo oscuro */
+.swiper-pagination-bullets-dark {
+  /* Estilos para el modo oscuro */
+  color: #fff; /* Color de los bullets */
+}
+
+.swiper-pagination-bullet {
+  margin: 10px;
+}
+
+.swiper-pagination-bullets-dark .swiper-pagination-bullet {
+  /* Estilos para los bullets individuales en modo oscuro */
+  background-color: white; /* Color de fondo de los bullets */
+}
+
+.swiper-pagination-bullets-dark .swiper-pagination-bullet-active {
+  /* Estilos para el bullet activo en modo oscuro */
+  background-color: #38bdf8; /* Color de fondo del bullet activo */
+}
+
+.swiper-scrollbar.swiper-scrollbar-horizontal {
+  background-color: hsl(0, 0%, 84%);
+}
+
+.swiper-scrollbar.swiper-scrollbar-horizontal > .swiper-scrollbar-drag {
+  background-color: #38bdf8;
+}
+
+@media (min-width: 600px) and (max-width: 969px) {
+  .image-swiper-button-prev {
+    left: 40px;
+  }
+
+  .image-swiper-button-next {
+    right: 40px;
+  }
+}
+
+@media (min-width: 970px) and (max-width: 1439px) {
+  .image-swiper-button-prev {
+    left: 50px;
+  }
+
+  .image-swiper-button-next {
+    right: 50px;
+  }
+}
+
+@media (min-width: 1440px) and (max-width: 1920px) {
+  .image-swiper-button-prev {
+    left: 60px;
+  }
+
+  .image-swiper-button-next {
+    right: 60px;
+  }
+}
