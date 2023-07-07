@@ -11,7 +11,7 @@ export const Main = ({ darkMode }) => {
       <Home darkMode={darkMode} />
       <About />
       <Skills darkMode={darkMode} />
-      <Portfolio />
+      <Portfolio darkMode={darkMode} />
       <Contact />
     </main>
   );
