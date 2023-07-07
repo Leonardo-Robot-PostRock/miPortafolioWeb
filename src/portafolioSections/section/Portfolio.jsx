@@ -5,10 +5,11 @@ import ipadMini from '../../assets/images/deviceShots/ipadMini.png';
 import macBookPro16 from '../../assets/images/deviceShots/macBookPro16.png';
 
 import { usePortfolioHooks } from '../hooks/usePortfolioHooks';
-import { Carousel } from '../components/Carousel';
 const AudioPlayer = lazy(() => import('../components/AudioPlayer'));
+import { Carousel } from '../components/Carousel';
+import proyects from '../utils/proyectsWeb';
 
-export const Portfolio = () => {
+export const Portfolio = ({ darkMode }) => {
   const [
     animation,
     animationTwo,
@@ -43,7 +44,7 @@ export const Portfolio = () => {
 
   return (
     <main
-      className="h-max min-w-280 font-victorMono text-black dark:text-white  md:h-max"
+      className="h-max min-w-280 font-victorMono text-black dark:text-white md:h-max"
       id="portfolio">
       <section className="mt-24 flex min-w-280 flex-col flex-wrap justify-center">
         <h1 className="mb-10 text-center font-Raleway text-3xl md:text-5xl">
@@ -59,10 +60,10 @@ export const Portfolio = () => {
           currentSong={currentSong}
           setCurrentSong={setCurrentSong}
         />
-        <p className="mx-5 mt-4 p-1 md:text-center">
+        <p className="mx-5 mb-2 mt-4 p-1 md:text-center">
           Proyecto de publicidad para el mundial de fútbol 2022 para LatinAd.
         </p>
-        <div className="mx-auto h-full md:grid md:grid-cols-6 md:gap-32 2xl:mx-96">
+        <div className="mx-auto h-full grid-rows-[300px] md:grid md:grid-cols-6 md:gap-32 2xl:mx-96">
           <div className="relative mx-2 flex w-56 flex-col justify-center overflow-hidden p-1 xs:mx-auto xs:w-60 375:w-80 md:col-span-3 md:w-96 md:overflow-visible">
             <img
               className={`animate__animated z-0 xs:mx-auto xs:w-72 375:w-80 md:mx-0 md:w-full ${animationTwo}`}
@@ -80,7 +81,7 @@ export const Portfolio = () => {
               alt="Ipad Mini publicidad mundial"
             />
           </div>
-          <div className="relative bottom-8 mx-5 leading-6 md:col-span-3 md:flex md:w-72 md:items-center 2xl:w-96">
+          <div className="relative bottom-12 mx-5 leading-6 md:col-span-3 md:flex md:w-72 md:items-center 2xl:w-96">
             <p className="p-1">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit.
               Explicabo, doloremque maiores vel et maxime harum pariatur commodi
@@ -90,10 +91,12 @@ export const Portfolio = () => {
           </div>
         </div>
       </section>
-      <section className="flex justify-center">
-        <h1>Proyectos personales:</h1>
+      <section className="mb-20 flex flex-col place-items-center">
+        <h1 className="mb-3 text-center font-Kanit text-2xl 2xl:text-4xl">
+          Proyectos personales:
+        </h1>
+        <Carousel proyects={proyects} darkMode={darkMode} />
       </section>
-      <Carousel />
     </main>
   );
 };
