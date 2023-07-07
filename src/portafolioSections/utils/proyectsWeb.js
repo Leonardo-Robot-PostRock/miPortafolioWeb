@@ -1,52 +1,44 @@
-import busquedaPaises from '../../assets/images/proyects/busquedaPaises.png';
-import gifExpertApp from '../../assets/images/proyects/gifExpertApp.png';
-import gifWeb from '../../assets/images/proyects/gifWeb.png';
-import bataBit from '../../assets/images/proyects/bataBit.png';
-import todoMachine from '../../assets/images/proyects/todoMachine.png';
-import searchGitHubUsers from '../../assets/images/proyects/searchGitHubUsers.png';
-import yardSale from '../../assets/images/proyects/yardSale.png';
-
 const proyects = [
   {
-    image: busquedaPaises,
-    title: 'Búsqueda de Países',
-    description: 'Aplicación realizada en Angular',
+    id: 1,
+    image: 'src/assets/images/proyects/busquedaPaises.png',
+    technology: 'src/assets/icons/angular.svg',
     link: 'https://busqueda-paises-leonardo.netlify.app/',
   },
   {
-    image: gifExpertApp,
-    title: 'Búsqueda de Gifs',
-    description: 'Aplicación realizada en React',
+    id: 2,
+    image: 'src/assets/images/proyects/gifExpertApp.png',
+    technology: 'src/assets/icons/react.svg',
     link: 'https://gif-expert-react-leonardo.netlify.app/',
   },
   {
-    image: gifWeb,
-    title: 'Búsqueda de Gifs',
-    description: 'Aplicación realizada en Angular',
+    id: 3,
+    image: 'src/assets/images/proyects/gifWeb.png',
+    technology: 'src/assets/icons/angular.svg',
     link: 'https://gifsweb.netlify.app/',
   },
   {
-    image: bataBit,
-    title: 'BataBit',
-    description: 'Criptomonedas Demo realizado con Vanilla Js',
+    id: 4,
+    image: 'src/assets/images/proyects/bataBit.png',
+    technology: 'src/assets/icons/javaScript.svg',
     link: 'https://leonardo-robot-postrock.github.io/BataBit/',
   },
   {
-    image: todoMachine,
-    title: 'Todo Machine',
-    description: 'React Application web',
+    id: 5,
+    image: 'src/assets/images/proyects/todoMachine.png',
+    technology: 'src/assets/icons/react.svg',
     link: 'https://leonardo-robot-postrock.github.io/TODO-MACHINE/',
   },
   {
-    image: searchGitHubUsers,
-    title: 'Buscador de Usuarios',
-    description: 'React Application web',
+    id: 6,
+    image: 'src/assets/images/proyects/searchGitHubUsers.png',
+    technology: 'src/assets/icons/react.svg',
     link: 'https://materialuileonardo.netlify.app/',
   },
   {
-    image: yardSale,
-    title: 'E-commerce Demo',
-    description: 'React application, e-commerce aún en producción',
+    id: 7,
+    image: 'src/assets/images/proyects/yardSale.png',
+    technology: 'src/assets/icons/react.svg',
     link: 'https://leonardo-robot-postrock.github.io/react-shop/',
   },
 ];
