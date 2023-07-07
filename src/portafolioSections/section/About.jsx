@@ -104,9 +104,9 @@ export const About = () => {
               📚Books I read:
             </h3>
             <div
-              className={`relative mx-auto my-2 flex w-56 min-w-280 justify-center p-1 md:mx-auto md:w-full md:overflow-visible 2xl:w-full`}>
+              className={`relative mx-2 my-2 flex xs:w-40 w-56 min-w-280 justify-center p-1 md:mx-auto md:w-full md:overflow-visible 2xl:w-full`}>
               <button
-                className="absolute xs:left-5 -left-2 top-1/2 z-10 flex -translate-y-1/2 transform rounded-full bg-neutral-950 bg-opacity-50 p-2 text-white md:hover:bg-sky-400 md:hover:transition md:hover:duration-500 dark:md:hover:bg-sky-400 dark:md:hover:bg-opacity-50 xl:left-10 2xl:left-0"
+                className="absolute xs:left-5 375:-left-5 md:-left-2 left-0 top-1/2 z-10 flex -translate-y-1/2 transform rounded-full bg-neutral-950 bg-opacity-50 p-2 text-white md:hover:bg-sky-400 md:hover:transition md:hover:duration-500 dark:md:hover:bg-sky-400 dark:md:hover:bg-opacity-50 xl:left-10 2xl:left-0"
                 onClick={handlePrevSlide}>
                 <span className="material-symbols-outlined">chevron_left</span>
               </button>
@@ -128,7 +128,7 @@ export const About = () => {
                 </p>
               </figure>
               <button
-                className="absolute xs:right-5 -right-2 top-1/2 flex -translate-y-1/2 transform rounded-full bg-neutral-950 bg-opacity-50 p-2 text-white md:hover:bg-sky-400 md:hover:transition md:hover:duration-500 dark:md:hover:bg-sky-400 dark:md:hover:bg-opacity-50 xl:right-10 2xl:right-0"
+                className="absolute xs:right-5 375:-right-5 md:-right-2 right-0 top-1/2 flex -translate-y-1/2 transform rounded-full bg-neutral-950 bg-opacity-50 p-2 text-white md:hover:bg-sky-400 md:hover:transition md:hover:duration-500 dark:md:hover:bg-sky-400 dark:md:hover:bg-opacity-50 xl:right-10 2xl:right-0"
                 onClick={handleNextSlide}>
                 <span className="material-symbols-outlined">chevron_right</span>
               </button>
