@@ -58,7 +58,7 @@ export const Skills = ({ darkMode }) => {
               className={`animate__animated animate__bounceInLeft relative mb-1 font-Kanit text-2xl dark:text-white 2xl:mb-4 2xl:text-4xl ${
                 count === 0 ? 'animate__delay-1s' : ''
               }`}>
-              Tengo conocimientos en:
+              Conocimientos:
             </h3>
             <p
               className={`animate__animated animate__bounceInLeft relative dark:text-white ${
