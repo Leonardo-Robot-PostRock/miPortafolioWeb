@@ -32,7 +32,7 @@ export const Carousel = ({ proyects, darkMode }) => {
       }}
       pagination={{ clickable: true, el: `.${paginationClass}` }}
       scrollbar={{ draggable: true }}
-      className="mySwiper flex w-72 flex-col sm:w-96 md:mx-10 md:w-3/5">
+      className="mySwiper flex xs:w-64 w-72 flex-col sm:w-96 md:mx-10 md:w-3/5">
       {proyects?.map((proyect) => {
         return (
           <>
