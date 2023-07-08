@@ -26,11 +26,11 @@ export const Contact = () => {
   };
 
   return (
-    <main className="h-screen min-w-280 " id="contact">
-      <section className="mt-24 text-center">
+    <main className="min-w-800 h-screen" id="contact">
+      <section className="mx-2 mt-24 min-w-280 text-center">
         <h1 className="font-Raleway text-5xl">Contact</h1>
-        <div className="flex flex-col place-items-center">
-          <div className="grid grid-cols-1 gap-10 md:grid-cols-[repeat(2,300px)] md:gap-20">
+        <div className="mt-10 flex flex-col place-items-center">
+          <div className="grid grid-cols-1 gap-10 md:grid-cols-[repeat(2,350px)] md:gap-20">
             {/* box 1 */}
             <div className="col-span-1">
               <div>
@@ -48,24 +48,36 @@ export const Contact = () => {
             </div>
             {/* box 2 */}
             <div className="col-span-1">
-              <form className="flex flex-col text-neutral-950" ref={form} onSubmit={sendEmail}>
-                <div className="grid grid-rows-2">
-                  <label className="row-span-1">Name</label>
-                  <input className="row-span-1" type="text" name="user_name" />
-                </div>
-                <div className="grid grid-rows-2">
-                  <label className="row-span-1">Email</label>
+              <form className="grid gap-y-5" ref={form} onSubmit={sendEmail}>
+                <div className="flex flex-col gap-2">
+                  <label className="font-Kanit">Name</label>
                   <input
-                    className="row-span-1"
+                    className="h-10 p-1 text-neutral-950 outline-none dark:bg-neutral-800 dark:text-white"
+                    type="text"
+                    name="user_name"
+                  />
+                </div>
+                <div className="flex flex-col">
+                  <label className="font-Kanit">Email</label>
+                  <input
+                    className="h-10 p-1 text-neutral-950 outline-none dark:bg-neutral-800 dark:text-white"
                     type="email"
                     name="user_email"
                   />
                 </div>
-                <div className="grid grid-rows-2">
-                  <label className="row-span-1">Message</label>
-                  <textarea className="row-span-1 resize-none" name="message" />
+                <div className="flex flex-col">
+                  <label className="font-Kanit">Message</label>
+                  <textarea
+                    className="resize-none p-1 text-neutral-950 outline-none dark:bg-neutral-800 dark:text-white"
+                    rows="7"
+                    name="message"
+                  />
                 </div>
-                <input className="cursor-pointer" type="submit" value="Send" />
+                <input
+                  className="mt-2 h-8 w-28 cursor-pointer rounded-md border-2 font-victorMonoBold"
+                  type="submit"
+                  value="Send"
+                />
               </form>
             </div>
           </div>
