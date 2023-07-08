@@ -63,6 +63,7 @@
 
 .swiper-scrollbar.swiper-scrollbar-horizontal {
   background-color: hsl(0, 0%, 84%);
+  cursor: pointer;
 }
 
 .swiper-scrollbar.swiper-scrollbar-horizontal > .swiper-scrollbar-drag {
