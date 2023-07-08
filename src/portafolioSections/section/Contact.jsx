@@ -63,7 +63,7 @@ export const Contact = () => {
                 </div>
                 <div className="grid grid-rows-2">
                   <label className="row-span-1">Message</label>
-                  <textarea className="row-span-1" name="message" />
+                  <textarea className="row-span-1 resize-none" name="message" />
                 </div>
                 <input className="cursor-pointer" type="submit" value="Send" />
               </form>
