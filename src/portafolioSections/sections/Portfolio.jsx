@@ -7,7 +7,7 @@ import macBookPro16 from '../../assets/images/deviceShots/macBookPro16.png';
 import { usePortfolioHooks } from '../hooks/usePortfolioHooks';
 const AudioPlayer = lazy(() => import('../components/AudioPlayer'));
 import { Carousel } from '../components/Carousel';
-import proyects from '../utils/proyectsWeb';
+import proyects from '../../utils/proyectsWeb';
 
 export const Portfolio = ({ darkMode }) => {
   const [
