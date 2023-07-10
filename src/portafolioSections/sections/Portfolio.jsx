@@ -92,8 +92,8 @@ export const Portfolio = ({ darkMode }) => {
         </div>
       </section>
       <section className="mb-20 flex flex-col place-items-center">
-        <h1 className="mb-3 text-center font-Kanit text-2xl 2xl:text-4xl">
-          Proyectos personales:
+        <h1 className="mb-6 text-center font-Kanit text-2xl 2xl:text-4xl">
+          Proyectos de cursos:
         </h1>
         <Carousel proyects={proyects} darkMode={darkMode} />
       </section>
