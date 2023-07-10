@@ -1,9 +1,9 @@
 import React from 'react';
-import { Home } from '../section/Home';
-import { About } from '../section/About';
-import { Portfolio } from '../section/Portfolio';
-import { Contact } from './../section/Contact';
-import { Skills } from '../section/Skills';
+import { Home } from '../sections/Home';
+import { About } from '../sections/About';
+import { Portfolio } from '../sections/Portfolio';
+import { Contact } from '../sections/Contact';
+import { Skills } from '../sections/Skills';
 
 export const Main = ({ darkMode }) => {
   return (

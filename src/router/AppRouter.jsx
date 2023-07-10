@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { Navbar } from '../portafolioSections/components/Navbar';
-import { Main } from '../portafolioSections/pages/Main';
+import { Main } from '../portafolioSections/page/Main';
 import { useDarkMode } from '../hooks/useDarkMode';
 
 export const AppRouter = () => {
