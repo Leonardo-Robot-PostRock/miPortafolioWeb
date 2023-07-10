@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import foto from './../../assets/images/foto.png';
-import fotoWhite from './../../assets/images/foto_bgWhite.jpg';
+import foto from './../../assets/images/profile/foto.png';
+import fotoWhite from './../../assets/images/profile/foto_bgWhite.jpg';
 import { ReactComponent as Twitter } from '../../assets/icons/social/twitter.svg';
 import { ReactComponent as Github } from '../../assets/icons/social/github.svg';
 import { ReactComponent as Linkedin } from '../../assets/icons/social/linkedin.svg';
