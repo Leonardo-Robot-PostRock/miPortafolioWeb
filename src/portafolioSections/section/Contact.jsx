@@ -1,6 +1,9 @@
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 
+import { Input } from '../../ui/components/Input';
+import { BoxInfo } from '../../ui/components/BoxInfo';
+
 export const Contact = () => {
   const form = useRef();
   const sendEmail = (e) => {
@@ -33,38 +36,18 @@ export const Contact = () => {
           <div className="grid grid-cols-1 gap-10 md:grid-cols-[repeat(2,350px)] md:gap-20">
             {/* box 1 */}
             <div className="col-span-1">
-              <div>
-                <span className="material-symbols-outlined">call</span>
-                <p>+549 2612589352</p>
-              </div>
-              <div>
-                <span className="material-symbols-outlined">mail</span>
-                <p>leonardo38361@gmail.com</p>
-              </div>
-              <div>
-                <span className="material-symbols-outlined">location_on</span>
-                <p>Argentina, Mendoza</p>
-              </div>
+              <BoxInfo materialSymbols="call" info="+549 2612589352" />
+              <BoxInfo materialSymbols="mail" info="leonardo38361@gmail.com" />
+              <BoxInfo
+                materialSymbols="location_on"
+                info="Argentina, Mendoza"
+              />
             </div>
             {/* box 2 */}
             <div className="col-span-1">
               <form className="grid gap-y-5" ref={form} onSubmit={sendEmail}>
-                <div className="flex flex-col gap-2">
-                  <label className="font-Kanit">Name</label>
-                  <input
-                    className="h-10 p-1 text-neutral-950 outline-none dark:bg-neutral-800 dark:text-white"
-                    type="text"
-                    name="name"
-                  />
-                </div>
-                <div className="flex flex-col">
-                  <label className="font-Kanit">Email</label>
-                  <input
-                    className="h-10 p-1 text-neutral-950 outline-none dark:bg-neutral-800 dark:text-white"
-                    type="email"
-                    name="email"
-                  />
-                </div>
+                <Input label="Name" type="text" name="name" />
+                <Input label="Email" type="email" name="email" />
                 <div className="flex flex-col">
                   <label className="font-Kanit">Message</label>
                   <textarea
