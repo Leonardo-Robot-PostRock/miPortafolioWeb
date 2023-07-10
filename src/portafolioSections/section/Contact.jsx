@@ -17,12 +17,12 @@ export const Contact = () => {
         (result) => {
           console.log(result.text);
           console.log('message sent');
-          e.target.reset();
         },
         (error) => {
           console.log(error.text);
         }
       );
+    e.target.reset();
   };
 
   return (
@@ -54,7 +54,7 @@ export const Contact = () => {
                   <input
                     className="h-10 p-1 text-neutral-950 outline-none dark:bg-neutral-800 dark:text-white"
                     type="text"
-                    name="user_name"
+                    name="name"
                   />
                 </div>
                 <div className="flex flex-col">
@@ -62,7 +62,7 @@ export const Contact = () => {
                   <input
                     className="h-10 p-1 text-neutral-950 outline-none dark:bg-neutral-800 dark:text-white"
                     type="email"
-                    name="user_email"
+                    name="email"
                   />
                 </div>
                 <div className="flex flex-col">
