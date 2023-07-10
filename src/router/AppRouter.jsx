@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { Navbar } from '../ui/components/Navbar';
+import { Navbar } from '../portafolioSections/components/Navbar';
 import { Main } from '../portafolioSections/pages/Main';
 import { useDarkMode } from '../hooks/useDarkMode';
 
