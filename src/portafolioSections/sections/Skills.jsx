@@ -45,7 +45,7 @@ export const Skills = ({ darkMode }) => {
             : count === 3 && 'hidden'
         }`}>
         <div
-          className={`mx-2 mt-10 rounded-lg p-4 sm:mx-2 md:mx-16 md:mt-0 2xl:mx-auto 2xl:w-7/12 2xl:p-16 ${
+          className={`mx-2 mt-10 rounded-lg p-4 sm:mx-2 md:mx-16 md:mt-0 xl:mx-48 2xl:mx-auto 2xl:w-8/12 2xl:p-16 ${
             count === 3 ? 'hidden' : 'z-0'
           }`}>
           <div
