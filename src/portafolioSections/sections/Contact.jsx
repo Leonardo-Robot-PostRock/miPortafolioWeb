@@ -47,13 +47,13 @@ export const Contact = () => {
             </div>
             {/* box 2 */}
             <div className="col-span-1">
-              <form className="grid gap-y-5 xl:gap-y-2 2xl:gap-y-10" ref={form} onSubmit={sendEmail}>
+              <form className="grid gap-y-5 xl:gap-y-2 2xl:gap-y-5" ref={form} onSubmit={sendEmail}>
                 <Input label="Name" type="text" name="name" />
                 <Input label="Email" type="email" name="email" />
                 <div className="flex flex-col">
                   <label className="font-Kanit xl:mb-2 2xl:mb-5 xl:text-lg">Message</label>
                   <textarea
-                    className="resize-none rounded-sm border-2 border-solid border-neutral-200 p-2 text-neutral-950 outline-none dark:border-none dark:bg-neutral-800 dark:text-white"
+                    className="resize-none 2xl:h-64 rounded-sm border-2 border-solid border-neutral-200 p-2 text-neutral-950 outline-none dark:border-none dark:bg-neutral-800 dark:text-white"
                     rows="6"
                     name="message"
                   />
