@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { Navbar } from '../portafolioSections/components/Navbar';
-import { Main } from '../portafolioSections/page/Main';
+import { LandingPage } from '../portafolioSections/page/LandingPage';
 import { useDarkMode } from '../hooks/useDarkMode';
 
 export const AppRouter = () => {
@@ -18,7 +18,7 @@ export const AppRouter = () => {
     ${darkMode ? 'dark' : 'light'}`}>
       <Navbar toggleDarkMode={toggleDarkMode} darkMode={darkMode} savedDarkMode={savedDarkMode} />
       <Routes>
-        <Route path="/" element={<Main darkMode={darkMode} />}></Route>
+        <Route path="/" element={<LandingPage darkMode={darkMode} />}></Route>
         {/* Provisorio */}
         <Route path="*" element={<p>Path not resolved</p>} />
       </Routes>
