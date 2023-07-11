@@ -38,9 +38,9 @@ export const Main = ({ darkMode }) => {
       <Contact />
       {scrollTop && (
         <button
-          className="backToTop fixed bottom-5 right-5 z-50 h-10 w-10 rounded-[100%] bg-cyan-400 text-white shadow-md md:h-14 md:w-14"
+          className="backToTop fixed bottom-5 active:bg-cyan-300 right-5 z-50 h-10 w-10 rounded-[100%] bg-cyan-400 text-white shadow-md md:h-14 md:w-14"
           onClick={scrollToTop}>
-          <span class="material-symbols-outlined">arrow_upward</span>
+          <span className="material-symbols-outlined">arrow_upward</span>
         </button>
       )}
     </main>
