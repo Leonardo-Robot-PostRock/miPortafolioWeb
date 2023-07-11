@@ -53,7 +53,7 @@ export const Contact = () => {
                 <div className="flex flex-col">
                   <label className="font-Kanit xl:mb-2 2xl:mb-5 xl:text-lg">Message</label>
                   <textarea
-                    className="resize-none 2xl:h-56 rounded-sm border-2 border-solid border-neutral-200 p-2 text-neutral-950 outline-none dark:border-none dark:bg-neutral-800 dark:text-white"
+                    className="resize-none 2xl:h-64 rounded-sm border-2 border-solid border-neutral-200 p-2 text-neutral-950 outline-none dark:border-none dark:bg-neutral-800 dark:text-white"
                     rows="6"
                     name="message"
                   />
