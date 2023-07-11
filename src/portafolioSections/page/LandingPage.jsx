@@ -19,6 +19,9 @@ export const LandingPage = ({ darkMode }) => {
         setScrollTop(false);
       }
     };
+    
+    window.addEventListener('scroll', handleScroll);
+
     return () => {
       window.addEventListener('scroll', handleScroll);
     };
