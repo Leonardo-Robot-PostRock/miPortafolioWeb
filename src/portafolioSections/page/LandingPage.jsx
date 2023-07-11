@@ -7,7 +7,7 @@ import { Contact } from '../sections/Contact';
 import { Skills } from '../sections/Skills';
 import { Footer } from '../components/Footer';
 
-export const Main = ({ darkMode }) => {
+export const LandingPage = ({ darkMode }) => {
   const [scrollTop, setScrollTop] = useState(false);
 
   useEffect(() => {
