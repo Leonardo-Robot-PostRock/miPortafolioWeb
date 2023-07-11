@@ -5,6 +5,7 @@ import { About } from '../sections/About';
 import { Portfolio } from '../sections/Portfolio';
 import { Contact } from '../sections/Contact';
 import { Skills } from '../sections/Skills';
+import { Footer } from '../components/Footer';
 
 export const Main = ({ darkMode }) => {
   const [scrollTop, setScrollTop] = useState(false);
@@ -38,11 +39,12 @@ export const Main = ({ darkMode }) => {
       <Contact />
       {scrollTop && (
         <button
-          className="backToTop fixed bottom-5 active:bg-cyan-300 right-5 z-50 h-10 w-10 rounded-[100%] bg-cyan-400 text-white shadow-md md:h-14 md:w-14"
+          className="backToTop fixed bottom-5 right-5 z-50 h-10 w-10 rounded-[100%] bg-cyan-400 text-white shadow-md active:bg-cyan-300 md:h-14 md:w-14"
           onClick={scrollToTop}>
           <span className="material-symbols-outlined">arrow_upward</span>
         </button>
       )}
+      <Footer />
     </main>
   );
 };
