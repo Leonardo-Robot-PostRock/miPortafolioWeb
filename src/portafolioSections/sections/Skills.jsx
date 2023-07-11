@@ -20,12 +20,12 @@ export const Skills = ({ darkMode }) => {
       {/* Estilos dinámicos para h1 */}
       <h1
         className={`z-30 mb-96 flex cursor-pointer items-center rounded-lg p-3 text-center font-Raleway text-4xl 
-      transition-colors duration-500 hover:bg-sky-400 hover:text-white hover:transition-all hover:duration-500 dark:text-white hover:dark:rounded-lg hover:dark:bg-sky-400 
+      transition-colors duration-500 md:hover:bg-sky-400 md:hover:text-white hover:transition-all hover:duration-500 dark:text-white hover:dark:rounded-lg md:hover:dark:bg-sky-400 
       hover:dark:text-white sm:mb-64 md:mb-72 md:text-5xl 2xl:mb-80 2xl:text-6xl ${
         count === 0
-          ? 'animate-bounce opacity-100 hover:bg-inherit hover:text-current dark:hover:bg-none'
+          ? 'animate-bounce opacity-100'
           : count === 3
-          ? 'animate-pulse opacity-5 hover:bg-inherit hover:text-current dark:hover:bg-none'
+          ? 'animate-pulse opacity-5'
           : ''
       }`}
         onClick={handleZIndex}>
