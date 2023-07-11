@@ -60,8 +60,15 @@ export const Portfolio = ({ darkMode }) => {
           currentSong={currentSong}
           setCurrentSong={setCurrentSong}
         />
-        <p className="mx-5 mb-2 mt-4 p-1 md:text-center">
-          Proyecto de publicidad para el mundial de fútbol 2022 para LatinAd.
+        <p className="mx-5 mb-2 mt-4 p-1 md:text-center z-20">
+          Proyecto de publicidad para el mundial de fútbol 2022 para{' '}
+          <a
+            className="cursor-pointer font-victorMonoBold text-cyan-400"
+            target="_blank"
+            href="https://www.instagram.com/stories/highlights/17967698422982317/">
+            LatinAd
+          </a>
+          .
         </p>
         <div className="mx-auto h-full grid-rows-[300px] md:grid md:grid-cols-6 md:gap-32 2xl:mx-96">
           <div className="relative mx-2 flex w-56 flex-col justify-center overflow-hidden p-1 xs:mx-auto xs:w-60 375:w-80 md:col-span-3 md:w-96 md:overflow-visible">
@@ -81,12 +88,12 @@ export const Portfolio = ({ darkMode }) => {
               alt="Ipad Mini publicidad mundial"
             />
           </div>
-          <div className="relative bottom-12 mx-5 leading-6 md:col-span-3 md:flex md:w-72 md:items-center 2xl:w-96">
+          <div className="relative bottom-8 mx-5 leading-6 md:col-span-3 md:flex md:w-72 md:items-center 2xl:w-96">
             <p className="p-1">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Explicabo, doloremque maiores vel et maxime harum pariatur commodi
-              placeat a nostrum minus ex porro officia aliquid nisi sed ratione!
-              Ducimus
+              Este proyecto está diseñado para su uso en espacios públicos,
+              adaptándose a distintas resoluciones de pantalla. Proporciona
+              información actualizada sobre los resultados de los partidos,
+              marcadores y fases de grupos en tiempo real.
             </p>
           </div>
         </div>
