@@ -58,17 +58,17 @@ export const About = () => {
     <main
       className="flex h-max min-w-280 place-content-center items-center text-black dark:bg-neutral-900 dark:text-white md:mb-6 md:h-max xl:h-max 2xl:h-screen"
       id="about">
-      <section className="my-20 flex w-screen min-w-280 flex-col rounded-lg dark:bg-inherit md:mt-0 md:w-max 2xl:my-0">
+      <section className="my-20 flex w-screen min-w-280 flex-col rounded-lg dark:bg-inherit md:mt-0 md:w-max 2xl:my-0 2xl:w-7/12">
         <h2 className="mb-4 text-center font-Raleway text-3xl md:mt-24 md:text-5xl xl:mt-24 2xl:my-5 2xl:mb-5 2xl:text-6xl">
           About me
         </h2>
-        <div className="grid place-content-center overflow-hidden bg-neutral-200 p-4 dark:bg-neutral-950 md:grid md:grid-cols-2 md:gap-24 md:rounded-md xl:gap-x-36">
+        <div className="grid place-content-center justify-items-center overflow-hidden bg-neutral-200 p-4 dark:bg-neutral-950 md:grid md:grid-cols-2 md:gap-24 md:rounded-md xl:gap-x-36">
           <div className="col-span-1 w-72 leading-6 md:w-72 xl:w-96">
             <h3 className="p-1 text-center font-Kanit text-2xl md:text-center 2xl:text-4xl">
               Estudios y experiencia:
             </h3>
             <div className="my-2 flex flex-col p-1 md:w-full">
-              <p className="mx-2 mt-2 whitespace-break-spaces p-1 font-victorMono text-sm md:tracking-wide md:mx-0 md:text-base 2xl:text-lg">
+              <p className="mx-2 mt-2 whitespace-break-spaces p-1 font-victorMono text-sm md:mx-0 md:text-base md:tracking-wide 2xl:text-lg">
                 Comencé mis estudios con Java en el curso 111 Mil Programadores
                 entre el año 2016 y 2017. Luego, reforcé conocimientos en POO.
                 En 2019 ingresé a la UTN y estudié durante todo el año. En 2021,
@@ -104,9 +104,9 @@ export const About = () => {
               📚Books I read:
             </h3>
             <div
-              className={`relative mx-2 my-2 flex xs:w-40 w-56 min-w-280 justify-center p-1 md:mx-auto md:w-full md:overflow-visible 2xl:w-full`}>
+              className={`relative mx-2 my-2 flex w-56 min-w-280 justify-center p-1 xs:w-40 md:mx-auto md:w-full md:overflow-visible 2xl:w-full`}>
               <button
-                className="absolute xs:left-5 375:-left-5 md:-left-2 left-0 top-1/2 z-10 flex -translate-y-1/2 transform rounded-full bg-neutral-950 bg-opacity-50 p-2 text-white md:hover:bg-sky-400 md:hover:transition md:hover:duration-500 dark:md:hover:bg-sky-400 dark:md:hover:bg-opacity-50 xl:left-10 2xl:left-0"
+                className="absolute left-0 top-1/2 z-10 flex -translate-y-1/2 transform rounded-full bg-neutral-950 bg-opacity-50 p-2 text-white xs:left-5 375:-left-5 md:-left-2 md:hover:bg-sky-400 md:hover:transition md:hover:duration-500 dark:md:hover:bg-sky-400 dark:md:hover:bg-opacity-50 xl:left-10 2xl:left-0"
                 onClick={handlePrevSlide}>
                 <span className="material-symbols-outlined">chevron_left</span>
               </button>
@@ -128,7 +128,7 @@ export const About = () => {
                 </p>
               </figure>
               <button
-                className="absolute xs:right-5 375:-right-5 md:-right-2 right-0 top-1/2 flex -translate-y-1/2 transform rounded-full bg-neutral-950 bg-opacity-50 p-2 text-white md:hover:bg-sky-400 md:hover:transition md:hover:duration-500 dark:md:hover:bg-sky-400 dark:md:hover:bg-opacity-50 xl:right-10 2xl:right-0"
+                className="absolute right-0 top-1/2 flex -translate-y-1/2 transform rounded-full bg-neutral-950 bg-opacity-50 p-2 text-white xs:right-5 375:-right-5 md:-right-2 md:hover:bg-sky-400 md:hover:transition md:hover:duration-500 dark:md:hover:bg-sky-400 dark:md:hover:bg-opacity-50 xl:right-10 2xl:right-0"
                 onClick={handleNextSlide}>
                 <span className="material-symbols-outlined">chevron_right</span>
               </button>
@@ -148,7 +148,7 @@ export const About = () => {
                 <p className="font-victorMono text-sm md:text-base 2xl:text-lg">
                   Email: {personalData.email}
                 </p>
-                <p className="font-victorMono text-sm md:text-base tracking-widest 2xl:text-lg">
+                <p className="font-victorMono text-sm tracking-widest md:text-base 2xl:text-lg">
                   Phone: {personalData.phone}
                 </p>
               </div>
