@@ -4,6 +4,7 @@ import fotoWhite from './../../assets/images/profile/foto_bgWhite.jpg';
 import { ReactComponent as Twitter } from '../../assets/icons/social/twitter.svg';
 import { ReactComponent as Github } from '../../assets/icons/social/github.svg';
 import { ReactComponent as Linkedin } from '../../assets/icons/social/linkedin.svg';
+import { SocialMediaIcon } from '../../ui/components/SocialMediaIcon';
 
 export const Home = ({ darkMode }) => {
   useEffect(() => {
@@ -49,30 +50,24 @@ export const Home = ({ darkMode }) => {
             FrontEnd Developer
           </h2>
           <div className="my-5 flex justify-center gap-6">
-            <div className="flex h-max animate-pulse items-center rounded-lg border-2 border-solid border-sky-400 dark:border-white">
-              <a href="https://twitter.com/LeonardoPu65507">
-                <Twitter
-                  className="w-10 cursor-pointer fill-sky-400 p-1 dark:fill-white 2xl:w-16 2xl:p-2"
-                  alt="red social Twitter"
-                />
-              </a>
-            </div>
-            <div className="flex animate-pulse items-center rounded-lg border-2 border-solid border-sky-400 dark:border-white">
-              <a href="https://github.com/Leonardo-Robot-PostRock?tab=repositories">
-                <Github
-                  className="w-10 cursor-pointer fill-sky-400 dark:fill-white 2xl:w-16"
-                  alt="repositorio Github"
-                />
-              </a>
-            </div>
-            <div className="flex animate-pulse items-center rounded-lg border-2 border-solid border-sky-400 dark:border-white">
-              <a href="https://www.linkedin.com/in/leonardo-puebla-1a2b71229/">
-                <Linkedin
-                  className="w-10 cursor-pointer fill-sky-400 dark:fill-white 2xl:w-16"
-                  alt="red social Linkedin"
-                />
-              </a>
-            </div>
+            <SocialMediaIcon
+              className="home"
+              link="https://twitter.com/LeonardoPu65507"
+              icon={Twitter}
+              alt="red social Twitter"
+            />
+            <SocialMediaIcon
+              className="home"
+              link="https://github.com/Leonardo-Robot-PostRock?tab=repositories"
+              icon={Github}
+              alt="repositorio Github"
+            />
+            <SocialMediaIcon
+              className="home"
+              link="https://www.linkedin.com/in/leonardo-puebla-1a2b71229/"
+              icon={Linkedin}
+              alt="red social Linkedin"
+            />
           </div>
         </div>
       </section>
