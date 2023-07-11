@@ -15,6 +15,8 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
+import { ArrowsOfSwiper } from '../../ui/components/ArrowsOfSwiper';
+
 export const Carousel = ({ proyects, darkMode }) => {
   const paginationClass = darkMode
     ? 'swiper-pagination-bullets-dark'
@@ -36,16 +38,8 @@ export const Carousel = ({ proyects, darkMode }) => {
       {proyects?.map((proyect) => {
         return (
           <SwiperSlide className="mb-10 flex justify-center" key={proyect.id}>
-            <div className="swiper-button image-swiper-button-next flex h-6 w-6 items-center justify-center rounded-full bg-cyan-400 transition-all duration-500 hover:opacity-50 md:h-10 md:w-10">
-              <span className="material-symbols-outlined text-base text-white md:text-xl xl:text-2xl">
-                arrow_forward_ios
-              </span>
-            </div>
-            <div className="swiper-button image-swiper-button-prev flex h-6 w-6 items-center justify-center rounded-full bg-cyan-400 transition-all duration-500 hover:opacity-50 md:h-10 md:w-10">
-              <span className="material-symbols-outlined text-base text-white md:text-xl xl:text-2xl">
-                arrow_back_ios_new
-              </span>
-            </div>
+            <ArrowsOfSwiper arrowMaterialSymbols={"arrow_forward_ios"} direction={"next"} />
+            <ArrowsOfSwiper arrowMaterialSymbols={"arrow_back_ios_new"} direction={"prev"}/>
             <img
               className="z-0 w-11/12 rounded-md bg-neutral-200 p-2 shadow-lg dark:bg-neutral-400 2xl:rounded-lg"
               src={proyect.image}
