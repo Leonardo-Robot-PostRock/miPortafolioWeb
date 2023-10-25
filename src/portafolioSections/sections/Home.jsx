@@ -7,13 +7,6 @@ import { ReactComponent as Linkedin } from '../../assets/icons/social/linkedin.s
 import { SocialMediaIcon } from '../../ui/components/SocialMediaIcon';
 
 export const Home = ({ darkMode }) => {
-  useEffect(() => {
-    const imageUrls = [foto, fotoWhite];
-    imageUrls.forEach((imageUrl) => {
-      const image = new Image();
-      image.src = imageUrl;
-    });
-  }, []);
 
   return (
     <main
