@@ -5,11 +5,11 @@ import { SocialMediaIcon } from '../../ui/components/SocialMediaIcon';
 
 export const Footer = () => {
   return (
-    <div className="grid grid-rows-2 h-full items-center place-items-center gap-1 bg-white dark:bg-neutral-950 shadow-md">
-      <h4 className='row-span-1'>Con mucho ❤ y esfuerzo por Leonardo</h4>
-      <div className='flex row-span-1 mb-2 gap-6'>
+    <div className="grid h-full grid-rows-2 place-items-center items-center gap-1 bg-white shadow-md dark:bg-neutral-950">
+      <h4 className="row-span-1">Con mucho ❤ y esfuerzo por Leonardo</h4>
+      <div className="row-span-1 mb-2 flex gap-6">
         <SocialMediaIcon
-          link="https://twitter.com/LeonardoPu65507"
+          link="https://twitter.com/LeoluxMrQwerty"
           icon={Twitter}
           alt="red social Twitter"
         />

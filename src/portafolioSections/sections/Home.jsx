@@ -44,7 +44,7 @@ export const Home = ({ darkMode }) => {
           <div className="my-5 flex justify-center gap-6">
             <SocialMediaIcon
               className="home"
-              link="https://twitter.com/LeonardoPu65507"
+              link="https://twitter.com/LeoluxMrQwerty"
               icon={Twitter}
               alt="red social Twitter"
             />
