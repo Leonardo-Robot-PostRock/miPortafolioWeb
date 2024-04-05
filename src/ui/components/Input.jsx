@@ -1,5 +1,3 @@
-import React from 'react';
-
 export const Input = ({ label, type, name }) => {
   return (
     <div className="flex flex-col">

@@ -1,4 +1,4 @@
-import React, { lazy } from 'react';
+import { lazy } from 'react';
 import { loadFull } from 'tsparticles';
 import iconImages from '../../utils/icons';
 const Particles = lazy(() => import('react-particles'));

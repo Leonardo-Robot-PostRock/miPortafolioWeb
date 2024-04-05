@@ -1,4 +1,3 @@
-import React, { useEffect } from 'react';
 import foto from './../../assets/images/profile/foto.png';
 import fotoWhite from './../../assets/images/profile/foto_bgWhite.jpg';
 import { ReactComponent as Twitter } from '../../assets/icons/social/twitter.svg';

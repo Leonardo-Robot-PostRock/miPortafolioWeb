@@ -1,4 +1,3 @@
-import React from 'react';
 import './../styles/ArrowsOfSwiper.css';
 
 export const ArrowsOfSwiper = ({ arrowMaterialSymbols, direction }) => {

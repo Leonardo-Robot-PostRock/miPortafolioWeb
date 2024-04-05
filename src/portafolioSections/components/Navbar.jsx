@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { HashLink } from 'react-router-hash-link';
 import { MenuHamburger } from '../../ui/components/MenuHamburger';
 import { ToggleDarkMode } from '../../ui/components/ToggleDarkMode';

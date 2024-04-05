@@ -1,5 +1,3 @@
-import React from 'react';
-
 export const SocialMediaIcon = ({ link, icon: Icon, alt, className }) => {
   return (
     <div className="flex h-max animate-pulse items-center rounded-lg border-2 border-solid border-sky-400 dark:border-white">

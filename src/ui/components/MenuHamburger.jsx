@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import Hamburger from 'hamburger-react';
 
 export const MenuHamburger = ({ isOpen, setIsOpen }) => {

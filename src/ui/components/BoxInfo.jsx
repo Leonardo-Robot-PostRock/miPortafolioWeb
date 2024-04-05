@@ -1,5 +1,3 @@
-import React from 'react';
-
 export const BoxInfo = ({ materialSymbols, info }) => {
   return (
     <div className="mb-4 md:mb-4 2xl:mb-12 flex h-16 2xl:h-24 w-full items-center rounded-sm 2xl:rounded-md bg-neutral-200 dark:bg-neutral-800 p-4">

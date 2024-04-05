@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 import eloquentJsImage from '../../assets/images/books/eloquentJs.jpg';
 import pythonAfondoImage from '../../assets/images/books/pythonAfondo.jpg';

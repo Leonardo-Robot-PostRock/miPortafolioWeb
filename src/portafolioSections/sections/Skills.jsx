@@ -1,5 +1,5 @@
 import { ParticlesComponent } from '../components/Particle';
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 export const Skills = ({ darkMode }) => {
   const [zIndex, setZIndex] = useState(true);

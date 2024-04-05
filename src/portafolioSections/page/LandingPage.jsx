@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { Home } from '../sections/Home';
 import { About } from '../sections/About';
@@ -19,7 +19,7 @@ export const LandingPage = ({ darkMode }) => {
         setScrollTop(false);
       }
     };
-    
+
     window.addEventListener('scroll', handleScroll);
 
     return () => {

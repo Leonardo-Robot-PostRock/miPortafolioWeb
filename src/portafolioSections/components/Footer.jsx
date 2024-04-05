@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { ReactComponent as Twitter } from './../../assets/icons/social/twitter.svg';
 import { ReactComponent as Github } from './../../assets/icons/social/github.svg';
 import { ReactComponent as Linkedin } from './../../assets/icons/social/linkedin.svg';

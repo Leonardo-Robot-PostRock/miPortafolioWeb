@@ -1,4 +1,4 @@
-import React, { lazy, useEffect, useRef } from 'react';
+import { lazy, useEffect, useRef } from 'react';
 
 import iphoneX from '../../assets/images/deviceShots/iphoneX.png';
 import ipadMini from '../../assets/images/deviceShots/ipadMini.png';

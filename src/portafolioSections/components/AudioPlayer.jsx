@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import  { useRef } from 'react';
 
 const AudioPlayer = ({ audioElem, isPlaying, setIsPlaying, currentSong, setCurrentSong, songs }) => {
   const clickRef = useRef();
