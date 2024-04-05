@@ -1,11 +1,11 @@
-import { lazy } from 'react';
+import { lazy, memo } from 'react';
 import { loadFull } from 'tsparticles';
 import iconImages from '../../utils/icons';
 const Particles = lazy(() => import('react-particles'));
 
 const LoadingFallback = () => <div className="font-Raleway text-2xl">Loading particles...</div>;
 
-export const ParticlesComponent = React.memo(({ count, darkMode, zIndex, id }) => {
+export const ParticlesComponent = memo(({ count, darkMode, zIndex, id }) => {
   let color = '#38bdf8';
 
   const shapeOptions = {
