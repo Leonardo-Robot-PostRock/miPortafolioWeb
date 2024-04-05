@@ -75,9 +75,9 @@ export const ParticlesComponent = memo(({ count, darkMode, zIndex, id }) => {
       number: {
         density: {
           enable: true,
-          area: count === 3 ? 800 : 1100
+          area: count === 3 ? 900 : 1100
         },
-        value: count === 2 ? 20 : 35
+        value: count === 2 ? 15 : 20
       },
       shape: shapeOptions,
       size: {
