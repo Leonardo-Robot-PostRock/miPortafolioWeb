@@ -39,7 +39,7 @@ export const Home = ({ darkMode }) => {
             Leonardo
           </p>
           <h2 className="xl:text-1xl mt-3 px-1 text-center font-victorMonoBold text-2xl tracking-wider text-neutral-950 dark:text-white sm:text-3xl md:text-3xl lg:text-2xl xl:mt-5 2xl:my-10 2xl:text-5xl">
-            FrontEnd Developer
+            Full-stack Developer
           </h2>
           <div className="my-5 flex justify-center gap-6">
             <SocialMediaIcon
