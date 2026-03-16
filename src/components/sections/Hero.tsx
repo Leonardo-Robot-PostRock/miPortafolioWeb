@@ -22,7 +22,7 @@ export function Hero({ data }: HeroProps) {
             <motion.img
               src={data.avatar.src}
               alt={data.name}
-              className="w-32 h-32 rounded-full mx-auto mb-8 object-cover border-4 border-[var(--color-border)]"
+              className="w-32 h-32 rounded-full mx-auto mb-8 object-cover border-4 border-[var(--color-primary)] shadow-[0_10px_28px_var(--color-glow)]"
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.4 }}

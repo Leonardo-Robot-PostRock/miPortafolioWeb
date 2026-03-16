@@ -15,6 +15,16 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
     alt: string;
     caption?: string;
   } | null>(null);
+  const heroFrameClassName =
+    'relative rounded-2xl overflow-hidden border border-[var(--color-border)] bg-[var(--color-surface)] ring-1 ring-[var(--color-border)] shadow-[0_0_28px_var(--color-glow)]';
+  const galleryFrameClassName =
+    'relative rounded-xl overflow-hidden border border-[var(--color-border)] bg-[var(--color-surface)] ring-1 ring-[var(--color-border)] shadow-[0_0_18px_var(--color-glow)]';
+  const heroGlowStyle = {
+    background: 'radial-gradient(120% 70% at 50% 0%, var(--color-glow) 0%, transparent 65%)',
+  } as const;
+  const galleryGlowStyle = {
+    background: 'radial-gradient(90% 60% at 50% 0%, var(--color-glow) 0%, transparent 70%)',
+  } as const;
 
   useEffect(() => {
     const handleEscape = (event: KeyboardEvent) => {
@@ -127,8 +137,8 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
           transition={{ delay: 0.2, duration: 0.6 }}
           className="max-w-6xl mx-auto px-6 md:px-8 mb-20"
         >
-          <div className="relative rounded-2xl overflow-hidden border border-[var(--color-border)] bg-[var(--color-surface)] shadow-none dark:border-[#64CCC5]/35 dark:bg-[linear-gradient(180deg,rgba(100,204,197,0.10)_0%,rgba(10,10,10,0.96)_100%)] dark:ring-1 dark:ring-[#64CCC5]/20 dark:shadow-[0_0_28px_rgba(100,204,197,0.20),0_0_56px_rgba(100,204,197,0.08)]">
-            <div className="pointer-events-none absolute inset-0 opacity-0 dark:opacity-100 dark:bg-[radial-gradient(120%_70%_at_50%_0%,rgba(137,207,240,0.24)_0%,rgba(10,10,10,0)_65%)]" />
+            <div className={heroFrameClassName}>
+              <div className="pointer-events-none absolute inset-0 opacity-70" style={heroGlowStyle} />
             <img src={project.image.src} alt={project.title} className="relative w-full h-auto" />
           </div>
         </motion.div>
@@ -170,7 +180,7 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {project.gallery.map((img, idx) => (
-                <div key={idx} className="relative rounded-xl overflow-hidden border border-[var(--color-border)] bg-[var(--color-surface)] shadow-none dark:border-[#64CCC5]/30 dark:bg-[linear-gradient(180deg,rgba(100,204,197,0.08)_0%,rgba(10,10,10,0.96)_100%)] dark:ring-1 dark:ring-[#64CCC5]/15 dark:shadow-[0_0_18px_rgba(100,204,197,0.14)]">
+                <div key={idx} className={galleryFrameClassName}>
                   <button
                     type="button"
                     className="block w-full text-left cursor-pointer"
@@ -183,7 +193,7 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
                       })
                     }
                   >
-                    <div className="pointer-events-none absolute inset-0 opacity-0 dark:opacity-100 dark:bg-[radial-gradient(90%_60%_at_50%_0%,rgba(137,207,240,0.20)_0%,rgba(10,10,10,0)_70%)]" />
+                    <div className="pointer-events-none absolute inset-0 opacity-65" style={galleryGlowStyle} />
                     <img src={img.image.src} alt={img.caption ? tr(img.caption, locale) : `Screenshot ${idx + 1}`} className="relative w-full transition-transform duration-300 ease-out hover:scale-[1.02]" loading="lazy" />
                   </button>
                   {img.caption && (
@@ -265,20 +275,20 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
           aria-label="Expanded screenshot"
         >
           <div
-            className="relative max-w-6xl w-full rounded-2xl overflow-hidden border border-white/20 dark:border-[#64CCC5]/40 bg-black"
+            className="relative max-w-6xl w-full rounded-2xl overflow-hidden border border-[var(--color-border)] bg-[var(--color-surface)] shadow-[0_0_28px_var(--color-glow)]"
             onClick={(event) => event.stopPropagation()}
           >
             <button
               type="button"
               onClick={() => setSelectedImage(null)}
-              className="absolute top-3 right-3 z-10 h-10 w-10 rounded-full bg-black/55 text-white hover:bg-black/75 transition-colors cursor-pointer"
+              className="absolute top-3 right-3 z-10 flex h-10 w-10 items-center justify-center rounded-full border border-[var(--color-border)] bg-[var(--color-surface)] text-[var(--color-text)] hover:bg-[var(--color-hover)] transition-colors cursor-pointer"
               aria-label="Close image"
             >
               x
             </button>
             <img src={selectedImage.src} alt={selectedImage.alt} className="w-full max-h-[82vh] object-contain" />
             {selectedImage.caption && (
-              <p className="type-caption text-sm text-white/85 text-center px-6 py-4 bg-black/45">
+              <p className="type-caption text-sm text-[var(--color-text-secondary)] text-center px-6 py-4 bg-[var(--color-surface)] border-t border-[var(--color-border)]">
                 {selectedImage.caption}
               </p>
             )}

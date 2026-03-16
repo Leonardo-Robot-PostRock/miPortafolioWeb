@@ -49,6 +49,7 @@
   --color-surface: #F8FAFB;
   --color-text: #1A1A1A;
   --color-text-secondary: #6B7280;
+  --color-glow: rgba(10, 126, 164, 0.32);
   --color-hover: rgba(10, 126, 164, 0.08);
   --color-pressed: rgba(10, 126, 164, 0.12);
   --color-disabled: rgba(26, 26, 26, 0.3);
@@ -101,6 +102,7 @@
   --color-surface: #1A1A1A;
   --color-text: #F9FAFB;
   --color-text-secondary: #9CA3AF;
+  --color-glow: rgba(100, 204, 197, 0.38);
   --color-hover: rgba(100, 204, 197, 0.08);
   --color-pressed: rgba(100, 204, 197, 0.12);
   --color-separator: rgba(255, 255, 255, 0.1);
@@ -135,21 +137,31 @@ body {
    Scrollbar
    =========================== */
 
-html::-webkit-scrollbar {
+html,
+.scrollbar-global {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-text-secondary) var(--color-background);
+}
+
+html::-webkit-scrollbar,
+.scrollbar-global::-webkit-scrollbar {
   width: 8px;
 }
 
-html::-webkit-scrollbar-track {
+html::-webkit-scrollbar-track,
+.scrollbar-global::-webkit-scrollbar-track {
   background-color: var(--color-background);
 }
 
-html::-webkit-scrollbar-thumb {
+html::-webkit-scrollbar-thumb,
+.scrollbar-global::-webkit-scrollbar-thumb {
   background-color: var(--color-text-secondary);
   border-radius: var(--radius-full);
   border: 2px solid var(--color-background);
 }
 
-html::-webkit-scrollbar-thumb:hover {
+html::-webkit-scrollbar-thumb:hover,
+.scrollbar-global::-webkit-scrollbar-thumb:hover {
   background-color: var(--color-primary);
 }
 
