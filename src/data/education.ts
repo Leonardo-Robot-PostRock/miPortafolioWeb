@@ -1,3 +1,4 @@
+import { date } from 'astro:schema';
 import type { Education } from './types';
 
 export const educationData: Education[] = [
@@ -15,10 +16,10 @@ export const educationData: Education[] = [
   },
   {
     id: '2',
-    institution: 'Platzi & Udemy',
+    institution: 'Platzi, Udemy & DevTalles',
     title: { es: 'Formación Continua en Múltiples Tecnologías', en: 'Continuous Training in Multiple Technologies' },
     startDate: '2021',
-    endDate: '2023',
+    endDate: new Date().getFullYear().toString(),
     description: {
       es: 'Capacitación intensiva en desarrollo web, abarcando frontend, backend, bases de datos, herramientas de desarrollo y buenas prácticas.',
       en: 'Intensive web development training covering frontend, backend, databases, development tools and best practices.',

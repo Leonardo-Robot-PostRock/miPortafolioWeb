@@ -51,7 +51,12 @@ function updateMetaTagsForLocale(locale: Locale) {
 }
 
 export function useLanguage() {
-  const [locale, setLocale] = useState<Locale>(getLanguage);
+  // Keep first client render aligned with SSR to avoid hydration mismatches.
+  const [locale, setLocale] = useState<Locale>(defaultLocale);
+
+  useEffect(() => {
+    setLocale(getLanguage());
+  }, []);
 
   useEffect(() => {
     const handler = (e: Event) => {
