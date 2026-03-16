@@ -1,0 +1,30 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { Header } from '@/components/layout/Header';
+import { Hero } from '@/components/sections/Hero';
+import { Projects } from '@/components/sections/Projects';
+import { Experience } from '@/components/sections/Experience';
+import { Skills } from '@/components/sections/Skills';
+import { Footer } from '@/components/layout/Footer';
+import { ThemeSwitcher } from '@/components/ui/ThemeSwitcher';
+import { portfolioData } from '@/data/portfolio';
+---
+
+<BaseLayout>
+  <Header client:load />
+
+  <main>
+    <Hero data={portfolioData.personal} client:load />
+    <Projects projects={portfolioData.projects} featured={true} client:load />
+    <Experience
+      experiences={portfolioData.experience}
+      education={portfolioData.education}
+      expertise={portfolioData.expertise}
+      client:load
+    />
+    <Skills skills={portfolioData.skills} client:load />
+  </main>
+
+  <Footer socialLinks={portfolioData.personal.socialLinks} client:load />
+  <ThemeSwitcher client:load />
+</BaseLayout>

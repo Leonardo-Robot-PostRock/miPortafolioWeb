@@ -1,0 +1,126 @@
+---
+import '@/styles/global.css';
+
+interface Props {
+  title?: string;
+  titleEn?: string;
+  description?: string;
+  descriptionEn?: string;
+  image?: string;
+}
+
+const {
+  title = 'Leonardo Puebla — Desarrollador Frontend & Full-Stack',
+  titleEn = 'Leonardo Puebla — Frontend & Full-Stack Developer',
+  description = 'Portfolio profesional de Leonardo Puebla. Desarrollo de experiencias web modernas con React, Angular, Svelte, Node.js y Python.',
+  descriptionEn = 'Professional portfolio of Leonardo Puebla. Building modern web experiences with React, Angular, Svelte, Node.js and Python.',
+  image = '/og-image.png'
+} = Astro.props;
+
+const siteUrl = Astro.site || Astro.url.origin;
+const canonicalURL = new URL(Astro.url.pathname, siteUrl);
+const ogImageURL = new URL(image, siteUrl);
+---
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Hreflang: alternate languages -->
+    <link rel="alternate" hreflang="es" href={canonicalURL} />
+    <link rel="alternate" hreflang="en" href={canonicalURL} />
+    <link rel="alternate" hreflang="x-default" href={canonicalURL} />
+
+    <!-- Primary Meta Tags (ES - default) -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+
+    <!-- Open Graph (ES - default) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:image:alt" content={title} />
+    <meta property="og:locale" content="es_AR" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta property="og:site_name" content="Leonardo Puebla — Portfolio" />
+
+    <!-- X -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={ogImageURL} />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" href="/portfolio.svg" />
+
+    <!-- JSON-LD Structured Data (multilingual) -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Leonardo Puebla — Portfolio",
+      "url": canonicalURL.origin,
+      "author": {
+        "@type": "Person",
+        "name": "Leonardo Puebla",
+        "jobTitle": "Frontend Developer · Full Stack",
+        "url": canonicalURL.origin,
+        "sameAs": [
+          "https://github.com/Leonardo-Robot-PostRock",
+          "https://www.linkedin.com/in/leonardocode/",
+          "https://x.com/LeoluxMrQwerty"
+        ]
+      },
+      "inLanguage": ["es", "en"],
+      "description": description
+    })} />
+
+    <!-- Theme & Language init (prevent flash) -->
+    <script is:inline>
+      (function() {
+        const mode = localStorage.getItem('color-mode') ||
+          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', mode);
+        var lang = localStorage.getItem('preferred-language') || 'es';
+        document.documentElement.setAttribute('lang', lang);
+
+        // Update meta tags based on selected language
+        if (lang === 'en') {
+          var titleEn = document.querySelector('meta[data-i18n-title-en]');
+          var descEn = document.querySelector('meta[data-i18n-desc-en]');
+          if (titleEn) {
+            var enTitle = titleEn.getAttribute('data-i18n-title-en');
+            document.title = enTitle;
+            document.querySelectorAll('meta[property="og:title"], meta[property="twitter:title"], meta[name="title"]')
+              .forEach(function(el) { el.setAttribute('content', enTitle); });
+          }
+          if (descEn) {
+            var enDesc = descEn.getAttribute('data-i18n-desc-en');
+            document.querySelectorAll('meta[property="og:description"], meta[property="twitter:description"], meta[name="description"]')
+              .forEach(function(el) { el.setAttribute('content', enDesc); });
+          }
+        }
+      })();
+    </script>
+
+    <!-- i18n data attributes for client-side switching -->
+    <meta data-i18n-title-en={titleEn} data-i18n-desc-en={descriptionEn} />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

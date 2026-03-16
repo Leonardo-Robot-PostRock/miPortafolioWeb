@@ -1,0 +1,33 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { Header } from '@/components/layout/Header';
+import { ProjectDetail } from '@/components/sections/ProjectDetail';
+import { Footer } from '@/components/layout/Footer';
+import { ThemeSwitcher } from '@/components/ui/ThemeSwitcher';
+import { portfolioData } from '@/data/portfolio';
+
+export async function getStaticPaths() {
+  return portfolioData.projects.map((project) => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+---
+
+<BaseLayout
+  title={`${project.title} — Leonardo Puebla`}
+  description={project.shortDescription.es}
+  descriptionEn={project.shortDescription.en}
+  image={typeof project.image === 'string' ? project.image : project.image?.src}
+>
+  <Header client:load />
+
+  <main>
+    <ProjectDetail project={project} client:load />
+  </main>
+
+  <Footer socialLinks={portfolioData.personal.socialLinks} client:load />
+  <ThemeSwitcher client:load />
+</BaseLayout>
