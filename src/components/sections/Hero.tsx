@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Button } from '@/components/core/Button';
+import { SmartImage } from '@/components/core/SmartImage';
 import { SocialLinks } from '@/components/ui/SocialLinks';
 import type { PersonalInfo } from '@/data/portfolio';
 import { useTranslations, tr } from '@/i18n';
@@ -19,14 +20,20 @@ export function Hero({ data }: HeroProps) {
           transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
         >
           {data.avatar && (
-            <motion.img
-              src={data.avatar.src}
-              alt={data.name}
-              className="w-32 h-32 rounded-full mx-auto mb-8 object-cover border-4 border-[var(--color-primary)] shadow-[0_10px_28px_var(--color-glow)]"
+            <motion.div
+              className="w-32 h-32 mx-auto mb-8"
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.4 }}
-            />
+            >
+              <SmartImage
+                image={data.avatar}
+                alt={data.name}
+                className="w-32 h-32 rounded-full object-cover border-4 border-[var(--color-primary)] shadow-[0_10px_28px_var(--color-glow)]"
+                loading="eager"
+                fetchPriority="high"
+              />
+            </motion.div>
           )}
 
           {/* Name — Display Serif */}

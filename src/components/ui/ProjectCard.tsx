@@ -1,5 +1,6 @@
 import { Card } from '@/components/core/Card';
 import { motion } from 'framer-motion';
+import { SmartImage } from '@/components/core/SmartImage';
 import type { Project } from '@/data/portfolio';
 import { useTranslations, tr } from '@/i18n';
 
@@ -14,14 +15,18 @@ export function ProjectCard({ project }: ProjectCardProps) {
       <Card className="h-full flex flex-col">
         {project.image && (
           <div className="aspect-video overflow-hidden bg-[var(--color-surface)]">
-            <motion.img
-              src={project.image.src}
-              alt={project.title}
-              className="w-full h-full object-cover"
+            <motion.div
+              className="w-full h-full"
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
-              loading="lazy"
-            />
+            >
+              <SmartImage
+                image={project.image}
+                alt={project.title}
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </motion.div>
           </div>
         )}
 

@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { Section } from '@/components/core/Section';
+import { SmartImage } from '@/components/core/SmartImage';
 import { ProjectCard } from '@/components/ui/ProjectCard';
 import type { Project } from '@/data/portfolio';
 import { staggerContainer, fadeInUp } from '@/utils/motion-config';
@@ -63,7 +64,7 @@ function MobileProjectsCarousel({ projects, locale, viewProjectLabel }: MobileCa
           >
             {project.image && (
               <div className="aspect-video overflow-hidden">
-                <img src={project.image.src} alt={project.title} className="w-full h-full object-cover" loading="lazy" />
+                <SmartImage image={project.image} alt={project.title} className="w-full h-full object-cover" loading="lazy" />
               </div>
             )}
             <div className="p-4">

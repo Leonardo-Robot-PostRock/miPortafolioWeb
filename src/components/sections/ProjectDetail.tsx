@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { Button } from '@/components/core/Button';
+import { SmartImage } from '@/components/core/SmartImage';
 import type { Project } from '@/data/portfolio';
 import { useTranslations, tr } from '@/i18n';
 
@@ -11,7 +12,7 @@ interface ProjectDetailProps {
 export function ProjectDetail({ project }: ProjectDetailProps) {
   const { t, locale } = useTranslations();
   const [selectedImage, setSelectedImage] = useState<{
-    src: string;
+    image: ImageMetadata;
     alt: string;
     caption?: string;
   } | null>(null);
@@ -139,7 +140,13 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
         >
             <div className={heroFrameClassName}>
               <div className="pointer-events-none absolute inset-0 opacity-70" style={heroGlowStyle} />
-            <img src={project.image.src} alt={project.title} className="relative w-full h-auto" />
+              <SmartImage
+                image={project.image}
+                alt={project.title}
+                className="relative w-full h-auto"
+                loading="eager"
+                fetchPriority="high"
+              />
           </div>
         </motion.div>
       )}
@@ -187,14 +194,19 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
                     aria-label={img.caption ? tr(img.caption, locale) : `Screenshot ${idx + 1}`}
                     onClick={() =>
                       setSelectedImage({
-                        src: img.image.src,
+                        image: img.image,
                         alt: img.caption ? tr(img.caption, locale) : `Screenshot ${idx + 1}`,
                         caption: img.caption ? tr(img.caption, locale) : undefined,
                       })
                     }
                   >
                     <div className="pointer-events-none absolute inset-0 opacity-65" style={galleryGlowStyle} />
-                    <img src={img.image.src} alt={img.caption ? tr(img.caption, locale) : `Screenshot ${idx + 1}`} className="relative w-full transition-transform duration-300 ease-out hover:scale-[1.02]" loading="lazy" />
+                    <SmartImage
+                      image={img.image}
+                      alt={img.caption ? tr(img.caption, locale) : `Screenshot ${idx + 1}`}
+                      className="relative w-full transition-transform duration-300 ease-out hover:scale-[1.02]"
+                      loading="lazy"
+                    />
                   </button>
                   {img.caption && (
                     <p className="type-caption text-sm text-[var(--color-text-secondary)] mt-2 text-center">
@@ -286,7 +298,7 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
             >
               x
             </button>
-            <img src={selectedImage.src} alt={selectedImage.alt} className="w-full max-h-[82vh] object-contain" />
+            <SmartImage image={selectedImage.image} alt={selectedImage.alt} className="w-full max-h-[82vh] object-contain" loading="eager" />
             {selectedImage.caption && (
               <p className="type-caption text-sm text-[var(--color-text-secondary)] text-center px-6 py-4 bg-[var(--color-surface)] border-t border-[var(--color-border)]">
                 {selectedImage.caption}
