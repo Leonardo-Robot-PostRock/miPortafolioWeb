@@ -11,7 +11,7 @@ interface HeroProps {
 export function Hero({ data }: HeroProps) {
   const { t, locale } = useTranslations();
   return (
-    <section id="about" className="min-h-screen flex items-center justify-center px-6 md:px-8 py-20">
+    <section id="about" className="scroll-mt-24 md:scroll-mt-28 min-h-screen flex items-center justify-center px-6 md:px-8 py-20">
       <div className="max-w-4xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

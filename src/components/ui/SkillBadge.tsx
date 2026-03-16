@@ -10,7 +10,7 @@ export function SkillBadge({ skill }: SkillBadgeProps) {
 
   return (
     <motion.div
-      className="group relative flex flex-col items-center justify-center gap-3 p-5 rounded-2xl
+      className="group relative w-full aspect-square md:w-[112px] md:h-[112px] md:aspect-auto shrink-0 flex flex-col items-center justify-center gap-3 p-3 md:p-4 rounded-2xl
         bg-[var(--color-surface)]/50 backdrop-blur-md
         border border-[var(--color-border)]
         cursor-default select-none"

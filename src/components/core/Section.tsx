@@ -14,7 +14,7 @@ export function Section({ id, title, subtitle, children, className }: SectionPro
   return (
     <section
       id={id}
-      className={cn('py-20 md:py-32 px-6 md:px-8', className)}
+      className={cn('scroll-mt-24 md:scroll-mt-28 py-20 md:py-32 px-6 md:px-8', className)}
     >
       <div className="max-w-[var(--content-max)] mx-auto">
         {(title || subtitle) && (

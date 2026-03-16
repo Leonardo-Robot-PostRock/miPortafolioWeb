@@ -1,12 +1,18 @@
 import { motion } from 'framer-motion';
+import { useRef, useState } from 'react';
 import { Section } from '@/components/core/Section';
 import { SkillBadge } from '@/components/ui/SkillBadge';
 import type { SkillCategory } from '@/data/portfolio';
 import { fadeInUp } from '@/utils/motion-config';
-import { useTranslations, tr } from '@/i18n';
+import { useTranslations, tr, type Locale } from '@/i18n';
 
 interface SkillsProps {
   skills: SkillCategory[];
+}
+
+interface MobileSkillsCarouselProps {
+  skills: SkillCategory[];
+  locale: Locale;
 }
 
 const gridStagger = {
@@ -26,6 +32,60 @@ const tileVariant = {
   },
 };
 
+function MobileSkillsCarousel({ skills, locale }: MobileSkillsCarouselProps) {
+  const trackRef = useRef<HTMLDivElement | null>(null);
+  const [progress, setProgress] = useState(0);
+
+  const onTrackScroll = () => {
+    const track = trackRef.current;
+    if (!track) return;
+
+    const maxScroll = track.scrollWidth - track.clientWidth;
+    if (maxScroll <= 0) {
+      setProgress(0);
+      return;
+    }
+
+    const nextProgress = (track.scrollLeft / maxScroll) * 100;
+    setProgress(Math.max(0, Math.min(100, nextProgress)));
+  };
+
+  return (
+    <div className="md:hidden">
+      <div
+        ref={trackRef}
+        onScroll={onTrackScroll}
+        className="flex gap-3 overflow-x-auto snap-x snap-mandatory pb-3 pr-10 scrollbar-global"
+      >
+        {skills.map((category) => (
+          <div
+            key={tr(category.name, locale)}
+            className="snap-start shrink-0 w-[min(92vw,420px)] rounded-xl border border-[var(--color-separator)] bg-[var(--color-card-bg)] p-4"
+          >
+            <p className="type-caption text-[10px] font-semibold uppercase tracking-[0.15em] text-[var(--color-text-secondary)] mb-3">
+              {tr(category.name, locale)}
+            </p>
+            <div className="grid grid-cols-3 gap-2">
+              {category.items.map((skill) => (
+                <SkillBadge key={skill} skill={skill} />
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {skills.length > 1 && (
+        <div className="mt-2 h-1 rounded-full bg-[var(--color-separator)] overflow-hidden">
+          <div
+            className="h-full bg-[var(--color-primary)] transition-[width] duration-150"
+            style={{ width: `${Math.max(14, progress)}%` }}
+          />
+        </div>
+      )}
+    </div>
+  );
+}
+
 export function Skills({ skills }: SkillsProps) {
   const { t, locale } = useTranslations();
   return (
@@ -34,7 +94,9 @@ export function Skills({ skills }: SkillsProps) {
       title={t('skills.title')}
       subtitle={t('skills.subtitle')}
     >
-      <div className="space-y-16">
+      <MobileSkillsCarousel skills={skills} locale={locale} />
+
+      <div className="hidden md:block space-y-16">
         {skills.map((category) => (
           <motion.div
             key={tr(category.name, locale)}
@@ -46,12 +108,13 @@ export function Skills({ skills }: SkillsProps) {
             <p className="type-caption text-xs font-semibold uppercase tracking-[0.15em] text-[var(--color-text-secondary)] mb-6">
               {tr(category.name, locale)}
             </p>
+
             <motion.div
               variants={gridStagger}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-4"
+              className="hidden md:grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-4"
             >
               {category.items.map((skill) => (
                 <motion.div key={skill} variants={tileVariant}>
