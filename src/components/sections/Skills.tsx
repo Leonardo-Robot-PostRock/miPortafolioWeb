@@ -96,7 +96,7 @@ export function Skills({ skills }: SkillsProps) {
     >
       <MobileSkillsCarousel skills={skills} locale={locale} />
 
-      <div className="hidden md:block space-y-16">
+      <div className="hidden md:block space-y-16 lg:space-y-10">
         {skills.map((category) => (
           <motion.div
             key={tr(category.name, locale)}
@@ -105,7 +105,7 @@ export function Skills({ skills }: SkillsProps) {
             whileInView="visible"
             viewport={{ once: true, margin: '-40px' }}
           >
-            <p className="type-caption text-xs font-semibold uppercase tracking-[0.15em] text-[var(--color-text-secondary)] mb-6">
+            <p className="type-caption text-xs font-semibold uppercase tracking-[0.15em] text-[var(--color-text-secondary)] mb-6 lg:mb-4">
               {tr(category.name, locale)}
             </p>
 
@@ -114,7 +114,7 @@ export function Skills({ skills }: SkillsProps) {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="hidden md:grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-4"
+              className="hidden md:flex grid-cols-3 sm:grid-cols-4  gap-4"
             >
               {category.items.map((skill) => (
                 <motion.div key={skill} variants={tileVariant}>
