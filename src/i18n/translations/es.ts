@@ -3,7 +3,7 @@ export const es = {
   'nav.about': 'Sobre Mí',
   'nav.projects': 'Proyectos',
   'nav.experience': 'Experiencia',
-  'nav.skills': 'Skills',
+  'nav.skills': 'Habilidades',
   'nav.allProjects': 'Todos los proyectos',
   'nav.menu': 'Menú de navegación',
 
@@ -30,7 +30,7 @@ export const es = {
   'experience.impact': 'Impacto y Logros:',
 
   // Skills
-  'skills.title': 'Skills Técnicos',
+  'skills.title': 'Habilidades Técnicas',
   'skills.subtitle': 'Tecnologías y herramientas que domino para crear soluciones efectivas.',
 
   // ProjectDetail
