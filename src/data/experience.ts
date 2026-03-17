@@ -15,7 +15,7 @@ export const experienceData: Experience[] = [
     role: 'Full Stack Developer',
     startDate: { es: 'Nov 2024', en: 'Nov 2024' },
     endDate: { es: 'Dic 2025', en: 'Dec 2025' },
-    description: { es: 'Plataforma low-code legacy — Full-time, remoto.', en: 'Legacy low-code platform — Full-time, remote.' },
+    description: { es: 'Plataforma low-code legacy & muestras de laboratorio — Full-time, remoto.', en: 'Legacy low-code platform & lab samples — Full-time, remote.' },
   },
   {
     id: '3',
