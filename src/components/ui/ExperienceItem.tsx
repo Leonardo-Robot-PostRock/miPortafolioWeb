@@ -14,7 +14,7 @@ export function ExperienceItem({ experience }: ExperienceItemProps) {
       <div>
         <div className="mb-4">
           <h3 className="type-heading font-semibold text-2xl text-[var(--color-text)] mb-1">
-            {experience.role}
+            {tr(experience.role, locale)}
           </h3>
           <div className="flex flex-wrap items-center gap-3 type-caption text-base text-[var(--color-text-secondary)]">
             <span className="font-semibold text-[var(--color-primary)]">

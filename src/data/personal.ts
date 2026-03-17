@@ -6,7 +6,7 @@ import type { PersonalInfo } from './types';
 export const personalData: PersonalInfo = {
   name: 'Leonardo Puebla',
   role: {
-    es: 'Frontend Developer · Full Stack',
+    es: 'Desarrollador Frontend · Full Stack',
     en: 'Frontend Developer · Full Stack',
   },
   tagline: {

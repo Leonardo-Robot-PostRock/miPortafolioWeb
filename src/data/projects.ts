@@ -32,7 +32,10 @@ export const projectsData: Project[] = [
     featured: true,
     category: 'professional',
     year: '2022',
-    role: 'Frontend Developer',
+    role: {
+      es: 'Desarrollador Frontend',
+      en: 'Frontend Developer',
+    },
     client: 'LatinAd',
     challenge: {
       es: 'Desarrollar una plataforma publicitaria digital para espacios públicos durante el Mundial de Fútbol 2022. El sistema debía adaptarse a múltiples resoluciones de pantalla y proporcionar información actualizada sobre partidos en tiempo real.',
@@ -70,7 +73,10 @@ export const projectsData: Project[] = [
     featured: true,
     category: 'professional',
     year: '2024–2025',
-    role: 'Full Stack Developer',
+    role: {
+      es: 'Desarrollador Full Stack',
+      en: 'Full Stack Developer',
+    },
     client: 'Tremé',
     challenge: {
       es: 'Operar y mantener un ecosistema low-code legacy complejo con documentación mínima, compuesto por dos aplicaciones interconectadas: Tremé Studio (back office con formularios dinámicos, flujos con notificaciones por correo y conectores con motor de base de datos configurable) y Grip (cliente web que completaba esos formularios con datos reales). En el caso que me tocó analizar, el conector estaba configurado sobre PostgreSQL para bajar registros/listas y estructurar datos, con SQL Server como pasarela hacia Oracle del cliente. El mayor reto era garantizar la integridad de ese flujo sin intervenir directamente la base Oracle.',
@@ -112,7 +118,10 @@ export const projectsData: Project[] = [
     featured: true,
     category: 'professional',
     year: '2025',
-    role: 'Full Stack Developer',
+    role: {
+      es: 'Desarrollador Full Stack',
+      en: 'Full Stack Developer',
+    },
     client: 'Tremé',
     challenge: {
       es: 'Una aplicación de escritorio legacy gestionaba las muestras de laboratorio con una interfaz obsoleta y difícil de mantener. Era necesario construir una aplicación web independiente que replicara todas las funcionalidades existentes, manteniendo coherencia con el ecosistema tecnológico del proyecto, sin interrumpir los flujos de trabajo del equipo.',
@@ -141,7 +150,10 @@ export const projectsData: Project[] = [
     featured: false,
     category: 'professional',
     year: '2026',
-    role: 'Founder & Backend Developer',
+    role: {
+      es: 'Fundador y Desarrollador Backend',
+      en: 'Founder & Backend Developer',
+    },
     challenge: {
       es: 'Diseñar y construir desde cero un marketplace B2B2C escalable para pequeños negocios, con una arquitectura que permita crecer de forma sostenible.',
       en: 'Design and build from scratch a scalable B2B2C marketplace for small businesses, with an architecture that allows sustainable growth.',
@@ -172,7 +184,10 @@ export const projectsData: Project[] = [
     featured: false,
     category: 'professional',
     year: '2024',
-    role: 'Full Stack Developer (Pasantía)',
+    role: {
+      es: 'Desarrollador Full Stack (Pasantía)',
+      en: 'Full Stack Developer (Internship)',
+    },
     client: 'Westnet',
     challenge: {
       es: 'Optimizar una aplicación web con problemas de rendimiento y código complejo con componentes de más de 2000 líneas, sin documentación de base de datos.',
@@ -205,7 +220,10 @@ export const projectsData: Project[] = [
     featured: false,
     category: 'professional',
     year: '2024',
-    role: 'Frontend Developer (Freelance)',
+    role: {
+      es: 'Desarrollador Frontend (Freelance)',
+      en: 'Frontend Developer (Freelance)',
+    },
     challenge: {
       es: 'Actualizar completamente el frontend de una aplicación móvil existente, incluyendo navegación, formularios con cálculos dinámicos e integraciones con APIs.',
       en: 'Fully update the frontend of an existing mobile application, including navigation, forms with dynamic calculations and API integrations.',
@@ -238,7 +256,10 @@ export const projectsData: Project[] = [
     featured: true,
     category: 'educational',
     year: '2022',
-    role: 'Frontend Developer',
+    role: {
+      es: 'Desarrollador Frontend',
+      en: 'Frontend Developer',
+    },
     challenge: {
       es: 'Crear una aplicación que permita buscar y filtrar países del mundo de manera eficiente, consumiendo una API REST y presentando la información de forma clara.',
       en: 'Create an application to efficiently search and filter countries worldwide, consuming a REST API and presenting clear information.',
@@ -267,7 +288,10 @@ export const projectsData: Project[] = [
     featured: false,
     category: 'educational',
     year: '2021',
-    role: 'Frontend Developer',
+    role: {
+      es: 'Desarrollador Frontend',
+      en: 'Frontend Developer',
+    },
     challenge: {
       es: 'Desarrollar una aplicación para buscar GIFs de manera intuitiva, con una interfaz limpia y resultados instantáneos.',
       en: 'Develop an intuitive GIF search application with a clean interface and instant results.',
@@ -296,7 +320,10 @@ export const projectsData: Project[] = [
     featured: false,
     category: 'educational',
     year: '2022',
-    role: 'Frontend Developer',
+    role: {
+      es: 'Desarrollador Frontend',
+      en: 'Frontend Developer',
+    },
   },
   {
     id: '9',
@@ -311,7 +338,10 @@ export const projectsData: Project[] = [
     liveUrl: 'https://gifsweb.netlify.app/',
     category: 'educational',
     year: '2022',
-    role: 'Frontend Developer',
+    role: {
+      es: 'Desarrollador Frontend',
+      en: 'Frontend Developer',
+    },
   },
   {
     id: '10',
@@ -327,7 +357,10 @@ export const projectsData: Project[] = [
     liveUrl: 'https://leonardo-robot-postrock.github.io/react-shop/',
     category: 'educational',
     year: '2022',
-    role: 'Frontend Developer',
+    role: {
+      es: 'Desarrollador Frontend',
+      en: 'Frontend Developer',
+    },
   },
   {
     id: '11',
@@ -342,7 +375,10 @@ export const projectsData: Project[] = [
     liveUrl: 'https://leonardo-robot-postrock.github.io/TODO-MACHINE/',
     category: 'educational',
     year: '2021',
-    role: 'Frontend Developer',
+    role: {
+      es: 'Desarrollador Frontend',
+      en: 'Frontend Developer',
+    },
   },
   {
     id: '12',
@@ -358,6 +394,9 @@ export const projectsData: Project[] = [
     liveUrl: 'https://leonardo-robot-postrock.github.io/BataBit/',
     category: 'educational',
     year: '2021',
-    role: 'Frontend Developer',
+    role: {
+      es: 'Desarrollador Frontend',
+      en: 'Frontend Developer',
+    },
   },
 ];

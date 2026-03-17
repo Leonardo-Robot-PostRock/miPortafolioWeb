@@ -35,7 +35,7 @@ export interface Project {
   category: 'professional' | 'educational';
   client?: string;
   year?: string;
-  role?: string;
+  role?: Translatable;
   challenge?: Translatable;
   solution?: Translatable;
   gallery?: Array<{ image: ImageMetadata; caption?: Translatable }>;
@@ -46,7 +46,7 @@ export interface Project {
 export interface Experience {
   id: string;
   company: string;
-  role: string;
+  role: Translatable;
   startDate: Translatable;
   endDate: Translatable;
   description: Translatable;

@@ -98,7 +98,7 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
               <p className="type-caption font-medium text-xs text-[var(--color-text-secondary)] mb-1 uppercase tracking-wider">
                 {t('detail.role')}
               </p>
-              <p className="type-body text-base text-[var(--color-text)]">{project.role}</p>
+              <p className="type-body text-base text-[var(--color-text)]">{tr(project.role, locale)}</p>
             </div>
           )}
         </div>
