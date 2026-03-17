@@ -1,3 +1,3 @@
 # miPortafolioWeb
-Este mi portafolio web realizado con astro + react + tailwind
+Este es mi portafolio web realizado con astro + react + tailwind
 
