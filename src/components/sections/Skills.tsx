@@ -60,12 +60,13 @@ function MobileSkillsCarousel({ skills, locale }: MobileSkillsCarouselProps) {
         {skills.map((category) => (
           <div
             key={tr(category.name, locale)}
-            className="snap-start shrink-0 w-[min(92vw,420px)] rounded-xl border border-[var(--color-separator)] bg-[var(--color-card-bg)] p-4"
+            className="snap-start shrink-0 w-[min(92vw,420px)] rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] ring-1 ring-[var(--color-border)] shadow-[0_0_18px_var(--color-glow)] overflow-hidden relative p-4"
           >
-            <p className="type-caption text-[10px] font-semibold uppercase tracking-[0.15em] text-[var(--color-text-secondary)] mb-3">
+            <div className="pointer-events-none absolute inset-0 opacity-50" style={{ background: 'radial-gradient(90% 60% at 50% 0%, var(--color-glow) 0%, transparent 70%)' }} />
+            <p className="type-caption text-[10px] font-semibold uppercase tracking-[0.15em] text-[var(--color-text-secondary)] mb-3 relative">
               {tr(category.name, locale)}
             </p>
-            <div className="grid grid-cols-3 gap-2">
+            <div className="grid grid-cols-3 gap-2 relative">
               {category.items.map((skill) => (
                 <SkillBadge key={skill} skill={skill} />
               ))}
