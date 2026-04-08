@@ -15,13 +15,13 @@ export const personalData: PersonalInfo = {
   },
   avatar: avatarDark,
   location: 'Mendoza, Argentina',
-  email: 'leonardo38361@gmail.com',
+  email: 'contact@leonardopuebla.com',
   cvEs: cvES,
   cvEn: cvEN,
   socialLinks: [
     { platform: 'github', url: 'https://github.com/Leonardo-Robot-PostRock', label: 'GitHub' },
     { platform: 'linkedin', url: 'https://www.linkedin.com/in/leonardocode/', label: 'LinkedIn' },
     { platform: 'x', url: 'https://x.com/LeoluxMrQwerty', label: 'X' },
-    { platform: 'email', url: 'mailto:leonardo38361@gmail.com', label: 'Email' },
+    { platform: 'email', url: 'mailto:contact@leonardopuebla.com', label: 'Email' },
   ]
 };
