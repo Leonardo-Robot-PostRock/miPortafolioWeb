@@ -18,6 +18,7 @@ const { project } = Astro.props;
 
 <BaseLayout
   title={`${project.title} — Leonardo Puebla`}
+  titleEn={`${project.title} — Leonardo Puebla`}
   description={project.shortDescription.es}
   descriptionEn={project.shortDescription.en}
   image={typeof project.image === 'string' ? project.image : project.image?.src}

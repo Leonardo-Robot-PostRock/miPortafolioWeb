@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://leonardopuebla.com/sitemap-index.xml

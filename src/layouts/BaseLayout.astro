@@ -7,19 +7,63 @@ interface Props {
   description?: string;
   descriptionEn?: string;
   image?: string;
+  /** Set to false on pages that should not be indexed (e.g. drafts) */
+  noIndex?: boolean;
 }
 
 const {
   title = 'Leonardo Puebla — Desarrollador Frontend & Full-Stack',
   titleEn = 'Leonardo Puebla — Frontend & Full-Stack Developer',
-  description = 'Portfolio profesional de Leonardo Puebla. Desarrollo de experiencias web modernas con React, Angular, Svelte, Node.js y Python.',
-  descriptionEn = 'Professional portfolio of Leonardo Puebla. Building modern web experiences with React, Angular, Svelte, Node.js and Python.',
-  image = '/og-image.png'
+  description = 'Portfolio profesional de Leonardo Puebla, Desarrollador Frontend & Full-Stack con +3 años de experiencia en React, Angular, Svelte y Node.js. Basado en Mendoza, Argentina.',
+  descriptionEn = 'Professional portfolio of Leonardo Puebla, Frontend & Full-Stack Developer with 3+ years of experience in React, Angular, Svelte and Node.js. Based in Mendoza, Argentina.',
+  image = '/og-image.png',
+  noIndex = false,
 } = Astro.props;
 
-const siteUrl = Astro.site || Astro.url.origin;
+const siteUrl = 'https://leonardopuebla.com';
 const canonicalURL = new URL(Astro.url.pathname, siteUrl);
 const ogImageURL = new URL(image, siteUrl);
+
+// JSON-LD: dual graph — Person + WebSite
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": `${siteUrl}/#person`,
+      "name": "Leonardo Puebla",
+      "url": siteUrl,
+      "email": "leonardo38361@gmail.com",
+      "jobTitle": "Frontend Developer · Full Stack",
+      "description": "Desarrollador Frontend con perfil Full Stack y +3 años de experiencia construyendo y modernizando aplicaciones web y móviles. Basado en Luján de Cuyo, Mendoza, Argentina.",
+      "image": `${siteUrl}/og-image.png`,
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Luján de Cuyo",
+        "addressRegion": "Mendoza",
+        "addressCountry": "AR"
+      },
+      "sameAs": [
+        "https://github.com/Leonardo-Robot-PostRock",
+        "https://www.linkedin.com/in/leonardocode/",
+        "https://x.com/LeoluxMrQwerty"
+      ],
+      "knowsAbout": [
+        "React", "Angular", "Svelte", "SvelteKit", "TypeScript",
+        "Node.js", "Python", "PostgreSQL", "Docker", "Astro"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      "name": "Leonardo Puebla — Portfolio",
+      "url": siteUrl,
+      "author": { "@id": `${siteUrl}/#person` },
+      "inLanguage": ["es", "en"],
+      "description": description
+    }
+  ]
+};
 ---
 
 <!DOCTYPE html>
@@ -27,97 +71,100 @@ const ogImageURL = new URL(image, siteUrl);
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ─── Crawling & Indexing ──────────────────────────────────────── -->
+    {noIndex
+      ? <meta name="robots" content="noindex, nofollow" />
+      : <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    }
     <link rel="canonical" href={canonicalURL} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
 
     <!-- Hreflang: alternate languages -->
     <link rel="alternate" hreflang="es" href={canonicalURL} />
     <link rel="alternate" hreflang="en" href={canonicalURL} />
     <link rel="alternate" hreflang="x-default" href={canonicalURL} />
 
-    <!-- Primary Meta Tags (ES - default) -->
+    <!-- ─── Primary Meta Tags ────────────────────────────────────────── -->
     <title>{title}</title>
     <meta name="title" content={title} />
     <meta name="description" content={description} />
+    <meta name="author" content="Leonardo Puebla" />
+    <meta name="keywords" content="Leonardo Puebla, Frontend Developer, Full Stack Developer, React, Angular, Svelte, Node.js, TypeScript, developer portfolio Mendoza Argentina" />
 
-    <!-- Open Graph (ES - default) -->
+    <!-- ─── Open Graph ───────────────────────────────────────────────── -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImageURL} />
-    <meta property="og:image:alt" content={title} />
+    <meta property="og:image:alt" content={`${title} — og image`} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:locale" content="es_AR" />
     <meta property="og:locale:alternate" content="en_US" />
     <meta property="og:site_name" content="Leonardo Puebla — Portfolio" />
 
-    <!-- X -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content={canonicalURL} />
-    <meta property="twitter:title" content={title} />
-    <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={ogImageURL} />
+    <!-- ─── Twitter / X Card ─────────────────────────────────────────── -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@LeoluxMrQwerty" />
+    <meta name="twitter:creator" content="@LeoluxMrQwerty" />
+    <meta name="twitter:url" content={canonicalURL} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
+    <meta name="twitter:image:alt" content={`${title} — og image`} />
 
-    <!-- Fonts -->
+    <!-- ─── Performance: resource hints ─────────────────────────────── -->
+    <!-- Preconnect to Google Fonts to avoid render-blocking -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Preload the font stylesheet so it doesn't block first paint -->
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
 
-    <!-- Favicon -->
-    <link rel="icon" href="/portfolio.svg" />
+    <!-- ─── Favicon ───────────────────────────────────────────────────── -->
+    <link rel="icon" href="/portfolio.svg" type="image/svg+xml" />
 
-    <!-- JSON-LD Structured Data (multilingual) -->
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "Leonardo Puebla — Portfolio",
-      "url": canonicalURL.origin,
-      "author": {
-        "@type": "Person",
-        "name": "Leonardo Puebla",
-        "jobTitle": "Frontend Developer · Full Stack",
-        "url": canonicalURL.origin,
-        "sameAs": [
-          "https://github.com/Leonardo-Robot-PostRock",
-          "https://www.linkedin.com/in/leonardocode/",
-          "https://x.com/LeoluxMrQwerty"
-        ]
-      },
-      "inLanguage": ["es", "en"],
-      "description": description
-    })} />
+    <!-- ─── Structured Data (JSON-LD) ───────────────────────────────── -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 
-    <!-- Theme & Language init (prevent flash) -->
+    <!-- ─── Theme & Language init (prevent FOUC) ─────────────────────── -->
     <script is:inline>
       (function() {
-        const mode = localStorage.getItem('color-mode') ||
+        var mode = localStorage.getItem('color-mode') ||
           (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
         document.documentElement.setAttribute('data-theme', mode);
         var lang = localStorage.getItem('preferred-language') || 'es';
         document.documentElement.setAttribute('lang', lang);
 
-        // Update meta tags based on selected language
+        // Swap meta tags to the selected language on page load
         if (lang === 'en') {
-          var titleEn = document.querySelector('meta[data-i18n-title-en]');
-          var descEn = document.querySelector('meta[data-i18n-desc-en]');
-          if (titleEn) {
-            var enTitle = titleEn.getAttribute('data-i18n-title-en');
+          var titleEl = document.querySelector('meta[data-i18n-title-en]');
+          var descEl = document.querySelector('meta[data-i18n-desc-en]');
+          if (titleEl) {
+            var enTitle = titleEl.getAttribute('data-i18n-title-en');
             document.title = enTitle;
-            document.querySelectorAll('meta[property="og:title"], meta[property="twitter:title"], meta[name="title"]')
+            document.querySelectorAll('meta[property="og:title"], meta[name="twitter:title"], meta[name="title"]')
               .forEach(function(el) { el.setAttribute('content', enTitle); });
           }
-          if (descEn) {
-            var enDesc = descEn.getAttribute('data-i18n-desc-en');
-            document.querySelectorAll('meta[property="og:description"], meta[property="twitter:description"], meta[name="description"]')
+          if (descEl) {
+            var enDesc = descEl.getAttribute('data-i18n-desc-en');
+            document.querySelectorAll('meta[property="og:description"], meta[name="twitter:description"], meta[name="description"]')
               .forEach(function(el) { el.setAttribute('content', enDesc); });
           }
         }
       })();
     </script>
 
-    <!-- i18n data attributes for client-side switching -->
+    <!-- i18n data attributes for client-side language switching -->
     <meta data-i18n-title-en={titleEn} data-i18n-desc-en={descriptionEn} />
   </head>
   <body>
