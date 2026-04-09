@@ -5,9 +5,6 @@ import { Projects } from '@/components/sections/Projects';
 import { Footer } from '@/components/layout/Footer';
 import { ThemeSwitcher } from '@/components/ui/ThemeSwitcher';
 import { portfolioData } from '@/data/portfolio';
-import { optimizeProjectImages } from '@/utils/optimize-images';
-
-const projects = await optimizeProjectImages(portfolioData.projects);
 ---
 
 <BaseLayout
@@ -19,7 +16,7 @@ const projects = await optimizeProjectImages(portfolioData.projects);
   <Header client:load />
 
   <main class="pt-20">
-    <Projects projects={projects} client:load />
+    <Projects projects={portfolioData.projects} client:load />
   </main>
 
   <Footer socialLinks={portfolioData.personal.socialLinks} client:load />

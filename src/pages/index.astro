@@ -8,21 +8,14 @@ import { Skills } from '@/components/sections/Skills';
 import { Footer } from '@/components/layout/Footer';
 import { ThemeSwitcher } from '@/components/ui/ThemeSwitcher';
 import { portfolioData } from '@/data/portfolio';
-import { optimizePersonalImages, optimizeProjectImages } from '@/utils/optimize-images';
-
-// Optimizar imágenes a WebP en build time
-const [personal, projects] = await Promise.all([
-  optimizePersonalImages(portfolioData.personal),
-  optimizeProjectImages(portfolioData.projects),
-]);
 ---
 
 <BaseLayout>
   <Header client:load />
 
   <main>
-    <Hero data={personal} client:load />
-    <Projects projects={projects} featured={true} client:load />
+    <Hero data={portfolioData.personal} client:load />
+    <Projects projects={portfolioData.projects} featured={true} client:load />
     <Experience
       experiences={portfolioData.experience}
       education={portfolioData.education}
