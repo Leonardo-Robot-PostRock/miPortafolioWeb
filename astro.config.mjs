@@ -10,9 +10,35 @@ export default defineConfig({
     react(),
     tailwind({ applyBaseStyles: false }),
     sitemap({
-      changefreq: 'monthly',
-      priority: 0.7,
       lastmod: new Date(),
+      // Prioridades jerárquicas según importancia de cada página
+      serialize(item) {
+        const url = new URL(item.url);
+        const path = url.pathname;
+
+        // Homepage → máxima prioridad
+        if (path === '/') {
+          item.priority = 1.0;
+          item.changefreq = 'weekly';
+        }
+        // Página de listado de proyectos
+        else if (path === '/proyectos/' || path === '/proyectos') {
+          item.priority = 0.9;
+          item.changefreq = 'weekly';
+        }
+        // Páginas individuales de proyecto
+        else if (path.startsWith('/proyecto/')) {
+          item.priority = 0.6;
+          item.changefreq = 'monthly';
+        }
+        // Cualquier otra página
+        else {
+          item.priority = 0.5;
+          item.changefreq = 'monthly';
+        }
+
+        return item;
+      },
     }),
   ],
   vite: {

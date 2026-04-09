@@ -12,11 +12,11 @@ interface Props {
 }
 
 const {
-  title = 'Leonardo Puebla — Desarrollador Frontend & Full-Stack',
-  titleEn = 'Leonardo Puebla — Frontend & Full-Stack Developer',
-  description = 'Portfolio profesional de Leonardo Puebla, Desarrollador Frontend & Full-Stack con +3 años de experiencia en React, Angular, Svelte y Node.js. Basado en Mendoza, Argentina.',
-  descriptionEn = 'Professional portfolio of Leonardo Puebla, Frontend & Full-Stack Developer with 3+ years of experience in React, Angular, Svelte and Node.js. Based in Mendoza, Argentina.',
-  image = '/og-image.png',
+  title = 'Leonardo Puebla — Desarrollador React, Angular & Node.js | Mendoza',
+  titleEn = 'Leonardo Puebla — React, Angular & Node.js Developer | Mendoza',
+  description = 'Portfolio de Leonardo Puebla, Desarrollador Frontend & Full-Stack en Mendoza, Argentina. +3 años creando aplicaciones web con React, Angular, Svelte, Node.js, TypeScript y PostgreSQL.',
+  descriptionEn = 'Portfolio of Leonardo Puebla, Frontend & Full-Stack Developer based in Mendoza, Argentina. 3+ years building web apps with React, Angular, Svelte, Node.js, TypeScript and PostgreSQL.',
+  image = '/og-image.webp',
   noIndex = false,
 } = Astro.props;
 
@@ -24,45 +24,51 @@ const siteUrl = 'https://leonardopuebla.com';
 const canonicalURL = new URL(Astro.url.pathname, siteUrl);
 const ogImageURL = new URL(image, siteUrl);
 
-// JSON-LD: dual graph — Person + WebSite
-const jsonLd = {
+// ─── Nota hreflang ───────────────────────────────────────────────────
+// El i18n actual es client-side (localStorage), no hay rutas /en/ reales.
+// Cuando se implemente routing por idioma, agregar en el <head>:
+//   <link rel="alternate" hreflang="es" href={canonicalURL} />
+//   <link rel="alternate" hreflang="en" href={`${siteUrl}/en${Astro.url.pathname}`} />
+//   <link rel="alternate" hreflang="x-default" href={canonicalURL} />
+
+// JSON-LD: Person — datos estructurados de la persona
+const jsonLdPerson = {
   "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Person",
-      "@id": `${siteUrl}/#person`,
-      "name": "Leonardo Puebla",
-      "url": siteUrl,
-      "email": "contact@leonardopuebla.com",
-      "jobTitle": "Frontend Developer · Full Stack",
-      "description": "Desarrollador Frontend con perfil Full Stack y +3 años de experiencia construyendo y modernizando aplicaciones web y móviles. Basado en Luján de Cuyo, Mendoza, Argentina.",
-      "image": `${siteUrl}/og-image.png`,
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Luján de Cuyo",
-        "addressRegion": "Mendoza",
-        "addressCountry": "AR"
-      },
-      "sameAs": [
-        "https://github.com/Leonardo-Robot-PostRock",
-        "https://www.linkedin.com/in/leonardocode/",
-        "https://x.com/LeoluxMrQwerty"
-      ],
-      "knowsAbout": [
-        "React", "Angular", "Svelte", "SvelteKit", "TypeScript",
-        "Node.js", "Python", "PostgreSQL", "Docker", "Astro"
-      ]
-    },
-    {
-      "@type": "WebSite",
-      "@id": `${siteUrl}/#website`,
-      "name": "Leonardo Puebla — Portfolio",
-      "url": siteUrl,
-      "author": { "@id": `${siteUrl}/#person` },
-      "inLanguage": ["es", "en"],
-      "description": description
-    }
+  "@type": "Person",
+  "@id": `${siteUrl}/#person`,
+  "name": "Leonardo Puebla",
+  "url": siteUrl,
+  "email": "contact@leonardopuebla.com",
+  "jobTitle": "Frontend Developer · Full Stack",
+  "description": "Desarrollador Frontend con perfil Full Stack y +3 años de experiencia construyendo y modernizando aplicaciones web y móviles. Basado en Luján de Cuyo, Mendoza, Argentina.",
+  "image": `${siteUrl}/og-image.webp`,
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Luján de Cuyo",
+    "addressRegion": "Mendoza",
+    "addressCountry": "AR"
+  },
+  "sameAs": [
+    "https://github.com/Leonardo-Robot-PostRock",
+    "https://www.linkedin.com/in/leonardocode/",
+    "https://x.com/LeoluxMrQwerty"
+  ],
+  "knowsAbout": [
+    "React", "Angular", "Svelte", "SvelteKit", "TypeScript",
+    "Node.js", "Python", "PostgreSQL", "Docker", "Astro"
   ]
+};
+
+// JSON-LD: WebSite — datos estructurados del sitio
+const jsonLdWebSite = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${siteUrl}/#website`,
+  "name": "Leonardo Puebla — Portfolio",
+  "url": siteUrl,
+  "author": { "@id": `${siteUrl}/#person` },
+  "inLanguage": ["es", "en"],
+  "description": description
 };
 ---
 
@@ -79,11 +85,6 @@ const jsonLd = {
     }
     <link rel="canonical" href={canonicalURL} />
     <link rel="sitemap" href="/sitemap-index.xml" />
-
-    <!-- Hreflang: alternate languages -->
-    <link rel="alternate" hreflang="es" href={canonicalURL} />
-    <link rel="alternate" hreflang="en" href={canonicalURL} />
-    <link rel="alternate" hreflang="x-default" href={canonicalURL} />
 
     <!-- ─── Primary Meta Tags ────────────────────────────────────────── -->
     <title>{title}</title>
@@ -116,25 +117,39 @@ const jsonLd = {
     <meta name="twitter:image:alt" content={`${title} — og image`} />
 
     <!-- ─── Performance: resource hints ─────────────────────────────── -->
-    <!-- Preconnect to Google Fonts to avoid render-blocking -->
+    <!-- Preconnect a Google Fonts para evitar bloqueo de render -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- Preload the font stylesheet so it doesn't block first paint -->
+    <!-- Carga no bloqueante de fuentes con media="print" trick -->
     <link
-      rel="preload"
-      as="style"
-      href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      media="print"
+      onload="this.media='all'"
     />
+    <!-- Fallback sin JS -->
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
 
-    <!-- ─── Favicon ───────────────────────────────────────────────────── -->
+    <!-- ─── Favicons multi-formato ────────────────────────────────────── -->
+    <!-- ICO para navegadores legacy (IE, etc.) -->
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <!-- SVG para navegadores modernos (soporta dark mode via CSS) -->
     <link rel="icon" href="/portfolio.svg" type="image/svg+xml" />
+    <!-- Apple Touch Icon para iOS/Safari -->
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <!-- Android/PWA icons -->
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png" />
 
-    <!-- ─── Structured Data (JSON-LD) ───────────────────────────────── -->
-    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    <!-- ─── Structured Data: Person (JSON-LD) ──────────────────────── -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLdPerson)} />
+    <!-- ─── Structured Data: WebSite (JSON-LD) ─────────────────────── -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLdWebSite)} />
 
     <!-- ─── Theme & Language init (prevent FOUC) ─────────────────────── -->
     <script is:inline>
