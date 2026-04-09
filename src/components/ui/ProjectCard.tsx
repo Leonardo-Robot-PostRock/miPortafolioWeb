@@ -24,6 +24,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
                 image={project.image}
                 alt={project.title}
                 className="w-full h-full object-cover"
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 400px"
                 loading="lazy"
               />
             </motion.div>

@@ -5,6 +5,7 @@ import { ProjectDetail } from '@/components/sections/ProjectDetail';
 import { Footer } from '@/components/layout/Footer';
 import { ThemeSwitcher } from '@/components/ui/ThemeSwitcher';
 import { portfolioData } from '@/data/portfolio';
+import { optimizeProjectImages } from '@/utils/optimize-images';
 
 export async function getStaticPaths() {
   return portfolioData.projects.map((project) => ({
@@ -13,7 +14,9 @@ export async function getStaticPaths() {
   }));
 }
 
-const { project } = Astro.props;
+const { project: rawProject } = Astro.props;
+// Optimizar imágenes del proyecto a WebP en build time
+const [project] = await optimizeProjectImages([rawProject]);
 ---
 
 <BaseLayout
