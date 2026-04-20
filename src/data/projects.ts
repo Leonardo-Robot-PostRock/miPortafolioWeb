@@ -164,7 +164,7 @@ export const projectsData: Project[] = [
     },
     results: [
       { metric: 'DDD', description: { es: 'Arquitectura Domain-Driven Design desde el día uno', en: 'Domain-Driven Design architecture from day one' } },
-      { metric: '3 capas', description: { es: 'Separación completa: aplicación, dominio e infraestructura', en: 'Complete separation: application, domain and infrastructure' } },
+      { metric: '3 layers', description: { es: 'Separación completa: aplicación, dominio e infraestructura', en: 'Complete separation: application, domain and infrastructure' } },
     ],
     learnings: [
       { es: 'Domain-Driven Design aplicado en un proyecto real', en: 'Domain-Driven Design applied in a real project' },
@@ -173,7 +173,47 @@ export const projectsData: Project[] = [
     ]
   },
   {
-    id: '5',
+    id: '6',
+    slug: 'itjobs-portal',
+    title: 'ITJobs — Portal de Empleos IT',
+    shortDescription: {
+      es: 'Backend de portal de empleos IT con arquitectura hexagonal, Domain-Driven Design y automatización de gestión de proyectos con ClickUp MCP.',
+      en: 'IT jobs portal backend with hexagonal architecture, Domain-Driven Design and project management automation with ClickUp MCP.',
+    },
+    techStack: ['Spring Boot 3.5', 'Java 17', 'Hexagonal Architecture', 'DDD', 'JWT', 'MySQL', 'Flyway', 'ClickUp MCP', 'MapStruct', 'Lombok'],
+    featured: true,
+    category: 'professional',
+    year: '2026',
+    role: {
+      es: 'Fundador y Desarrollador Backend',
+      en: 'Founder & Backend Developer',
+    },
+    client: 'CoNeko',
+    challenge: {
+      es: 'Diseñar y construir desde cero un backend escalable para un portal de empleos IT, con arquitectura que permita evolución futura y automatización de gestión de proyectos.',
+      en: 'Design and build from scratch a scalable backend for an IT jobs portal, with architecture that allows future evolution and project management automation.',
+    },
+    solution: {
+      es: 'Diseñé la Architecture Hexagonal (Ports & Adapters) con múltiples bounded contexts desde cero, con diagramas PlantUML para visión global, diagramas de clase, secuencias y casos de uso. Implementé TDD con estilo BDD (JUnit 5 + Mockito,Testcontainers para MySQL). JWT con Google OAuth, búsqueda con Specification Pattern, migrations Flyway, y automatización ClickUp MCP.',
+      en: 'Designed Hexagonal Architecture (Ports & Adapters) with multiple bounded contexts from scratch, with PlantUML diagrams for overview, class diagrams, sequences and use cases. Implemented TDD with BDD style (JUnit 5 + Mockito, Testcontainers for MySQL). JWT with Google OAuth, search with Specification Pattern, Flyway migrations, and ClickUp MCP automation.',
+    },
+    results: [
+      { metric: 'DDD', description: { es: 'Arquitectura Hexagonal diseñada desde cero con bounded contexts', en: 'Hexagonal Architecture designed from scratch with bounded contexts' } },
+      { metric: '20+', description: { es: 'Diagramas PlantUML: visión global, clases, secuencias, casos de uso, estados', en: 'PlantUML diagrams: overview, classes, sequences, use cases, states' } },
+      { metric: 'TDD', description: { es: 'Testing con JUnit 5 + Mockito, estilo BDD, Testcontainers', en: 'Testing with JUnit 5 + Mockito, BDD style, Testcontainers' } },
+      { metric: '6+', description: { es: 'Endpoints REST: /api/v1/auth/*, /api/v1/jobs', en: 'REST endpoints: /api/v1/auth/*, /api/v1/jobs' } },
+      { metric: 'MCP', description: { es: 'Automatización de gestión con ClickUp MCP', en: 'Project management automation with ClickUp MCP' } },
+    ],
+    learnings: [
+      { es: 'Arquitectura Hexagonal (Ports & Adapters) con Domain-Driven Design', en: 'Hexagonal Architecture (Ports & Adapters) with Domain-Driven Design' },
+      { es: 'Implementación de JWT y Google OAuth en Spring Security', en: 'JWT and Google OAuth implementation in Spring Security' },
+      { es: 'Specification Pattern para filtros dinámicos en JPA', en: 'Specification Pattern for dynamic JPA filters' },
+      { es: 'Integración de herramientas externas via MCP (ClickUp)', en: 'External tool integration via MCP (ClickUp)' },
+      { es: 'Migrations con Flyway y gestión de versiones de base de datos', en: 'Flyway migrations and database version management' },
+    ]
+  },
+  {
+    id: '7',
     slug: 'westnet',
     title: 'Westnet — Optimización Frontend',
     shortDescription: {
@@ -209,7 +249,7 @@ export const projectsData: Project[] = [
     ]
   },
   {
-    id: '6',
+    id: '8',
     slug: 'taxi-barber-app',
     title: 'Taxi Barber App',
     shortDescription: {
@@ -243,7 +283,7 @@ export const projectsData: Project[] = [
   // Educational Projects
   // ===========================
   {
-    id: '6',
+    id: '9',
     slug: 'busqueda-paises',
     title: 'Búsqueda de Países',
     shortDescription: {
@@ -275,7 +315,7 @@ export const projectsData: Project[] = [
     ]
   },
   {
-    id: '7',
+    id: '10',
     slug: 'gif-expert-app',
     title: 'GIF Expert App',
     shortDescription: {
@@ -307,7 +347,7 @@ export const projectsData: Project[] = [
     ]
   },
   {
-    id: '8',
+    id: '11',
     slug: 'search-github-users',
     title: 'Search GitHub Users',
     shortDescription: {
@@ -326,7 +366,7 @@ export const projectsData: Project[] = [
     },
   },
   {
-    id: '9',
+    id: '12',
     slug: 'gif-web',
     title: 'GIF Web',
     shortDescription: {
@@ -344,7 +384,7 @@ export const projectsData: Project[] = [
     },
   },
   {
-    id: '10',
+    id: '13',
     slug: 'yard-sale',
     title: 'Yard Sale',
     featured: true,
@@ -363,7 +403,7 @@ export const projectsData: Project[] = [
     },
   },
   {
-    id: '11',
+    id: '14',
     slug: 'todo-machine',
     title: 'TODO Machine',
     shortDescription: {
@@ -381,7 +421,7 @@ export const projectsData: Project[] = [
     },
   },
   {
-    id: '12',
+    id: '15',
     slug: 'batabit',
     title: 'BataBit',
     featured: true,

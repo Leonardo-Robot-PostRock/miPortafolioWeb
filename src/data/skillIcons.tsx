@@ -1,5 +1,7 @@
 import type { ReactNode } from 'react';
-import { SiSvelte, SiRedux, SiPython, SiExpress, SiConfluence, SiNodedotjs, SiAngular, SiMongodb, SiDocker, SiGit, SiRabbitmq, SiPostgresql } from 'react-icons/si';
+import zustandIconUrl from '@/assets/icons/zustand.svg?url';
+import { FaJava } from 'react-icons/fa';
+import { SiSvelte, SiRedux, SiPython, SiExpress, SiConfluence, SiNodedotjs, SiAngular, SiMongodb, SiDocker, SiGit, SiRabbitmq, SiPostgresql, SiSpring, SiMysql, SiJunit5, SiFlyway, SiHibernate, SiJsonwebtokens, SiClickup, SiSpringsecurity } from 'react-icons/si';
 import { TbBrandReactNative } from 'react-icons/tb';
 
 interface SkillIconData {
@@ -68,6 +70,10 @@ const icons: Record<string, SkillIconData> = {
     Redux: {
         brandColor: '#764ABC',
         icon: <SiRedux size="100%" />,
+    },
+    Zustand: {
+        brandColor: '#9d3939',
+        icon: <img src={zustandIconUrl} className="w-full h-full object-contain" alt="" />,
     },
     'Node.js': {
         brandColor: '#339933',
@@ -147,6 +153,42 @@ const icons: Record<string, SkillIconData> = {
     Confluence: {
         brandColor: '#172B4D',
         icon: <SiConfluence size="100%" />,
+    },
+    'Java 17': {
+        brandColor: '#007396',
+        icon: <FaJava size="100%" />,
+    },
+    'Spring Boot': {
+        brandColor: '#6DB33F',
+        icon: <SiSpring size="100%" />,
+    },
+    'Spring Security': {
+        brandColor: '#6DB33F',
+        icon: <SiSpringsecurity size="100%" />,
+    },
+    JWT: {
+        brandColor: '#D63DFF',
+        icon: <SiJsonwebtokens size="100%" />,
+    },
+    Flyway: {
+        brandColor: '#E93424',
+        icon: <SiFlyway size="100%" />,
+    },
+    H2: {
+        brandColor: '#D22630',
+        icon: <SiHibernate size="100%" />,
+    },
+    'JUnit 5': {
+        brandColor: '#25A162',
+        icon: <SiJunit5 size="100%" />,
+    },
+    MySQL: {
+        brandColor: '#4479A1',
+        icon: <SiMysql size="100%" />,
+    },
+    'ClickUp MCP': {
+        brandColor: '#FF6372',
+        icon: <SiClickup size="100%" />,
     },
 };
 
