@@ -59,12 +59,12 @@ function MobileProjectsCarousel({ projects, locale, viewProjectLabel }: MobileCa
           <a
             key={project.id}
             data-slide
-            href={`/proyecto/${project.slug}`}
+            href={`/project/${project.slug}`}
             className="snap-start shrink-0 w-[84%] sm:w-[62%] rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] overflow-hidden ring-1 ring-[var(--color-border)] shadow-[0_10px_28px_var(--color-glow)]"
           >
             {project.image && (
               <div className="aspect-video overflow-hidden">
-                <SmartImage image={project.image} alt={project.title} className="w-full h-full object-cover" loading="lazy" />
+                <SmartImage image={project.image} alt={project.title} className="w-full h-full object-cover" loading="lazy" sizes="(max-width: 640px) 84vw, 62vw" />
               </div>
             )}
             <div className="p-4">
@@ -78,13 +78,13 @@ function MobileProjectsCarousel({ projects, locale, viewProjectLabel }: MobileCa
                 {project.techStack.slice(0, 3).map((tech) => (
                   <span
                     key={tech}
-                    className="type-caption text-[10px] font-semibold px-2 py-1 rounded-full bg-[var(--color-primary)]/10 text-[var(--color-primary)]"
+                    className="type-caption text-[10px] font-semibold px-2 py-1 rounded-full bg-[var(--color-primary)]/10 text-[var(--color-text)]"
                   >
                     {tech}
                   </span>
                 ))}
               </div>
-              <div className="type-caption text-xs font-semibold text-[var(--color-primary)] flex items-center gap-1">
+              <div className="type-caption text-xs font-semibold text-[var(--color-text)] flex items-center gap-1">
                 {viewProjectLabel}
                 <span aria-hidden="true">→</span>
               </div>
@@ -94,19 +94,23 @@ function MobileProjectsCarousel({ projects, locale, viewProjectLabel }: MobileCa
       </div>
 
       {projects.length > 1 && (
-        <div className="mt-2 flex justify-center gap-1.5">
+        <div className="mt-2 flex justify-center">
           {projects.map((project, index) => (
             <button
               key={project.id}
               type="button"
               aria-label={`${locale === 'es' ? 'Ir al proyecto' : 'Go to project'} ${index + 1}`}
               onClick={() => goToSlide(index)}
-              className={`h-1.5 rounded-full transition-all ${
-                index === activeIndex
-                  ? 'w-6 bg-[var(--color-primary)]'
-                  : 'w-1.5 bg-[var(--color-text-secondary)]/45'
-              }`}
-            />
+              className="h-6 min-w-[24px] px-1 flex items-center justify-center"
+            >
+              <span
+                className={`block h-1.5 w-6 rounded-full origin-center transition-transform duration-200 ${
+                  index === activeIndex
+                    ? 'scale-x-100 bg-[var(--color-primary)]'
+                    : 'scale-x-[0.25] bg-[var(--color-text-secondary)]/45'
+                }`}
+              />
+            </button>
           ))}
         </div>
       )}
@@ -199,7 +203,7 @@ export function Projects({ projects, featured = false }: ProjectsProps) {
           className="text-center mt-12"
         >
           <a
-            href="/proyectos"
+            href="/projects"
             className="inline-flex items-center gap-2 type-heading text-lg text-[var(--color-primary)] hover:underline"
           >
             {t('projects.viewAll')}

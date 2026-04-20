@@ -11,7 +11,7 @@ interface ProjectCardProps {
 export function ProjectCard({ project }: ProjectCardProps) {
   const { t, locale } = useTranslations();
   return (
-    <a href={`/proyecto/${project.slug}`} className="block h-full">
+    <a href={`/project/${project.slug}`} className="block h-full">
       <Card className="h-full flex flex-col">
         {project.image && (
           <div className="aspect-video overflow-hidden bg-[var(--color-surface)]">
@@ -43,7 +43,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             {project.techStack.slice(0, 4).map((tech) => (
               <span
                 key={tech}
-                className="type-caption font-medium text-xs px-3 py-1 rounded-full bg-[var(--color-primary)]/10 text-[var(--color-primary)]"
+                className="type-caption font-medium text-xs px-3 py-1 rounded-full bg-[var(--color-primary)]/10 text-[var(--color-text)]"
               >
                 {tech}
               </span>
