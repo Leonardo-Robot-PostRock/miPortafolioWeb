@@ -53,10 +53,36 @@ const jsonLdPerson = {
     "https://www.linkedin.com/in/leonardocode/",
     "https://x.com/LeoluxMrQwerty"
   ],
+  "alternateName": ["Leonardo", "Leo Puebla", "LeonardoPuebla"],
   "knowsAbout": [
     "React", "Angular", "Svelte", "SvelteKit", "TypeScript",
-    "Node.js", "Python", "PostgreSQL", "Docker", "Astro"
-  ]
+    "Node.js", "Python", "PostgreSQL", "Docker", "Astro",
+    "JavaScript", "Full Stack Development", "Frontend Development",
+    "Web Development", "Software Engineering", "REST API", "GraphQL"
+  ],
+  "hasOccupation": {
+    "@type": "Occupation",
+    "name": "Full Stack Developer",
+    "alternateName": ["Frontend Developer", "Web Developer", "Fullstack Dev", "Software Engineer"],
+    "occupationLocation": {
+      "@type": "City",
+      "name": "Mendoza"
+    },
+    "skills": "React, Angular, Svelte, Node.js, TypeScript, PostgreSQL, Docker"
+  }
+};
+
+// JSON-LD: ProfilePage — datos estructurados de la página de perfil/portfolio
+const jsonLdProfilePage = {
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "@id": `${siteUrl}/#profilepage`,
+  "url": siteUrl,
+  "name": "Leonardo Puebla — Portfolio",
+  "description": description,
+  "mainEntity": { "@id": `${siteUrl}/#person` },
+  "dateModified": new Date().toISOString().split('T')[0],
+  "inLanguage": ["es", "en"]
 };
 
 // JSON-LD: WebSite — datos estructurados del sitio
@@ -91,7 +117,7 @@ const jsonLdWebSite = {
     <meta name="title" content={title} />
     <meta name="description" content={description} />
     <meta name="author" content="Leonardo Puebla" />
-    <meta name="keywords" content="Leonardo Puebla, Frontend Developer, Full Stack Developer, React, Angular, Svelte, Node.js, TypeScript, developer portfolio Mendoza Argentina" />
+    <meta name="keywords" content="Leonardo Puebla, Leonardo, dev, fullstack, full stack developer, desarrollador fullstack, frontend developer, desarrollador frontend, React developer, Angular developer, Node.js developer, TypeScript developer, web developer, desarrollador web, portfolio desarrollador, software engineer, ingeniero de software, Mendoza, Argentina" />
 
     <!-- ─── Open Graph ───────────────────────────────────────────────── -->
     <meta property="og:type" content="website" />
@@ -148,6 +174,8 @@ const jsonLdWebSite = {
 
     <!-- ─── Structured Data: Person (JSON-LD) ──────────────────────── -->
     <script type="application/ld+json" set:html={JSON.stringify(jsonLdPerson)} />
+    <!-- ─── Structured Data: ProfilePage (JSON-LD) ──────────────────── -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLdProfilePage)} />
     <!-- ─── Structured Data: WebSite (JSON-LD) ─────────────────────── -->
     <script type="application/ld+json" set:html={JSON.stringify(jsonLdWebSite)} />
 
