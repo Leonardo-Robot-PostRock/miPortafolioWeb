@@ -8,8 +8,8 @@ export const experienceData: Experience[] = [
     startDate: { es: 'Ene 2026', en: 'Jan 2026' },
     endDate: { es: 'Presente', en: 'Present' },
     description: {
-      es: 'Backend de portal de empleos IT B2B— proyecto propio.',
-      en: 'IT jobs portal backend B2B — personal project.',
+      es: 'Backend de portal de empleos IT B2B — Proyecto propio.',
+      en: 'IT jobs portal backend B2B — Personal project.',
     },
   },
   {
