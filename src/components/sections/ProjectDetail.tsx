@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { Button } from '@/components/core/Button';
 import { SmartImage } from '@/components/core/SmartImage';
 import type { Project } from '@/data/portfolio';
+import type { ImageSource } from '@/data/types';
 import { useTranslations, tr } from '@/i18n';
 
 interface ProjectDetailProps {
@@ -12,7 +13,7 @@ interface ProjectDetailProps {
 export function ProjectDetail({ project }: ProjectDetailProps) {
   const { t, locale } = useTranslations();
   const [selectedImage, setSelectedImage] = useState<{
-    image: ImageMetadata;
+    image: ImageSource;
     alt: string;
     caption?: string;
   } | null>(null);

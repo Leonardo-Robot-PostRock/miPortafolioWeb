@@ -1,10 +1,22 @@
 ---
+import { getImage } from 'astro:assets';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import { Header } from '@/components/layout/Header';
 import { Projects as ProjectsSection } from '@/components/sections/Projects';
 import { Footer } from '@/components/layout/Footer';
 import { ThemeSwitcher } from '@/components/ui/ThemeSwitcher';
 import { portfolioData } from '@/data/portfolio';
+
+// Optimize all project images for card display (~600px wide, 16:9)
+const projects = await Promise.all(
+  portfolioData.projects.map(async (project) => {
+    if (!project.image) return project;
+    const targetW = 600;
+    const targetH = Math.round(targetW * project.image.height / project.image.width);
+    const opt = await getImage({ src: project.image.src, width: targetW, format: 'webp', quality: 85 });
+    return { ...project, image: { src: opt.src, width: targetW, height: targetH } };
+  })
+);
 ---
 
 <BaseLayout
@@ -16,7 +28,7 @@ import { portfolioData } from '@/data/portfolio';
   <Header client:load />
 
   <main class="pt-20">
-    <ProjectsSection projects={portfolioData.projects} client:load />
+    <ProjectsSection projects={projects} client:load />
   </main>
 
   <Footer socialLinks={portfolioData.personal.socialLinks} client:load />

@@ -1,4 +1,5 @@
 ---
+import { getImage } from 'astro:assets';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import { Header } from '@/components/layout/Header';
 import { Hero } from '@/components/sections/Hero';
@@ -8,14 +9,36 @@ import { Skills } from '@/components/sections/Skills';
 import { Footer } from '@/components/layout/Footer';
 import { ThemeSwitcher } from '@/components/ui/ThemeSwitcher';
 import { portfolioData } from '@/data/portfolio';
+
+// Optimize profile avatar: displayed at 128x128 (w-32 h-32)
+const rawAvatar = portfolioData.personal.avatar;
+const optAvatar = rawAvatar
+  ? await getImage({ src: rawAvatar.src, width: 256, height: 256, format: 'webp', quality: 90 })
+  : undefined;
+
+const personal = {
+  ...portfolioData.personal,
+  ...(optAvatar && { avatar: { src: optAvatar.src, width: 128, height: 128 } }),
+};
+
+// Optimize project images for card display (~600px wide, 16:9)
+const projects = await Promise.all(
+  portfolioData.projects.map(async (project) => {
+    if (!project.image) return project;
+    const targetW = 600;
+    const targetH = Math.round(targetW * project.image.height / project.image.width);
+    const opt = await getImage({ src: project.image.src, width: targetW, format: 'webp', quality: 85 });
+    return { ...project, image: { src: opt.src, width: targetW, height: targetH } };
+  })
+);
 ---
 
 <BaseLayout>
   <Header client:load />
 
   <main>
-    <Hero data={portfolioData.personal} client:load />
-    <Projects projects={portfolioData.projects} featured={true} client:load />
+    <Hero data={personal} client:load />
+    <Projects projects={projects} featured={true} client:load />
     <Experience
       experiences={portfolioData.experience}
       education={portfolioData.education}

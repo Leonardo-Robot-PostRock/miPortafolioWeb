@@ -2,6 +2,13 @@ import type { Translatable } from '@/i18n/config';
 
 export type { Translatable };
 
+/** A serializable image descriptor — compatible with Astro's ImageMetadata and getImage() results */
+export interface ImageSource {
+  src: string;
+  width: number;
+  height: number;
+}
+
 export interface SocialLink {
   platform: 'linkedin' | 'github' | 'x' | 'email' | 'website';
   url: string;
@@ -12,8 +19,8 @@ export interface PersonalInfo {
   name: string;
   role: Translatable;
   tagline: Translatable;
-  avatar?: ImageMetadata;
-  avatarLight?: ImageMetadata;
+  avatar?: ImageSource;
+  avatarLight?: ImageSource;
   location?: string;
   email?: string;
   cvEs?: string;
@@ -26,7 +33,7 @@ export interface Project {
   slug: string;
   title: string;
   shortDescription: Translatable;
-  image?: ImageMetadata;
+  image?: ImageSource;
   techStack: string[];
   liveUrl?: string;
   showDemo?: boolean;
@@ -38,7 +45,7 @@ export interface Project {
   role?: Translatable;
   challenge?: Translatable;
   solution?: Translatable;
-  gallery?: Array<{ image: ImageMetadata; caption?: Translatable }>;
+  gallery?: Array<{ image: ImageSource; caption?: Translatable }>;
   results?: Array<{ metric: string; description: Translatable }>;
   learnings?: Translatable[];
 }
