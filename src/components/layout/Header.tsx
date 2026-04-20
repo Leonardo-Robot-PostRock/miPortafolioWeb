@@ -97,7 +97,7 @@ export function Header() {
             </a>
           ))}
           <a
-            href="/proyectos"
+            href="/projects"
             className="type-caption font-medium text-sm px-4 py-2 rounded-[var(--radius-md)] bg-[var(--color-primary)] text-[var(--color-primary-foreground)] hover:opacity-90 transition-opacity"
           >
             {t('nav.allProjects')}
@@ -150,7 +150,7 @@ export function Header() {
                 </a>
               ))}
               <a
-                href="/proyectos"
+                href="/projects"
                 onClick={() => setIsMobileOpen(false)}
                 className="block type-body text-lg text-[var(--color-primary)] font-semibold"
               >
