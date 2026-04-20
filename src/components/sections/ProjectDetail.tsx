@@ -265,7 +265,7 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
       {/* Navigation */}
       <div className="max-w-5xl mx-auto px-6 md:px-8 mt-24 pt-12 border-t border-[var(--color-separator)]">
         <a
-          href="/proyectos"
+          href="/projects"
           className="inline-flex items-center gap-2 type-heading font-semibold text-lg text-[var(--color-primary)] hover:underline"
         >
           {t('detail.moreProjects')}
