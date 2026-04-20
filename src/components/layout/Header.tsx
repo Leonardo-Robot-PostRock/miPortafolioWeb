@@ -72,8 +72,8 @@ export function Header() {
       className={cn(
         'fixed top-0 left-0 right-0 z-[70] isolate transition-all duration-300',
         isScrolled || isMobileOpen
-          ? 'bg-[var(--color-background)]/80 backdrop-blur-xl shadow-sm dark:bg-[var(--color-background)]/95 dark:shadow-none dark:border-b dark:border-[var(--color-border)]'
-          : 'bg-transparent dark:bg-transparent'
+          ? 'bg-[var(--color-background)]/80 backdrop-blur-xl shadow-sm'
+          : 'bg-transparent'
       )}
     >
       <nav className="max-w-[var(--content-max)] mx-auto px-6 md:px-8 h-16 flex items-center justify-between">
