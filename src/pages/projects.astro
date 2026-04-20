@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import { Header } from '@/components/layout/Header';
-import { Projects } from '@/components/sections/Projects';
+import { Projects as ProjectsSection } from '@/components/sections/Projects';
 import { Footer } from '@/components/layout/Footer';
 import { ThemeSwitcher } from '@/components/ui/ThemeSwitcher';
 import { portfolioData } from '@/data/portfolio';
@@ -16,7 +16,7 @@ import { portfolioData } from '@/data/portfolio';
   <Header client:load />
 
   <main class="pt-20">
-    <Projects projects={portfolioData.projects} client:load />
+    <ProjectsSection projects={portfolioData.projects} client:load />
   </main>
 
   <Footer socialLinks={portfolioData.personal.socialLinks} client:load />

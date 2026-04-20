@@ -14,6 +14,26 @@ export async function getStaticPaths() {
 }
 
 const { project } = Astro.props;
+
+const siteUrl = 'https://leonardopuebla.com';
+const projectUrl = `${siteUrl}/project/${project.slug}`;
+const imageUrl = project.image ? new URL(project.image.src, siteUrl).toString() : `${siteUrl}/og-image.webp`;
+
+const jsonLdProject = {
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "@id": projectUrl,
+  "name": project.title,
+  "description": project.shortDescription.es,
+  "url": projectUrl,
+  "image": imageUrl,
+  "author": {
+    "@id": `${siteUrl}/#person`
+  },
+  "dateCreated": project.year ? `${project.year.split('–')[0]}-01-01` : undefined,
+  "keywords": project.techStack.join(', '),
+  ...(project.client ? { "producer": { "@type": "Organization", "name": project.client } } : {}),
+};
 ---
 
 <BaseLayout
@@ -23,6 +43,7 @@ const { project } = Astro.props;
   descriptionEn={project.shortDescription.en}
   image={typeof project.image === 'string' ? project.image : project.image?.src}
 >
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLdProject)} slot="head" />
   <Header client:load />
 
   <main>
