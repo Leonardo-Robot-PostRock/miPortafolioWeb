@@ -22,12 +22,12 @@ export default defineConfig({
           item.changefreq = 'weekly';
         }
         // Página de listado de proyectos
-        else if (path === '/proyectos/' || path === '/proyectos') {
+        else if (path === '/projects/' || path === '/projects') {
           item.priority = 0.9;
           item.changefreq = 'weekly';
         }
         // Páginas individuales de proyecto
-        else if (path.startsWith('/proyecto/')) {
+        else if (path.startsWith('/project/')) {
           item.priority = 0.6;
           item.changefreq = 'monthly';
         }
