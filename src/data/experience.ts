@@ -8,8 +8,8 @@ export const experienceData: Experience[] = [
     startDate: { es: 'Ene 2026', en: 'Jan 2026' },
     endDate: { es: 'Presente', en: 'Present' },
     description: {
-      es: 'Backend de portal de empleos IT — Spring Boot 3.5, Java 17, Arquitectura Hexagonal (DDD), JWT, MySQL, Flyway. Diseño de arquitectura desde cero con diagramas PlantUML, testing TDD con estilo BDD (JUnit 5 + Mockito, Testcontainers).',
-      en: 'IT jobs portal backend — Spring Boot 3.5, Java 17, Hexagonal Architecture (DDD), JWT, MySQL, Flyway. Architecture design from scratch with PlantUML diagrams, TDD testing with BDD style (JUnit 5 + Mockito, Testcontainers).',
+      es: 'Backend de portal de empleos IT B2B— proyecto propio.',
+      en: 'IT jobs portal backend B2B — personal project.',
     },
   },
   {

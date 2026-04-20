@@ -147,7 +147,7 @@ export const projectsData: Project[] = [
       en: 'B2B2C marketplace for small businesses, designed with Domain-Driven Design and clean architecture from scratch.',
     },
     techStack: ['Node.js', 'Express', 'TypeScript', 'MongoDB'],
-    featured: false,
+    featured: true,
     category: 'professional',
     year: '2026',
     role: {
@@ -177,8 +177,8 @@ export const projectsData: Project[] = [
     slug: 'itjobs-portal',
     title: 'ITJobs — Portal de Empleos IT',
     shortDescription: {
-      es: 'Backend de portal de empleos IT con arquitectura hexagonal, Domain-Driven Design y automatización de gestión de proyectos con ClickUp MCP.',
-      en: 'IT jobs portal backend with hexagonal architecture, Domain-Driven Design and project management automation with ClickUp MCP.',
+      es: 'Backend de portal de empleos IT B2B con arquitectura hexagonal, Domain-Driven Design y automatización de gestión de proyectos con ClickUp MCP.',
+      en: 'IT jobs portal backend B2B with hexagonal architecture, Domain-Driven Design and project management automation with ClickUp MCP.',
     },
     techStack: ['Spring Boot 3.5', 'Java 17', 'Hexagonal Architecture', 'DDD', 'JWT', 'MySQL', 'Flyway', 'ClickUp MCP', 'MapStruct', 'Lombok'],
     featured: true,
@@ -190,8 +190,8 @@ export const projectsData: Project[] = [
     },
     client: 'CoNeko',
     challenge: {
-      es: 'Diseñar y construir desde cero un backend escalable para un portal de empleos IT, con arquitectura que permita evolución futura y automatización de gestión de proyectos.',
-      en: 'Design and build from scratch a scalable backend for an IT jobs portal, with architecture that allows future evolution and project management automation.',
+      es: 'Diseñar y construir desde cero un backend escalable para un portal de empleos IT que resuelva los problemas de los filtros de ATS actuales, que hacen que los candidatos no sean evaluados correctamente. Arquitectura que permita evolución futura y automatización de gestión de proyectos.',
+      en: 'Design and build from scratch a scalable backend for an IT jobs portal that solves the issues with current ATS filters that cause candidates to not be evaluated correctly. Architecture that allows future evolution and project management automation.',
     },
     solution: {
       es: 'Diseñé la Architecture Hexagonal (Ports & Adapters) con múltiples bounded contexts desde cero, con diagramas PlantUML para visión global, diagramas de clase, secuencias y casos de uso. Implementé TDD con estilo BDD (JUnit 5 + Mockito,Testcontainers para MySQL). JWT con Google OAuth, búsqueda con Specification Pattern, migrations Flyway, y automatización ClickUp MCP.',
