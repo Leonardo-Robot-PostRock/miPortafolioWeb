@@ -13,6 +13,7 @@ interface SmartImageProps {
   loading?: 'eager' | 'lazy';
   decoding?: 'sync' | 'async' | 'auto';
   fetchPriority?: 'high' | 'low' | 'auto';
+  sizes?: string;
 }
 
 export function SmartImage({
@@ -22,6 +23,7 @@ export function SmartImage({
   loading = 'lazy',
   decoding = 'async',
   fetchPriority = 'auto',
+  sizes,
 }: SmartImageProps) {
   return createElement('img', {
     src: image.src,
@@ -32,5 +34,6 @@ export function SmartImage({
     loading,
     decoding,
     fetchpriority: fetchPriority,
+    ...(sizes ? { sizes } : {}),
   });
 }
