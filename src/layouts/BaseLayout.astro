@@ -181,6 +181,9 @@ const jsonLdWebSite = {
 
     <!-- i18n data attributes for client-side language switching -->
     <meta data-i18n-title-en={titleEn} data-i18n-desc-en={descriptionEn} />
+
+    <!-- Named slot for page-specific <head> content (e.g. per-page JSON-LD) -->
+    <slot name="head" />
   </head>
   <body>
     <slot />
