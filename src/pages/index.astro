@@ -1,5 +1,6 @@
 ---
 import { getImage } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import { Header } from '@/components/layout/Header';
 import { Hero } from '@/components/sections/Hero';
@@ -13,7 +14,7 @@ import { portfolioData } from '@/data/portfolio';
 // Optimize profile avatar: displayed at 128x128 (w-32 h-32)
 const rawAvatar = portfolioData.personal.avatar;
 const optAvatar = rawAvatar
-  ? await getImage({ src: rawAvatar.src, width: 256, height: 256, format: 'webp', quality: 90 })
+  ? await getImage({ src: rawAvatar as unknown as ImageMetadata, width: 256, height: 256, format: 'webp', quality: 90 })
   : undefined;
 
 const personal = {
@@ -27,7 +28,7 @@ const projects = await Promise.all(
     if (!project.image) return project;
     const targetW = 600;
     const targetH = Math.round(targetW * project.image.height / project.image.width);
-    const opt = await getImage({ src: project.image.src, width: targetW, format: 'webp', quality: 85 });
+    const opt = await getImage({ src: project.image as unknown as ImageMetadata, width: targetW, format: 'webp', quality: 85 });
     return { ...project, image: { src: opt.src, width: targetW, height: targetH } };
   })
 );

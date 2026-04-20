@@ -1,5 +1,6 @@
 ---
 import { getImage } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import { Header } from '@/components/layout/Header';
 import { ProjectDetail } from '@/components/sections/ProjectDetail';
@@ -18,7 +19,7 @@ const { project } = Astro.props;
 
 // Optimize hero image for detail page (max 1200px wide)
 const optHero = project.image
-  ? await getImage({ src: project.image.src, width: 1200, format: 'webp', quality: 85 })
+  ? await getImage({ src: project.image as unknown as ImageMetadata, width: 1200, format: 'webp', quality: 85 })
   : undefined;
 
 // Optimize gallery images (max 800px wide)
@@ -27,7 +28,7 @@ const optGallery = project.gallery
       project.gallery.map(async (item) => {
         const targetW = 800;
         const targetH = Math.round(targetW * item.image.height / item.image.width);
-        const opt = await getImage({ src: item.image.src, width: targetW, format: 'webp', quality: 85 });
+        const opt = await getImage({ src: item.image as unknown as ImageMetadata, width: targetW, format: 'webp', quality: 85 });
         return { ...item, image: { src: opt.src, width: targetW, height: targetH } };
       })
     )

@@ -1,5 +1,6 @@
 ---
 import { getImage } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import { Header } from '@/components/layout/Header';
 import { Projects as ProjectsSection } from '@/components/sections/Projects';
@@ -13,7 +14,7 @@ const projects = await Promise.all(
     if (!project.image) return project;
     const targetW = 600;
     const targetH = Math.round(targetW * project.image.height / project.image.width);
-    const opt = await getImage({ src: project.image.src, width: targetW, format: 'webp', quality: 85 });
+    const opt = await getImage({ src: project.image as unknown as ImageMetadata, width: targetW, format: 'webp', quality: 85 });
     return { ...project, image: { src: opt.src, width: targetW, height: targetH } };
   })
 );
