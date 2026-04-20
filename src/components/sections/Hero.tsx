@@ -4,6 +4,7 @@ import { SmartImage } from '@/components/core/SmartImage';
 import { SocialLinks } from '@/components/ui/SocialLinks';
 import type { PersonalInfo } from '@/data/portfolio';
 import { useTranslations, tr } from '@/i18n';
+import { SCROLL_OFFSET, SECTION_PADDING, CV_LINK } from '@/utils/tw-classes';
 
 interface HeroProps {
   data: PersonalInfo;
@@ -12,7 +13,7 @@ interface HeroProps {
 export function Hero({ data }: HeroProps) {
   const { t, locale } = useTranslations();
   return (
-    <section id="about" className="scroll-mt-24 md:scroll-mt-28 min-h-screen flex items-center justify-center px-6 md:px-8 py-20">
+    <section id="about" className={`${SCROLL_OFFSET} min-h-screen flex items-center justify-center ${SECTION_PADDING} py-20`}>
       <div className="max-w-4xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -87,7 +88,7 @@ export function Hero({ data }: HeroProps) {
                 <a
                   href={data.cvEs}
                   download
-                  className="inline-flex items-center gap-2 type-caption font-medium text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] transition-colors"
+                  className={CV_LINK}
                 >
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -99,7 +100,7 @@ export function Hero({ data }: HeroProps) {
                 <a
                   href={data.cvEn}
                   download
-                  className="inline-flex items-center gap-2 type-caption font-medium text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] transition-colors"
+                  className={CV_LINK}
                 >
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />

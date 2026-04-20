@@ -4,6 +4,7 @@ import { ExperienceItem } from '@/components/ui/ExperienceItem';
 import type { Experience as ExperienceType, Education, Translatable } from '@/data/portfolio';
 import { staggerContainer, fadeInUp } from '@/utils/motion-config';
 import { useTranslations, tr } from '@/i18n';
+import { SURFACE_CARD, SECTION_SUBHEADING } from '@/utils/tw-classes';
 
 interface ExperienceProps {
   experiences: ExperienceType[];
@@ -20,10 +21,9 @@ export function Experience({ experiences, education, expertise }: ExperienceProp
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-16 p-8 rounded-2xl bg-[var(--color-surface)] border border-[var(--color-border)]"
+          className={`mb-16 p-8 rounded-2xl ${SURFACE_CARD}`}
         >
-          <h3 className="type-heading font-semibold text-2xl mb-6 text-[var(--color-text)]">
-            {t('experience.expertise')}
+          <h3 className={`${SECTION_SUBHEADING} mb-6`}>
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {expertise.map((item, idx) => (
@@ -71,9 +71,9 @@ export function Experience({ experiences, education, expertise }: ExperienceProp
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-16 p-8 rounded-2xl bg-[var(--color-surface)] border border-[var(--color-border)]"
+          className={`mt-16 p-8 rounded-2xl ${SURFACE_CARD}`}
         >
-          <h3 className="type-heading font-semibold text-2xl mb-6 text-[var(--color-text)]">
+          <h3 className={`${SECTION_SUBHEADING} mb-6`}>
             {t('education.title')}
           </h3>
           <div className="space-y-6">

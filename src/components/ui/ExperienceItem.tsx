@@ -1,5 +1,6 @@
 import type { Experience } from '@/data/portfolio';
 import { useTranslations, tr } from '@/i18n';
+import { TECH_BADGE } from '@/utils/tw-classes';
 
 interface ExperienceItemProps {
   experience: Experience;
@@ -61,7 +62,7 @@ export function ExperienceItem({ experience }: ExperienceItemProps) {
             {experience.techStack.map((tech) => (
               <span
                 key={tech}
-                className="type-caption font-medium text-xs px-3 py-1 rounded-full bg-[var(--color-surface)] border border-[var(--color-border)] text-[var(--color-text-secondary)]"
+                className={`${TECH_BADGE} bg-[var(--color-surface)] border border-[var(--color-border)] text-[var(--color-text-secondary)]`}
               >
                 {tech}
               </span>

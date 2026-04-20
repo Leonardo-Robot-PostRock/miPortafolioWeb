@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { type ReactNode } from 'react';
 import { cn } from '@/utils/cn';
+import { SURFACE_CARD } from '@/utils/tw-classes';
 
 interface CardProps {
   children: ReactNode;
@@ -12,9 +13,8 @@ export function Card({ children, className, hover = true }: CardProps) {
   return (
     <motion.div
       className={cn(
-        'bg-[var(--color-surface)] rounded-[var(--radius-lg)]',
-        'border border-[var(--color-border)]',
-        'overflow-hidden',
+        SURFACE_CARD,
+        'rounded-[var(--radius-lg)] overflow-hidden',
         hover && 'cursor-pointer',
         className
       )}

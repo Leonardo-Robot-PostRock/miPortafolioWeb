@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { SmartImage } from '@/components/core/SmartImage';
 import type { Project } from '@/data/portfolio';
 import { useTranslations, tr } from '@/i18n';
+import { TECH_BADGE } from '@/utils/tw-classes';
 
 interface ProjectCardProps {
   project: Project;
@@ -43,7 +44,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             {project.techStack.slice(0, 4).map((tech) => (
               <span
                 key={tech}
-                className="type-caption font-medium text-xs px-3 py-1 rounded-full bg-[var(--color-primary)]/10 text-[var(--color-text)]"
+                className={`${TECH_BADGE} bg-[var(--color-primary)]/10 text-[var(--color-text)]`}
               >
                 {tech}
               </span>

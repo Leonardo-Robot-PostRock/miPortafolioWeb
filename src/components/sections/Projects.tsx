@@ -6,6 +6,7 @@ import { ProjectCard } from '@/components/ui/ProjectCard';
 import type { Project } from '@/data/portfolio';
 import { staggerContainer, fadeInUp } from '@/utils/motion-config';
 import { useTranslations, tr } from '@/i18n';
+import { SECTION_SUBHEADING, PROJECTS_DESKTOP_GRID } from '@/utils/tw-classes';
 
 interface ProjectsProps {
   projects: Project[];
@@ -140,7 +141,7 @@ export function Projects({ projects, featured = false }: ProjectsProps) {
       {/* Professional Projects */}
       {professionalProjects.length > 0 && (
         <div className="mb-16">
-          <h3 className="type-heading font-semibold text-2xl mb-8 text-[var(--color-text)]">
+          <h3 className={`${SECTION_SUBHEADING} mb-8`}>
             {t('projects.professional')}
           </h3>
 
@@ -155,7 +156,7 @@ export function Projects({ projects, featured = false }: ProjectsProps) {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: '-100px' }}
-            className="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className={PROJECTS_DESKTOP_GRID}
           >
             {professionalProjects.map((project) => (
               <motion.div key={project.id} variants={fadeInUp}>
@@ -169,7 +170,7 @@ export function Projects({ projects, featured = false }: ProjectsProps) {
       {/* Educational Projects */}
       {educationalProjects.length > 0 && (
         <div>
-          <h3 className="type-heading font-semibold text-2xl mb-8 text-[var(--color-text)]">
+          <h3 className={`${SECTION_SUBHEADING} mb-8`}>
             {t('projects.educational')}
           </h3>
 
@@ -184,7 +185,7 @@ export function Projects({ projects, featured = false }: ProjectsProps) {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: '-100px' }}
-            className="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className={PROJECTS_DESKTOP_GRID}
           >
             {educationalProjects.map((project) => (
               <motion.div key={project.id} variants={fadeInUp}>

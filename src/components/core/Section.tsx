@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { type ReactNode } from 'react';
 import { cn } from '@/utils/cn';
+import { CONTENT_MAX, SECTION_PADDING, SCROLL_OFFSET } from '@/utils/tw-classes';
 
 interface SectionProps {
   id?: string;
@@ -14,9 +15,9 @@ export function Section({ id, title, subtitle, children, className }: SectionPro
   return (
     <section
       id={id}
-      className={cn('scroll-mt-24 md:scroll-mt-28 py-20 md:py-32 px-6 md:px-8', className)}
+      className={cn(SCROLL_OFFSET, 'py-20 md:py-32', SECTION_PADDING, className)}
     >
-      <div className="max-w-[var(--content-max)] mx-auto">
+        <div className={CONTENT_MAX}>
         {(title || subtitle) && (
           <motion.div
             initial={{ opacity: 0, y: 20 }}

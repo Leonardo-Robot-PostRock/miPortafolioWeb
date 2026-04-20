@@ -4,6 +4,7 @@ import { cn } from '@/utils/cn';
 import { useTranslations } from '@/i18n';
 import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher';
 import type { TranslationKey } from '@/i18n';
+import { CONTENT_MAX, SECTION_PADDING, NAV_LINK } from '@/utils/tw-classes';
 
 const navLinks: Array<{ id: string; labelKey: TranslationKey }> = [
   { id: 'about', labelKey: 'nav.about' },
@@ -76,7 +77,7 @@ export function Header() {
           : 'bg-transparent'
       )}
     >
-      <nav className="max-w-[var(--content-max)] mx-auto px-6 md:px-8 h-16 flex items-center justify-between">
+      <nav className={`${CONTENT_MAX} ${SECTION_PADDING} h-16 flex items-center justify-between`}>
         {/* Logo */}
         <a
           href="/"
@@ -91,7 +92,7 @@ export function Header() {
             <a
               key={link.id}
               href={`/#${link.id}`}
-              className="type-caption font-medium text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors"
+              className={NAV_LINK}
             >
               {t(link.labelKey)}
             </a>
