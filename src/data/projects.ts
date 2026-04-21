@@ -190,8 +190,8 @@ export const projectsData: Project[] = [
     },
     client: 'CoNeko',
     challenge: {
-      es: 'Diseñar y construir desde cero un backend escalable para un portal de empleos IT que resuelva los problemas de los filtros de ATS actuales, que hacen que los candidatos no sean evaluados correctamente. Arquitectura que permita evolución futura y automatización de gestión de proyectos.',
-      en: 'Design and build from scratch a scalable backend for an IT jobs portal that solves the issues with current ATS filters that cause candidates to not be evaluated correctly. Architecture that allows future evolution and project management automation.',
+      es: 'Diseñar y desarrollar desde cero un backend escalable para un portal de empleos IT orientado a optimizar el matching entre candidatos y vacantes. El sistema aborda las limitaciones de los ATS tradicionales —basados principalmente en filtros rígidos por palabras clave— mediante un modelo de filtrado más flexible y preciso. La arquitectura fue diseñada para facilitar la evolución del producto y habilitar la automatización de procesos dentro de la plataforma.',
+      en: 'Design and develop from scratch a scalable backend for an IT job portal aimed at optimizing the matching between candidates and job openings. The system addresses the limitations of traditional ATS platforms—primarily based on rigid keyword filters—by introducing a more flexible and precise filtering model. The architecture is designed to support future product evolution and enable the automation of processes within the platform.',
     },
     solution: {
       es: 'Diseñé la Architecture Hexagonal (Ports & Adapters) con múltiples bounded contexts desde cero, con diagramas PlantUML para visión global, diagramas de clase, secuencias y casos de uso. Implementé TDD con estilo BDD (JUnit 5 + Mockito,Testcontainers para MySQL). JWT con Google OAuth, búsqueda con Specification Pattern, migrations Flyway, y automatización ClickUp MCP.',
