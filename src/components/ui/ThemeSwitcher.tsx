@@ -72,13 +72,17 @@ export function ThemeSwitcher() {
   ];
 
   const allPaletteKeys = Object.keys(colorPalettes) as PaletteName[];
-  const basePaletteKeys = showAll
+  const trimmedQuery = query.trim();
+  const basePaletteKeys = showAll || trimmedQuery.length > 0
     ? allPaletteKeys
     : featuredPalettes;
 
+  const normalize = (s: string) =>
+    s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+
   const visiblePaletteKeys = basePaletteKeys.filter((key) => {
-    const label = t(paletteLabelKeys[key]).toLowerCase();
-    return label.includes(query.toLowerCase().trim());
+    const label = t(paletteLabelKeys[key]);
+    return normalize(label).includes(normalize(trimmedQuery));
   });
 
   const handlePaletteChange = (palette: PaletteName) => {
