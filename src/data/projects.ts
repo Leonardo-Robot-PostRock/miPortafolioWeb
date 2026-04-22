@@ -194,7 +194,7 @@ export const projectsData: Project[] = [
       en: 'Design and develop from scratch a scalable backend for an IT job portal aimed at optimizing the matching between candidates and job openings. The system addresses the limitations of traditional ATS platforms—primarily based on rigid keyword filters—by introducing a more flexible and precise filtering model. The architecture is designed to support future product evolution and enable the automation of processes within the platform.',
     },
     solution: {
-      es: 'Diseñé la arquitectura hexagonal (Ports & Adapters) con múltiples bounded contexts desde cero, con diagramas PlantUML para visión global, diagramas de clase, secuencias y casos de uso. Implementé TDD con estilo BDD (JUnit 5 + Mockito,Testcontainers para MySQL). JWT con Google OAuth, búsqueda con Specification Pattern, migrations Flyway, y automatización ClickUp MCP.',
+      es: 'Diseñé la arquitectura hexagonal (Ports & Adapters) con múltiples bounded contexts desde cero, con diagramas PlantUML para visión global, diagramas de clase, secuencias y casos de uso. Implementé TDD con estilo BDD (JUnit 5 + Mockito,Testcontainers para MySQL). JWT con Google OAuth, búsqueda con Patrón de Especificación, migraciones con Flyway, y automatización ClickUp MCP.',
       en: 'Designed hexagonal architecture (Ports & Adapters) with multiple bounded contexts from scratch, with PlantUML diagrams for overview, class diagrams, sequences and use cases. Implemented TDD with BDD style (JUnit 5 + Mockito, Testcontainers for MySQL). JWT with Google OAuth, search with Specification Pattern, Flyway migrations, and ClickUp MCP automation.',
     },
     results: [
