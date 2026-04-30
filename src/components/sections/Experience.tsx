@@ -12,8 +12,56 @@ interface ExperienceProps {
   expertise?: Translatable[];
 }
 
+type ExperienceGroup = { groupId: string; items: ExperienceType[] };
+type RenderItem = ExperienceType | ExperienceGroup;
+
+function isGroup(item: RenderItem): item is ExperienceGroup {
+  return 'items' in item;
+}
+
+function groupExperiences(experiences: ExperienceType[]): RenderItem[] {
+  const result: RenderItem[] = [];
+  const groupMap = new Map<string, ExperienceGroup>();
+  for (const exp of experiences) {
+    if (!exp.groupId) {
+      result.push(exp);
+    } else if (groupMap.has(exp.groupId)) {
+      groupMap.get(exp.groupId)!.items.push(exp);
+    } else {
+      const group: ExperienceGroup = { groupId: exp.groupId, items: [exp] };
+      groupMap.set(exp.groupId, group);
+      result.push(group);
+    }
+  }
+  return result;
+}
+
+function ExperienceGroupBlock({ group }: { group: ExperienceGroup }) {
+  const { locale } = useTranslations();
+  const { items } = group;
+  return (
+    <div className="relative pl-8 md:pl-12 border-l-2 border-[var(--color-primary)]">
+      <div className="absolute left-0 top-2 w-4 h-4 -ml-[9px] rounded-full bg-[var(--color-primary)] ring-4 ring-[var(--color-background)]" />
+      <div className="mb-5">
+        <span className="type-heading font-semibold text-lg text-[var(--color-primary)]">
+          {items[0].company}
+        </span>
+        <p className="type-caption text-sm text-[var(--color-muted)] mt-0.5">
+          {tr(items[0].startDate, locale)} — {tr(items[items.length - 1].endDate, locale)}
+        </p>
+      </div>
+      <div className="space-y-8 pl-6 border-l border-[var(--color-border)]">
+        {items.map((exp) => (
+          <ExperienceItem key={exp.id} experience={exp} isGrouped />
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export function Experience({ experiences, education, expertise }: ExperienceProps) {
   const { t, locale } = useTranslations();
+  const renderItems = groupExperiences(experiences);
   return (
     <Section id="experience" title={t('experience.title')} subtitle={t('experience.subtitle')}>
       {expertise && expertise.length > 0 && (
@@ -59,11 +107,17 @@ export function Experience({ experiences, education, expertise }: ExperienceProp
         viewport={{ once: true }}
         className="space-y-12"
       >
-        {experiences.map((exp) => (
-          <motion.div key={exp.id} variants={fadeInUp}>
-            <ExperienceItem experience={exp} />
-          </motion.div>
-        ))}
+        {renderItems.map((item) =>
+          isGroup(item) ? (
+            <motion.div key={item.groupId} variants={fadeInUp}>
+              <ExperienceGroupBlock group={item} />
+            </motion.div>
+          ) : (
+            <motion.div key={item.id} variants={fadeInUp}>
+              <ExperienceItem experience={item} />
+            </motion.div>
+          )
+        )}
       </motion.div>
 
       {education && education.length > 0 && (

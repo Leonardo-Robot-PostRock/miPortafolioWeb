@@ -38,6 +38,14 @@ export interface Project {
   liveUrl?: string;
   showDemo?: boolean;
   repoUrl?: string;
+  /** Si `false`, oculta el botón de repositorio aunque `repoUrl` esté definido */
+  showRepo?: boolean;
+  /** URLs de repositorios adicionales (ej: backend + frontend por separado) */
+  extraRepos?: Array<{ label: Translatable; url: string }>;
+  /** IDs de proyectos relacionados bajo la misma empresa/ecosistema */
+  linkedProjectIds?: string[];
+  /** Si `false`, el proyecto no se vincula desde ExperienceItem (útil si es redundante o privado) */
+  visibleInExperience?: boolean;
   featured?: boolean;
   category: 'professional' | 'educational';
   client?: string;
@@ -60,6 +68,8 @@ export interface Experience {
   achievements?: Translatable[];
   location?: string;
   techStack?: string[];
+  /** Agrupa visualmente entradas de la misma empresa/ecosistema */
+  groupId?: string;
 }
 
 export interface Education {

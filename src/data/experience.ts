@@ -3,14 +3,15 @@ import type { Experience } from './types';
 export const experienceData: Experience[] = [
   {
     id: '1',
-    company: 'CoNeko (ITJobs)',
+    company: 'CoNeko',
     role: { es: 'Fundador & Desarrollador Backend', en: 'Founder & Backend Developer' },
     startDate: { es: 'Ene 2026', en: 'Jan 2026' },
     endDate: { es: 'Presente', en: 'Present' },
     description: {
-      es: 'Backend de portal de empleos IT B2B — Proyecto propio.',
-      en: 'B2B IT jobs portal backend — Personal project.',
+      es: 'Backend de Rise Together, portal de empleos IT B2B — Proyecto propio.',
+      en: 'Backend of Rise Together, B2B IT jobs portal — Personal project.',
     },
+    groupId: 'coneko',
   },
   {
     id: '1b',
@@ -19,6 +20,7 @@ export const experienceData: Experience[] = [
     startDate: { es: 'Ene 2026', en: 'Jan 2026' },
     endDate: { es: 'Presente', en: 'Present' },
     description: { es: 'Marketplace B2B2C — Proyecto propio.', en: 'B2B2C Marketplace — Personal project.' },
+    groupId: 'coneko',
   },
   {
     id: '2',

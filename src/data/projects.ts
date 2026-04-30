@@ -142,6 +142,8 @@ export const projectsData: Project[] = [
     id: '4',
     slug: 'coneko',
     title: 'CoNeko — Marketplace B2B2C',
+    // repoUrl: 'https://github.com/coneko-org/marketplace',
+    showRepo: true,
     shortDescription: {
       es: 'Marketplace B2B2C para pequeños negocios, diseñado con Domain-Driven Design y arquitectura limpia desde cero.',
       en: 'B2B2C marketplace for small businesses, designed with Domain-Driven Design and clean architecture from scratch.',
@@ -174,8 +176,10 @@ export const projectsData: Project[] = [
   },
   {
     id: '6',
-    slug: 'itjobs-portal',
-    title: 'ITJobs — Portal de Empleos IT',
+    slug: 'rise-together',
+    title: 'Rise Together — Portal de Empleos IT',
+    repoUrl: 'https://github.com/Leonardo-Robot-PostRock/RiseTogetherDemo',
+    showRepo: true,
     shortDescription: {
       es: 'Backend de portal de empleos IT B2B con arquitectura hexagonal, Domain-Driven Design y automatización de gestión de proyectos con ClickUp MCP.',
       en: 'IT jobs portal backend B2B with hexagonal architecture, Domain-Driven Design and project management automation with ClickUp MCP.',
