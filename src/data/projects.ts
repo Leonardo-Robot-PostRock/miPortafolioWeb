@@ -186,7 +186,7 @@ export const projectsData: Project[] = [
       es: 'Los ATS tradicionales filtran por keywords y descartan buenos candidatos. Rise Together replantea el matching con un modelo más preciso. Backend en Java/Spring Boot con arquitectura hexagonal, DDD, TDD estilo BDD y automatización de gestión con ClickUp MCP.',
       en: 'Traditional ATS platforms filter by keywords and discard strong candidates. Rise Together rethinks matching with a more precise model. Java/Spring Boot backend with Hexagonal Architecture, DDD, BDD-style TDD and project management automation with ClickUp MCP.',
     },
-    techStack: ['Spring Boot 4.0.6', 'Java 25', 'Hexagonal Architecture', 'DDD', 'JWT', 'MySQL', 'Flyway', 'ClickUp MCP', 'MapStruct', 'Lombok'],
+    techStack: ['Spring Boot 4.0.6', 'Java 25', 'Hexagonal Architecture', 'DDD', 'CQRS', 'JWT', 'MySQL', 'Flyway', 'ClickUp MCP', 'MapStruct', 'Lombok'],
     featured: true,
     category: 'professional',
     year: '2026',

@@ -6,12 +6,12 @@ import type { PersonalInfo } from './types';
 export const personalData: PersonalInfo = {
   name: 'Leonardo Puebla',
   role: {
-    es: 'Desarrollador Frontend · Full Stack',
-    en: 'Frontend Developer · Full Stack',
+    es: 'Desarrollador Full Stack',
+    en: 'Full Stack Developer',
   },
   tagline: {
-    es: 'Desarrollador Frontend con perfil Full Stack y +3 años de experiencia creando y modernizando aplicaciones web y móviles complejas. Me especializo en transformar requisitos cambiantes en soluciones robustas y mantenibles.',
-    en: 'Frontend Developer with a Full Stack profile and 3+ years of experience building and modernizing complex web and mobile applications. I specialize in turning changing requirements into robust and maintainable solutions.',
+    es: 'Más de 3 años construyendo aplicaciones web y móviles complejas — frontend, backend, full stack. Transformo requisitos cambiantes en soluciones robustas, limpias y escalables.',
+    en: '3+ years building complex web and mobile applications — frontend, backend, full stack. I turn shifting requirements into robust, clean, and scalable solutions.',
   },
   avatar: avatarDark,
   location: 'Mendoza, Argentina',
