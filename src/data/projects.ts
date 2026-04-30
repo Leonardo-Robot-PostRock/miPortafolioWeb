@@ -145,8 +145,8 @@ export const projectsData: Project[] = [
     // repoUrl: 'https://github.com/coneko-org/marketplace',
     showRepo: true,
     shortDescription: {
-      es: 'Marketplace B2B2C para pequeños negocios, diseñado con Domain-Driven Design y arquitectura limpia desde cero.',
-      en: 'B2B2C marketplace for small businesses, designed with Domain-Driven Design and clean architecture from scratch.',
+      es: 'Marketplace B2B2C que conecta pequeños negocios con compradores directos. Construido sobre la arquitectura en capas de Martin Fowler (PoEAA) y Domain-Driven Design, con Domain Model, Service Layer y Repository como patrones base.',
+      en: 'B2B2C marketplace connecting small businesses with direct buyers. Built on Martin Fowler\'s layered architecture (PoEAA) and Domain-Driven Design, with Domain Model, Service Layer and Repository as core patterns.',
     },
     techStack: ['Node.js', 'Express', 'TypeScript', 'MongoDB'],
     featured: true,
@@ -157,21 +157,23 @@ export const projectsData: Project[] = [
       en: 'Founder & Backend Developer',
     },
     challenge: {
-      es: 'Diseñar y construir desde cero un marketplace B2B2C escalable para pequeños negocios, con una arquitectura que permita crecer de forma sostenible.',
-      en: 'Design and build from scratch a scalable B2B2C marketplace for small businesses, with an architecture that allows sustainable growth.',
+      es: 'Los marketplaces tradicionales nacen como monolitos: rápidos de arrancar pero imposibles de mantener cuando crecen. El desafío era construir Ágora con bases sólidas desde el día uno —sin sacrificar velocidad de desarrollo— de forma que agregar nuevos contextos (vendedores, compradores, pedidos, pagos) no generara deuda técnica acumulada ni fricciones entre equipos.',
+      en: 'Traditional marketplaces start as monoliths: fast to spin up but impossible to maintain as they grow. The challenge was to build Ágora on solid foundations from day one —without sacrificing development speed— so that adding new contexts (sellers, buyers, orders, payments) would not accumulate technical debt or create cross-team friction.',
     },
     solution: {
-      es: 'Apliqué Domain-Driven Design con separación completa de capas de aplicación, dominio e infraestructura. El backend está construido con Node.js, Express y TypeScript, usando MongoDB como base de datos.',
-      en: 'Applied Domain-Driven Design with complete separation of application, domain and infrastructure layers. The backend is built with Node.js, Express and TypeScript, using MongoDB as the database.',
+      es: 'Apliqué la arquitectura en capas de Fowler (PoEAA): Presentación, Dominio y Data Source. El Domain Model concentra toda la lógica de negocio en entidades ricas; el Service Layer orquesta los flujos de trabajo sin lógica propia; los Repositories abstraen la persistencia mediante Data Mappers, dejando MongoDB como un detalle intercambiable. Cada bounded context tiene su propio modelo de dominio y se comunica con los demás a través de interfaces explícitas.',
+      en: "Applied Fowler's layered architecture (PoEAA): Presentation, Domain and Data Source. The Domain Model concentrates all business logic in rich entities; the Service Layer orchestrates workflows without owning logic; Repositories abstract persistence via Data Mappers, making MongoDB a swappable detail. Each bounded context owns its domain model and communicates with others through explicit interfaces.",
     },
     results: [
-      { metric: 'DDD', description: { es: 'Arquitectura Domain-Driven Design desde el día uno', en: 'Domain-Driven Design architecture from day one' } },
-      { metric: '3 layers', description: { es: 'Separación completa: aplicación, dominio e infraestructura', en: 'Complete separation: application, domain and infrastructure' } },
+      { metric: 'PoEAA', description: { es: 'Arquitectura en capas de Fowler: Presentación / Dominio / Data Source', en: "Fowler's layered architecture: Presentation / Domain / Data Source" } },
+      { metric: 'DDD', description: { es: 'Bounded contexts independientes con modelos de dominio propios', en: 'Independent bounded contexts with their own domain models' } },
+      { metric: '0 coupling', description: { es: 'Infraestructura completamente desacoplada — MongoDB reemplazable sin tocar el dominio', en: 'Fully decoupled infrastructure — MongoDB replaceable without touching the domain' } },
     ],
     learnings: [
-      { es: 'Domain-Driven Design aplicado en un proyecto real', en: 'Domain-Driven Design applied in a real project' },
-      { es: 'Separación de capas para arquitectura mantenible', en: 'Layer separation for maintainable architecture' },
-      { es: 'Diseño de APIs escalables para marketplace', en: 'Scalable API design for marketplace' },
+      { es: 'Domain-Driven Design aplicado en un producto real con múltiples bounded contexts', en: 'Domain-Driven Design applied in a real product with multiple bounded contexts' },
+      { es: 'Arquitectura PoEAA de Fowler: Domain Model, Service Layer, Repository y Data Mapper', en: "Fowler's PoEAA: Domain Model, Service Layer, Repository and Data Mapper" },
+      { es: 'Diseño de APIs que exponen casos de uso, no modelos de base de datos', en: 'Designing APIs that expose use cases, not database models' },
+      { es: 'Estrategias de comunicación entre bounded contexts sin acoplamiento directo', en: 'Bounded context communication strategies without direct coupling' },
     ]
   },
   {
@@ -181,8 +183,8 @@ export const projectsData: Project[] = [
     repoUrl: 'https://github.com/Leonardo-Robot-PostRock/RiseTogetherDemo',
     showRepo: true,
     shortDescription: {
-      es: 'Backend de portal de empleos IT B2B con arquitectura hexagonal, Domain-Driven Design y automatización de gestión de proyectos con ClickUp MCP.',
-      en: 'IT jobs portal backend B2B with hexagonal architecture, Domain-Driven Design and project management automation with ClickUp MCP.',
+      es: 'Los ATS tradicionales filtran por keywords y descartan buenos candidatos. Rise Together replantea el matching con un modelo más preciso. Backend en Java/Spring Boot con arquitectura hexagonal, DDD, TDD estilo BDD y automatización de gestión con ClickUp MCP.',
+      en: 'Traditional ATS platforms filter by keywords and discard strong candidates. Rise Together rethinks matching with a more precise model. Java/Spring Boot backend with Hexagonal Architecture, DDD, BDD-style TDD and project management automation with ClickUp MCP.',
     },
     techStack: ['Spring Boot 3.5', 'Java 17', 'Hexagonal Architecture', 'DDD', 'JWT', 'MySQL', 'Flyway', 'ClickUp MCP', 'MapStruct', 'Lombok'],
     featured: true,
