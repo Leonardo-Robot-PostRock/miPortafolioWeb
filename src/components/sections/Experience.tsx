@@ -37,7 +37,6 @@ function groupExperiences(experiences: ExperienceType[]): RenderItem[] {
 }
 
 function ExperienceGroupBlock({ group }: { group: ExperienceGroup }) {
-  const { locale } = useTranslations();
   const { items } = group;
   return (
     <div className="relative pl-8 md:pl-12 border-l-2 border-[var(--color-primary)]">
@@ -46,11 +45,8 @@ function ExperienceGroupBlock({ group }: { group: ExperienceGroup }) {
         <span className="type-heading font-semibold text-lg text-[var(--color-primary)]">
           {items[0].company}
         </span>
-        <p className="type-caption text-sm text-[var(--color-muted)] mt-0.5">
-          {tr(items[0].startDate, locale)} — {tr(items[items.length - 1].endDate, locale)}
-        </p>
       </div>
-      <div className="space-y-8 pl-6 border-l border-[var(--color-border)]">
+      <div className="space-y-8">
         {items.map((exp) => (
           <ExperienceItem key={exp.id} experience={exp} isGrouped />
         ))}

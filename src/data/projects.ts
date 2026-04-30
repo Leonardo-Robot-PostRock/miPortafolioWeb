@@ -141,7 +141,7 @@ export const projectsData: Project[] = [
   {
     id: '4',
     slug: 'coneko',
-    title: 'CoNeko — Marketplace B2B2C',
+    title: 'Ágora — Marketplace B2B2C',
     // repoUrl: 'https://github.com/coneko-org/marketplace',
     showRepo: true,
     shortDescription: {

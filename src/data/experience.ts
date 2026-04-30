@@ -4,7 +4,7 @@ export const experienceData: Experience[] = [
   {
     id: '1',
     company: 'CoNeko',
-    role: { es: 'Fundador & Desarrollador Backend', en: 'Founder & Backend Developer' },
+    role: { es: 'Desarrollador Backend', en: 'Backend Developer' },
     startDate: { es: 'Ene 2026', en: 'Jan 2026' },
     endDate: { es: 'Presente', en: 'Present' },
     description: {
@@ -16,10 +16,10 @@ export const experienceData: Experience[] = [
   {
     id: '1b',
     company: 'CoNeko',
-    role: { es: 'Fundador & Desarrollador Backend', en: 'Founder & Backend Developer' },
+    role: { es: 'Desarrollador Backend', en: 'Backend Developer' },
     startDate: { es: 'Ene 2026', en: 'Jan 2026' },
     endDate: { es: 'Presente', en: 'Present' },
-    description: { es: 'Marketplace B2B2C — Proyecto propio.', en: 'B2B2C Marketplace — Personal project.' },
+    description: { es: 'Ágora, marketplace B2B2C — Proyecto propio.', en: 'Ágora, B2B2C marketplace — Personal project.' },
     groupId: 'coneko',
   },
   {
