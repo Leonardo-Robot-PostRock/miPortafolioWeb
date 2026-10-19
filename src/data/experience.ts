@@ -2,6 +2,17 @@ import type { Experience } from './types';
 
 export const experienceData: Experience[] = [
   {
+    id: '0',
+    company: 'Huayra Solutions S.R.L',
+    role: { es: 'Desarrollador Full Stack', en: 'Full Stack Developer' },
+    startDate: { es: 'Jul 2026', en: 'Jul 2026' },
+    endDate: { es: 'Presente', en: 'Present' },
+    description: {
+      es: 'Producto construido desde cero y evolucionado con cambio de arquitectura por escalabilidad y seguridad — Full-time, remoto.',
+      en: 'Product built from scratch and evolved through an architecture change for scalability and security — Full-time, remote.',
+    },
+  },
+  {
     id: '1',
     company: 'CoNeko',
     role: { es: 'Desarrollador Backend', en: 'Backend Developer' },

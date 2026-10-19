@@ -13,15 +13,15 @@ export const expertiseData: Translatable[] = [
 export const skillsData: SkillCategory[] = [
   {
     name: { es: 'Frontend', en: 'Frontend' },
-    items: ['React', 'Next.js', 'Svelte', 'SvelteKit', 'Angular', 'React Native', 'Redux', 'Zustand'],
+    items: ['React', 'Next.js', 'Svelte', 'SvelteKit', 'Angular', 'Expo', 'React Native', 'TanStack Query', 'iOS', 'Android', 'Redux', 'Zustand'],
   },
   {
     name: { es: 'Backend', en: 'Backend' },
-    items: ['Node.js', 'Express', 'Python', 'Java 17', 'Spring Boot', 'Spring Security', 'JWT', 'Flyway', 'JUnit 5', 'H2', 'REST APIs'],
+    items: ['Node.js', 'Express', 'Hono', 'Python', 'Java 17', 'Spring Boot', 'Spring Security', 'JWT', 'Flyway', 'JUnit 5', 'H2', 'REST APIs'],
   },
   {
     name: { es: 'Bases de Datos', en: 'Databases' },
-    items: ['MySQL', 'PostgreSQL', 'MongoDB', 'CouchDB', 'PouchDB'],
+    items: ['Firestore', 'MySQL', 'PostgreSQL', 'MongoDB', 'CouchDB', 'PouchDB'],
   },
   {
     name: { es: 'Herramientas', en: 'Tools' },

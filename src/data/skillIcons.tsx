@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import zustandIconUrl from '@/assets/icons/zustand.svg?url';
 import { FaJava } from 'react-icons/fa';
-import { SiSvelte, SiRedux, SiPython, SiExpress, SiConfluence, SiNodedotjs, SiAngular, SiMongodb, SiDocker, SiGit, SiRabbitmq, SiPostgresql, SiSpring, SiMysql, SiJunit5, SiFlyway, SiHibernate, SiJsonwebtokens, SiClickup, SiSpringsecurity } from 'react-icons/si';
+import { SiSvelte, SiRedux, SiPython, SiExpress, SiConfluence, SiNodedotjs, SiAngular, SiMongodb, SiDocker, SiGit, SiRabbitmq, SiPostgresql, SiSpring, SiMysql, SiJunit5, SiFlyway, SiHibernate, SiJsonwebtokens, SiClickup, SiSpringsecurity, SiExpo, SiHono, SiAndroid, SiApple, SiFirebase, SiReactquery } from 'react-icons/si';
 import { TbBrandReactNative } from 'react-icons/tb';
 
 interface SkillIconData {
@@ -44,6 +44,34 @@ const icons: Record<string, SkillIconData> = {
     'React Native': {
         brandColor: '#61DAFB',
         icon: <TbBrandReactNative size="100%" />,
+    },
+    'TanStack Query': {
+        brandColor: '#FF4154',
+        icon: <SiReactquery size="100%" />,
+    },
+    Expo: {
+        brandColor: '#A0A0A0',
+        icon: <SiExpo size="100%" />,
+    },
+    iOS: {
+        brandColor: '#A0A0A0',
+        icon: <SiApple size="100%" />,
+    },
+    Android: {
+        brandColor: '#3DDC84',
+        icon: <SiAndroid size="100%" />,
+    },
+    Hono: {
+        brandColor: '#F97316',
+        icon: <SiHono size="100%" />,
+    },
+    Firebase: {
+        brandColor: '#FFCA28',
+        icon: <SiFirebase size="100%" />,
+    },
+    Firestore: {
+        brandColor: '#FFCA28',
+        icon: <SiFirebase size="100%" />,
     },
     'Next.js': {
         brandColor: '#A0A0A0',

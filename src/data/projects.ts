@@ -177,6 +177,45 @@ export const projectsData: Project[] = [
     ]
   },
   {
+    id: '5',
+    slug: 'petapp-architecture-migration',
+    title: 'PetApp — Product Build & Architecture Evolution',
+    client: 'Huayra Solutions S.R.L',
+    shortDescription: {
+      es: 'Construcción del producto desde cero como único desarrollador, seguida por una evolución arquitectónica para mover lógica sensible del cliente al backend por escalabilidad y seguridad.',
+      en: 'Product built from scratch as a sole developer, followed by an architecture evolution to move sensitive logic from client to backend for scalability and security.',
+    },
+    techStack: ['TypeScript', 'Expo', 'React Native', 'TanStack Query', 'iOS', 'Android', 'Hono', 'Firebase', 'Firestore', 'Cloud Functions', 'Jest'],
+    featured: true,
+    category: 'professional',
+    year: '2026',
+    role: {
+      es: 'Full Stack Developer (Arquitectura, Dominio e Infraestructura)',
+      en: 'Full Stack Developer (Architecture, Domain, and Infrastructure)',
+    },
+    challenge: {
+      es: 'El desafío inicial fue construir el producto desde cero, cubriendo cliente, backend, contratos y operación diaria con un equipo de desarrollo de una sola persona. En una segunda etapa, el diseño MVP monolítico mostró límites de escalabilidad y seguridad, lo que forzó un cambio de requisito técnico sin frenar entregas ni continuidad de producto.',
+      en: 'The initial challenge was building the product from scratch, covering client, backend, contracts, and daily operations as a one-developer team. In a second stage, the MVP monolithic design showed scalability and security limits, forcing a technical requirement change without slowing delivery or product continuity.',
+    },
+    solution: {
+      es: 'Construí la primera versión funcional end-to-end con Expo + React Native para iOS y Android, y backend con Hono API sobre Cloud Functions, usando Firestore como base de datos principal. Luego ejecuté una transición incremental por waves para extraer lógica crítica del cliente hacia backend versionado. Apliqué diseño por puertos/adaptadores y modelado táctico de dominio (invariantes, políticas, Value Objects y casos de uso), junto con adaptación de infraestructura en Firestore y composition root. Para sostener ritmo y contexto en un proyecto llevado casi solo, integré un flujo operativo con dailies, tickets por tarea y automatización asistida por Claude sobre una base de conocimiento interna alimentada con minutas y documentación técnica.',
+      en: 'I built the first functional version end-to-end with Expo + React Native for iOS and Android, and a Hono API backend on Cloud Functions, using Firestore as the primary database. I then executed an incremental wave-based transition to extract critical logic from the client into a versioned backend. I applied ports/adapters design and tactical domain modeling (invariants, policies, Value Objects, and use cases), together with infrastructure adaptation in Firestore and the composition root. To keep pace and context in an almost solo project, I integrated an operating flow with dailies, task-scoped tickets, and Claude-assisted automation on top of an internal knowledge base fed with meeting notes and technical documentation.',
+    },
+    results: [
+      { metric: '0→1', description: { es: 'Producto funcional construido desde cero y evolucionado en producción', en: 'Functional product built from scratch and evolved in production' } },
+      { metric: 'Client → API', description: { es: 'Migración progresiva de responsabilidades críticas del cliente hacia backend versionado', en: 'Progressive migration of critical responsibilities from client to versioned backend' } },
+      { metric: 'DDD + Ports', description: { es: 'Diseño transversal en dominio, aplicación e infraestructura con puertos/adaptadores', en: 'Cross-layer design in domain, application, and infrastructure with ports/adapters' } },
+      { metric: 'Daily Ops', description: { es: 'Cadencia sostenida con dailies, tickets por tarea y contexto técnico persistente para automatización', en: 'Sustained cadence with dailies, task-scoped tickets, and persistent technical context for automation' } },
+    ],
+    learnings: [
+      { es: 'Construcción de producto end-to-end en contexto de ownership casi total', en: 'End-to-end product building in near-total ownership context' },
+      { es: 'Diseño de migraciones incrementales sin congelar el producto', en: 'Designing incremental migrations without freezing product delivery' },
+      { es: 'Trade-offs reales entre robustez arquitectónica y velocidad MVP', en: 'Real-world trade-offs between architectural robustness and MVP velocity' },
+      { es: 'Modelado táctico de dominio para proteger invariantes de negocio', en: 'Tactical domain modeling to protect business invariants' },
+      { es: 'Operación técnica con documentación viva y automatización asistida por IA', en: 'Technical operations with living documentation and AI-assisted automation' },
+    ],
+  },
+  {
     id: '6',
     slug: 'rise-together',
     title: 'Rise Together — Portal de Empleos IT',
